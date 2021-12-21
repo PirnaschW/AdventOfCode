@@ -1,0 +1,83 @@
+void AoC2020_01A(std::istream& cin);
+void AoC2020_01B(std::istream& cin);
+void AoC2020_02A(std::istream& cin);
+void AoC2020_02B(std::istream& cin);
+void AoC2020_03A(std::istream& cin);
+void AoC2020_03B(std::istream& cin);
+void AoC2020_04A(std::istream& cin);
+void AoC2020_04B(std::istream& cin);
+void AoC2020_05A(std::istream& cin);
+void AoC2020_05B(std::istream& cin);
+void AoC2020_06A(std::istream& cin);
+void AoC2020_06B(std::istream& cin);
+void AoC2020_07A(std::istream& cin);
+void AoC2020_07B(std::istream& cin);
+void AoC2020_08A(std::istream& cin);
+void AoC2020_08B(std::istream& cin);
+void AoC2020_09A(std::istream& cin);
+void AoC2020_09B(std::istream& cin);
+void AoC2020_10A(std::istream& cin);
+void AoC2020_10B(std::istream& cin);
+void AoC2020_11A(std::istream& cin);
+void AoC2020_11B(std::istream& cin);
+void AoC2020_12A(std::istream& cin);
+void AoC2020_12B(std::istream& cin);
+void AoC2020_13A(std::istream& cin);
+void AoC2020_13B(std::istream& cin);
+void AoC2020_14A(std::istream& cin);
+void AoC2020_14B(std::istream& cin);
+void AoC2020_15A(std::istream& cin);
+void AoC2020_15B(std::istream& cin);
+void AoC2020_16A(std::istream& cin);
+void AoC2020_16B(std::istream& cin);
+void AoC2020_17A(std::istream& cin);
+void AoC2020_17B(std::istream& cin);
+void AoC2020_18A(std::istream& cin);
+void AoC2020_18B(std::istream& cin);
+void AoC2020_19A(std::istream& cin);
+void AoC2020_19B(std::istream& cin);
+void AoC2020_20A(std::istream& cin);
+void AoC2020_20B(std::istream& cin);
+void AoC2020_21A(std::istream& cin);
+void AoC2020_21B(std::istream& cin);
+void AoC2020_22A(std::istream& cin);
+void AoC2020_22B(std::istream& cin);
+void AoC2020_23A(std::istream& cin);
+void AoC2020_23B(std::istream& cin);
+void AoC2020_24A(std::istream& cin);
+void AoC2020_24B(std::istream& cin);
+void AoC2020_25A(std::istream& cin);
+void AoC2020_25B(std::istream& cin);
+
+//void run_2020(int puzzle, int part, std::istream& input)
+//{
+//  switch (puzzle)
+//  {
+//    case  1: part == 1 ? AoC2020_01A(input) : AoC2020_01B(input); break;
+//    case  2: part == 1 ? AoC2020_02A(input) : AoC2020_02B(input); break;
+//    case  3: part == 1 ? AoC2020_03A(input) : AoC2020_03B(input); break;
+//    case  4: part == 1 ? AoC2020_04A(input) : AoC2020_04B(input); break;
+//    case  5: part == 1 ? AoC2020_05A(input) : AoC2020_05B(input); break;
+//    case  6: part == 1 ? AoC2020_06A(input) : AoC2020_06B(input); break;
+//    case  7: part == 1 ? AoC2020_07A(input) : AoC2020_07B(input); break;
+//    case  8: part == 1 ? AoC2020_08A(input) : AoC2020_08B(input); break;
+//    case  9: part == 1 ? AoC2020_09A(input) : AoC2020_09B(input); break;
+//    case 10: part == 1 ? AoC2020_10A(input) : AoC2020_10B(input); break;
+//    case 11: part == 1 ? AoC2020_11A(input) : AoC2020_11B(input); break;
+//    case 12: part == 1 ? AoC2020_12A(input) : AoC2020_12B(input); break;
+//    case 13: part == 1 ? AoC2020_13A(input) : AoC2020_13B(input); break;
+//    case 14: part == 1 ? AoC2020_14A(input) : AoC2020_14B(input); break;
+//    case 15: part == 1 ? AoC2020_15A(input) : AoC2020_15B(input); break;
+//    case 16: part == 1 ? AoC2020_16A(input) : AoC2020_16B(input); break;
+//    case 17: part == 1 ? AoC2020_17A(input) : AoC2020_17B(input); break;
+//    case 18: part == 1 ? AoC2020_18A(input) : AoC2020_18B(input); break;
+//    case 19: part == 1 ? AoC2020_19A(input) : AoC2020_19B(input); break;
+//    case 20: part == 1 ? AoC2020_20A(input) : AoC2020_20B(input); break;
+//  //case 21: part == 1 ? AoC2020_21A(input) : AoC2020_21B(input); break;
+//  //case 22: part == 1 ? AoC2020_22A(input) : AoC2020_22B(input); break;
+//  //case 23: part == 1 ? AoC2020_23A(input) : AoC2020_23B(input); break;
+//  //case 24: part == 1 ? AoC2020_24A(input) : AoC2020_24B(input); break;
+//  //case 25: part == 1 ? AoC2020_25A(input) : AoC2020_25B(input); break;
+//    default: assert(false);                                   break;
+//  }
+//}
