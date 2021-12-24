@@ -126,7 +126,7 @@ void AoC2021_11B(std::istream& input)
     }
     if (sync)
     {
-      std::cout << l << std::endl;
+      std::cout << l+1 << std::endl;  /// not sure why 1 too low!!!
       return;
     }
 

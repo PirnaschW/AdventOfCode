@@ -3,20 +3,22 @@
 #include "pch.h"
 
 #include "AoCUtil.h"
-#define COMPILE_ALL
+//#define COMPILE_ALL
 
 int main()
 {
-//RUN_ALL(2020);
-//RUN_ALL(2021);
+//RUN_ALL(PirnaschW,2020);
+//RUN_ALL(PirnaschW,2021);
+//RUN_ALL(FLEndlessSummer,2020);
+//RUN_ALL(FLEndlessSummer,2021);
 
-//RUN(2021, 19, A);
-//RUN(2021, 19, B);
-  RUN(2021, 11, B);
+  RUN(PirnaschW, 2021, 25, A);
+  RUN(PirnaschW, 2021, 25, B);
+  RUN(FLEndlessSummer, 2021, 25, A);
+  RUN(FLEndlessSummer, 2021, 25, B);
 }
 
-#include "2021 Solutions\AoC2021_19.h"
-#include "2021 Solutions\AoC2021_11.h"
+#include "2021 Solutions\AoC2021_25.h"
 
 
 #ifdef COMPILE_ALL
