@@ -13,9 +13,7 @@ int main()
 //RUN_ALL(FLEndlessSummer,2021);
 
   RUN(PirnaschW, 2021, 25, A);
-  RUN(PirnaschW, 2021, 25, B);
   RUN(FLEndlessSummer, 2021, 25, A);
-  RUN(FLEndlessSummer, 2021, 25, B);
 }
 
 #include "2021 Solutions\AoC2021_25.h"
