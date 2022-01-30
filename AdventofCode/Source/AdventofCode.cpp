@@ -1,4 +1,5 @@
-// proof of ownership: 1576026 - 20211201 - 811d0bff
+// proof of ownership "PirnaschW": 1576026 - 20211201 - 811d0bff
+// proof of ownership "FLEndlessSummer": 1969757-20211227-12f34eee
 
 #include "pch.h"
 
@@ -12,14 +13,43 @@ int main()
 //RUN_ALL(FLEndlessSummer,2020);
 //RUN_ALL(FLEndlessSummer,2021);
 
-  RUN(PirnaschW, 2021, 25, A);
-  RUN(FLEndlessSummer, 2021, 25, A);
+  RUN(PirnaschW, 2019, 01, A);
+  //RUN(PirnaschW, 2021, 01, A);
+  //RUN(PirnaschW, 2021, 01, A);
+  //RUN(PirnaschW, 2021, 01, A);
+  //RUN(PirnaschW, 2021, 01, A);
+  //RUN(FLEndlessSummer, 2021, 25, A);
 }
 
-#include "2021 Solutions\AoC2021_25.h"
-
+#include "2019 Solutions\AoC2019_01.h"
 
 #ifdef COMPILE_ALL
+
+#include "2019 Solutions\AoC2019_01.h"
+#include "2019 Solutions\AoC2019_02.h"
+#include "2019 Solutions\AoC2019_03.h"
+#include "2019 Solutions\AoC2019_04.h"
+#include "2019 Solutions\AoC2019_05.h"
+#include "2019 Solutions\AoC2019_06.h"
+#include "2019 Solutions\AoC2019_07.h"
+#include "2019 Solutions\AoC2019_08.h"
+#include "2019 Solutions\AoC2019_09.h"
+#include "2019 Solutions\AoC2019_10.h"
+#include "2019 Solutions\AoC2019_11.h"
+#include "2019 Solutions\AoC2019_12.h"
+#include "2019 Solutions\AoC2019_13.h"
+#include "2019 Solutions\AoC2019_14.h"
+#include "2019 Solutions\AoC2019_15.h"
+#include "2019 Solutions\AoC2019_16.h"
+#include "2019 Solutions\AoC2019_17.h"
+#include "2019 Solutions\AoC2019_18.h"
+#include "2019 Solutions\AoC2019_19.h"
+#include "2019 Solutions\AoC2019_20.h"
+#include "2019 Solutions\AoC2019_21.h"
+#include "2019 Solutions\AoC2019_22.h"
+#include "2019 Solutions\AoC2019_23.h"
+#include "2019 Solutions\AoC2019_24.h"
+#include "2019 Solutions\AoC2019_25.h"
 
 #include "2020 Solutions\AoC2020_01.h"
 #include "2020 Solutions\AoC2020_02.h"

@@ -1,3 +1,23 @@
+void AoC2021_01A(std::istream& input)
+{
+  auto start = std::chrono::steady_clock::now();
+
+  int z = std::numeric_limits<int>::max();
+  int p = z;
+  int n = 0;
+  while (input >> z)
+  {
+    if (z > p) ++n;
+    p = z;
+  }
+
+  std::cout << n << std::endl;
+  auto end = std::chrono::steady_clock::now();
+  auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+  std::cout << n << " (" << duration << ")" << std::endl;
+
+}
+
 void AoC2021_01B(std::istream& input)
 {
   int z = std::numeric_limits<int>::max();
@@ -15,15 +35,3 @@ void AoC2021_01B(std::istream& input)
   std::cout << n << std::endl;
 }
 
-void AoC2021_01A(std::istream& input)
-{
-  int z = std::numeric_limits<int>::max();
-  int p = z;
-  int n = 0;
-  while (input >> z)
-  {
-    if (z > p) ++n;
-    p = z;
-  }
-  std::cout << n << std::endl;
-}

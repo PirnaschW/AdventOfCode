@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\2021 Solutions\AoC2021_16.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019_01.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_02.h" />

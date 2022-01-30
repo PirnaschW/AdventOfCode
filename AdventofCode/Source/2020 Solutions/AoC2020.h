@@ -48,36 +48,3 @@ void AoC2020_24A(std::istream& cin);
 void AoC2020_24B(std::istream& cin);
 void AoC2020_25A(std::istream& cin);
 void AoC2020_25B(std::istream& cin);
-
-//void run_2020(int puzzle, int part, std::istream& input)
-//{
-//  switch (puzzle)
-//  {
-//    case  1: part == 1 ? AoC2020_01A(input) : AoC2020_01B(input); break;
-//    case  2: part == 1 ? AoC2020_02A(input) : AoC2020_02B(input); break;
-//    case  3: part == 1 ? AoC2020_03A(input) : AoC2020_03B(input); break;
-//    case  4: part == 1 ? AoC2020_04A(input) : AoC2020_04B(input); break;
-//    case  5: part == 1 ? AoC2020_05A(input) : AoC2020_05B(input); break;
-//    case  6: part == 1 ? AoC2020_06A(input) : AoC2020_06B(input); break;
-//    case  7: part == 1 ? AoC2020_07A(input) : AoC2020_07B(input); break;
-//    case  8: part == 1 ? AoC2020_08A(input) : AoC2020_08B(input); break;
-//    case  9: part == 1 ? AoC2020_09A(input) : AoC2020_09B(input); break;
-//    case 10: part == 1 ? AoC2020_10A(input) : AoC2020_10B(input); break;
-//    case 11: part == 1 ? AoC2020_11A(input) : AoC2020_11B(input); break;
-//    case 12: part == 1 ? AoC2020_12A(input) : AoC2020_12B(input); break;
-//    case 13: part == 1 ? AoC2020_13A(input) : AoC2020_13B(input); break;
-//    case 14: part == 1 ? AoC2020_14A(input) : AoC2020_14B(input); break;
-//    case 15: part == 1 ? AoC2020_15A(input) : AoC2020_15B(input); break;
-//    case 16: part == 1 ? AoC2020_16A(input) : AoC2020_16B(input); break;
-//    case 17: part == 1 ? AoC2020_17A(input) : AoC2020_17B(input); break;
-//    case 18: part == 1 ? AoC2020_18A(input) : AoC2020_18B(input); break;
-//    case 19: part == 1 ? AoC2020_19A(input) : AoC2020_19B(input); break;
-//    case 20: part == 1 ? AoC2020_20A(input) : AoC2020_20B(input); break;
-//  //case 21: part == 1 ? AoC2020_21A(input) : AoC2020_21B(input); break;
-//  //case 22: part == 1 ? AoC2020_22A(input) : AoC2020_22B(input); break;
-//  //case 23: part == 1 ? AoC2020_23A(input) : AoC2020_23B(input); break;
-//  //case 24: part == 1 ? AoC2020_24A(input) : AoC2020_24B(input); break;
-//  //case 25: part == 1 ? AoC2020_25A(input) : AoC2020_25B(input); break;
-//    default: assert(false);                                   break;
-//  }
-//}
