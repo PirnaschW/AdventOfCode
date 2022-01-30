@@ -1,38 +1,45 @@
 
-void AoC2019_01B(std::istream& input)
+Number AoC2019_01A(std::istream& input)
 {
-  constexpr int Y{ 2020 };
-  int z = 0;
-  std::vector<int> v{};
-  v.reserve(1000);
 
-  while (input >> z)
+  struct H
   {
-    for (int i : v)
+    static Number GetFuel(Number mass)
     {
-      for (int j : v)
-      {
-        if (i == j) continue;
-        if (i + j + z == Y)
-        {
-          std::cout << i * j * z << std::endl;
-          return;
-        }
-      }
+      return mass > 6 ? mass / 3 - 2 : 0;
     }
-    v.emplace_back(z);
-  }
+  };
+
+
+  auto v = ReadNumbers(input);
+  Number z = 0;
+
+  for (auto m : v) z += H::GetFuel(m);
+  return z;
 }
 
-void AoC2019_01A(std::istream& input)
+Number AoC2019_01B(std::istream& input)
 {
-  int z = 0;
-  std::unordered_set<int> s{};
 
-  while (input >> z)
+  struct H
   {
-    if (s.contains(2020 - z)) break;
-    s.emplace(z);
-  }
-  std::cout << z * (2020 - z) << std::endl;
+    static Number GetFuel(Number mass)
+    {
+      return mass > 6 ? mass / 3 - 2 : 0;
+    }
+    static Number GetFuelFuel(Number mass)
+    {
+      Number z{ 0 };
+      Number zz{ mass };
+      while (zz = GetFuel(zz)) z += zz;
+      return z;
+    }
+  };
+
+
+  auto v = ReadNumbers(input);
+  Number z = 0;
+
+  for (auto m : v) z += H::GetFuelFuel(m);
+  return z;
 }

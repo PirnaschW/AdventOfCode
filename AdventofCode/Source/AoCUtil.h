@@ -1,12 +1,11 @@
-using Number = long long;
-
 #define PATH(user,event,puzzle) "Input Files\\" ## #user ## "\\" ## #event ## " Inputs\\AoC" ## #event ## "_" ## #puzzle ## ".txt"
 #define RUN(user,event,puzzle,part) \
 {\
 std::ifstream inpf(PATH(user,event, puzzle), std::ios::in);\
 std::istream& inp(inpf);\
-std::cout << "running Event " << #event << " Puzzle " << #puzzle << " Part " << #part << " ..." << std::endl;\
-AoC ## event ## _ ## puzzle ## part ## (inp);\
+std::cout << "User " << #user << " Event " << #event << " Puzzle " << #puzzle << " Part " << #part << " started... " << std::flush;\
+auto result = AoC ## event ## _ ## puzzle ## part ## (inp);\
+std::cout << "Result = " << std::setw(20) << result << std::endl;\
 }
 #define RUN_ALL(user,event) {\
   RUN(user,event, 01, A);\
@@ -91,6 +90,18 @@ std::vector<std::string> ReadLines(std::istream& input) // read all lines into v
   while (getline(input, line))
   {
     v.emplace_back(line);
+  }
+  return v;
+}
+
+std::vector<Number> ReadNumbers(std::istream& input) // read all lines as Number into vector 
+{
+  std::vector<Number> v{};
+  v.reserve(1000);
+  std::string line{};
+  while (getline(input, line))
+  {
+    v.emplace_back(std::stoll(line));
   }
   return v;
 }

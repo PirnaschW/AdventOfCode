@@ -8,17 +8,17 @@
 
 int main()
 {
-//RUN_ALL(PirnaschW,2020);
-//RUN_ALL(PirnaschW,2021);
-//RUN_ALL(FLEndlessSummer,2020);
-//RUN_ALL(FLEndlessSummer,2021);
+  //RUN_ALL(FLEndlessSummer,2019);
+  //RUN_ALL(FLEndlessSummer,2020);
+  //RUN_ALL(FLEndlessSummer,2021);
+  //RUN_ALL(PirnaschW,2019);
+  //RUN_ALL(PirnaschW,2020);
+  //RUN_ALL(PirnaschW,2021);
 
+  RUN(FLEndlessSummer, 2019, 01, A);
+  RUN(FLEndlessSummer, 2019, 01, B);
   RUN(PirnaschW, 2019, 01, A);
-  //RUN(PirnaschW, 2021, 01, A);
-  //RUN(PirnaschW, 2021, 01, A);
-  //RUN(PirnaschW, 2021, 01, A);
-  //RUN(PirnaschW, 2021, 01, A);
-  //RUN(FLEndlessSummer, 2021, 25, A);
+  RUN(PirnaschW, 2019, 01, B);
 }
 
 #include "2019 Solutions\AoC2019_01.h"
