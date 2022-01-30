@@ -3,9 +3,12 @@
 {\
 std::ifstream inpf(PATH(user,event, puzzle), std::ios::in);\
 std::istream& inp(inpf);\
-std::cout << "User " << #user << " Event " << #event << " Puzzle " << #puzzle << " Part " << #part << " started... " << std::flush;\
+std::cout << "User " << std::setw(16) << std::left << #user << std::right << ": Event " << #event << " Puzzle " << #puzzle << " Part " << #part << " started... " << std::flush;\
+auto start = std::chrono::steady_clock::now();\
 auto result = AoC ## event ## _ ## puzzle ## part ## (inp);\
-std::cout << "Result = " << std::setw(20) << result << std::endl;\
+auto end = std::chrono::steady_clock::now();\
+auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);\
+std::cout << "Result = " << std::setw(20) << result << "  (" << duration << ")" << std::endl;\
 }
 #define RUN_ALL(user,event) {\
   RUN(user,event, 01, A);\
