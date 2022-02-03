@@ -80,7 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Source</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Source</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -126,6 +126,8 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,6 +156,7 @@
     <ClInclude Include="..\Source\2021 Solutions\AoC2021_16.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019_02.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_02.h" />
@@ -207,17 +210,22 @@
     <ClInclude Include="Source\2021 Solutions\AoC2021_25.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
+    <ClInclude Include="Source\FrameWork.h" />
     <ClInclude Include="Source\pch.h" />
+    <ClInclude Include="Source\URL.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AoCUtil.cpp" />
     <ClCompile Include="Source\AdventofCode.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\FrameWork.cpp" />
     <ClCompile Include="Source\pch.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\URL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Input Files\2020 Inputs\AoC2020_01.txt" />

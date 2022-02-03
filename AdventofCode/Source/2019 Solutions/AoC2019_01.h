@@ -1,5 +1,4 @@
-
-Number AoC2019_01A(std::istream& input)
+template<> Number AoC<2019, 1, A>(std::istream& input)
 {
 
   struct H
@@ -18,7 +17,7 @@ Number AoC2019_01A(std::istream& input)
   return z;
 }
 
-Number AoC2019_01B(std::istream& input)
+template<> Number AoC<2019, 1, B>(std::istream& input)
 {
 
   struct H

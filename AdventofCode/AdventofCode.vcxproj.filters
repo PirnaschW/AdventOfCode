@@ -28,11 +28,11 @@
     <Filter Include="Input Files\2021 Input Files">
       <UniqueIdentifier>{5f9a5c53-3f15-4e1b-af7c-08a7e3bc2048}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\2019 Solutions">
-      <UniqueIdentifier>{3f435bed-f19a-4923-a13f-2a576b3a682a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Input Files\2019 Input Files">
       <UniqueIdentifier>{7f8dfa56-82aa-4b89-bda0-6af458b57fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Solutions 2019">
+      <UniqueIdentifier>{31cf41f0-42a6-4a0f-9606-d3b0a6f44b81}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -201,11 +201,20 @@
     <ClInclude Include="Source\2021 Solutions\AoC2021_25.h">
       <Filter>Header Files\2021 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\URL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FrameWork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019.h">
-      <Filter>Header Files\2019 Solutions</Filter>
+      <Filter>Header Files\Solutions 2019</Filter>
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h">
-      <Filter>Header Files\2019 Solutions</Filter>
+      <Filter>Header Files\Solutions 2019</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_02.h">
+      <Filter>Header Files\Solutions 2019</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +222,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FrameWork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\URL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AoCUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

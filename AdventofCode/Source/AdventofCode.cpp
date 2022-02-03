@@ -3,53 +3,31 @@
 
 #include "pch.h"
 
-#include "AoCUtil.h"
+#include "2019 Solutions/AoC2019.h"
+
 //#define COMPILE_ALL
+
+using namespace AdventOfCode;
 
 int main()
 {
-  //RUN_ALL(FLEndlessSummer,2019);
-  //RUN_ALL(FLEndlessSummer,2020);
-  //RUN_ALL(FLEndlessSummer,2021);
-  //RUN_ALL(PirnaschW,2019);
-  //RUN_ALL(PirnaschW,2020);
-  //RUN_ALL(PirnaschW,2021);
+  RunDay<2019, 2>();
 
-  RUN(FLEndlessSummer, 2019, 01, A);
-  RUN(FLEndlessSummer, 2019, 01, B);
-  RUN(PirnaschW, 2019, 01, A);
-  RUN(PirnaschW, 2019, 01, B);
+  //RunEvent(FL,2019);
+  //RunEvent(FL,2020);
+  //RunEvent(FL,2021);
+  //RunEvent(PW,2019);
+  //RunEvent(PW,2020);
+  //RunEvent(PW,2021);
+
+  //Run<2019, 2, A>(User::FL);
+  //Run<2019, 2, B>(User::FL);
+  //Run<2019, 2, A>(User::PW);
+  //Run<2019, 2, B>(User::PW);
 }
 
-#include "2019 Solutions\AoC2019_01.h"
 
 #ifdef COMPILE_ALL
-
-#include "2019 Solutions\AoC2019_01.h"
-#include "2019 Solutions\AoC2019_02.h"
-#include "2019 Solutions\AoC2019_03.h"
-#include "2019 Solutions\AoC2019_04.h"
-#include "2019 Solutions\AoC2019_05.h"
-#include "2019 Solutions\AoC2019_06.h"
-#include "2019 Solutions\AoC2019_07.h"
-#include "2019 Solutions\AoC2019_08.h"
-#include "2019 Solutions\AoC2019_09.h"
-#include "2019 Solutions\AoC2019_10.h"
-#include "2019 Solutions\AoC2019_11.h"
-#include "2019 Solutions\AoC2019_12.h"
-#include "2019 Solutions\AoC2019_13.h"
-#include "2019 Solutions\AoC2019_14.h"
-#include "2019 Solutions\AoC2019_15.h"
-#include "2019 Solutions\AoC2019_16.h"
-#include "2019 Solutions\AoC2019_17.h"
-#include "2019 Solutions\AoC2019_18.h"
-#include "2019 Solutions\AoC2019_19.h"
-#include "2019 Solutions\AoC2019_20.h"
-#include "2019 Solutions\AoC2019_21.h"
-#include "2019 Solutions\AoC2019_22.h"
-#include "2019 Solutions\AoC2019_23.h"
-#include "2019 Solutions\AoC2019_24.h"
-#include "2019 Solutions\AoC2019_25.h"
 
 #include "2020 Solutions\AoC2020_01.h"
 #include "2020 Solutions\AoC2020_02.h"
