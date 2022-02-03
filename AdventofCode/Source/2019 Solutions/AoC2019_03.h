@@ -1,6 +1,6 @@
-template<> Number AoC<2019, 2, A>(std::istream& input)
+template<> Number AoC<2019, 3, A>(std::istream& input)
 {
-  auto code = ReadNumbers(input,',');
+  auto code = ReadNumbers(input, ',');
   code[1] = 12;
   code[2] = 2;
   //std::string teststring1{ "1,9,10,3,2,3,11,0,99,30,40,50" };
@@ -24,7 +24,7 @@ template<> Number AoC<2019, 2, A>(std::istream& input)
   }
 }
 
-template<> Number AoC<2019, 2, B>(std::istream& input)
+template<> Number AoC<2019, 3, B>(std::istream& input)
 {
   struct H {
     static Number GetResult(std::vector<Number> code)

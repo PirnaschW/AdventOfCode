@@ -34,14 +34,24 @@ std::vector<std::string> ReadLines(std::istream& input) // read all lines into v
   return v;
 }
 
-std::vector<Number> ReadNumbers(std::istream& input) // read all lines as Number into vector 
+std::vector<Number> ReadNumbers(std::istream& input, char separator) // read all lines as Number into vector 
 {
   std::vector<Number> v{};
   v.reserve(1000);
   std::string line{};
   while (getline(input, line))
   {
-    v.emplace_back(std::stoll(line));
+    std::istringstream str(line);
+
+    long long int z;
+    while (str >> z)
+    {
+      v.emplace_back(std::move(z));
+
+      char sep;
+      if (str >> sep) continue;
+      if (sep != separator) { assert(false); continue; }
+    }
   }
   return v;
 }

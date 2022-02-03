@@ -28,7 +28,7 @@ namespace AdventOfCode
 
   const std::string GetInputPath(User::ID id, Event event, Day day);
 
-  const std::string GetInputURL(User::ID id, Event event, Day day);
+  const std::string GetInputURL(Event event, Day day);
 
   void DownloadInput(const std::string& source, User::ID id, const std::string& target);
 
@@ -37,7 +37,7 @@ namespace AdventOfCode
   {
     const std::string path = GetInputPath(id, event, day);
     if (!std::filesystem::exists(path))
-      DownloadInput(GetInputURL(id, event, day), id, path);
+      DownloadInput(GetInputURL(event, day), id, path);
 
     std::ifstream inpf(path, std::ios::in);
     std::istream& inp(inpf);
@@ -118,7 +118,7 @@ namespace AdventOfCode
 }
 
 template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
-Number AoC(std::istream& input)
+Number AoC(std::istream&)
 {
   std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
   return -1;

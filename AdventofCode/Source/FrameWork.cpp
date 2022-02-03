@@ -25,7 +25,7 @@ namespace AdventOfCode
     if (leadingZeros)
     {
       static std::string sDay{ "00" };
-      sDay[0] = '0' + day / 10;
+      sDay[0] = '0' + static_cast<char>(day / 10);
       sDay[1] = '0' + day % 10;
       return sDay;
     }
@@ -47,7 +47,7 @@ namespace AdventOfCode
     return std::string{ "Input Files\\" + User::AsString(id) + "\\" + GetEventAsString(event) + " Inputs\\AoC" + GetEventAsString(event) + "_" + GetDayAsString(day,true) + ".txt" };
   }
 
-  const std::string GetInputURL(User::ID id, Event event, Day day)
+  const std::string GetInputURL(Event event, Day day)
   {
     return std::string{ "http://adventofcode.com/" + GetEventAsString(event) + "/day/" + GetDayAsString(day,false) + "/input" };
   }

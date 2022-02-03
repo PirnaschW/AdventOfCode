@@ -30,7 +30,7 @@ template<> Number AoC<2019, 1, B>(std::istream& input)
     {
       Number z{ 0 };
       Number zz{ mass };
-      while (zz = GetFuel(zz)) z += zz;
+      while ((zz = GetFuel(zz)) != 0) z += zz;
       return z;
     }
   };

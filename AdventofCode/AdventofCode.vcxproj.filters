@@ -216,6 +216,9 @@
     <ClInclude Include="Source\2019 Solutions\AoC2019_02.h">
       <Filter>Header Files\Solutions 2019</Filter>
     </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_03.h">
+      <Filter>Header Files\Solutions 2019</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">
