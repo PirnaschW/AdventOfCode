@@ -1,6 +1,7 @@
 #include "2019 Solutions\AoC2019_01.h"
 #include "2019 Solutions\AoC2019_02.h"
 #include "2019 Solutions\AoC2019_03.h"
+#include "2019 Solutions\AoC2019_04.h"
 
 #ifdef NOTYET
 #include "2019 Solutions\AoC2019_04.h"

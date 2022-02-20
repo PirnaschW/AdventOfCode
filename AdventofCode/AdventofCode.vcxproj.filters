@@ -31,7 +31,7 @@
     <Filter Include="Input Files\2019 Input Files">
       <UniqueIdentifier>{7f8dfa56-82aa-4b89-bda0-6af458b57fd0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Solutions 2019">
+    <Filter Include="Header Files\2019 Solutions">
       <UniqueIdentifier>{31cf41f0-42a6-4a0f-9606-d3b0a6f44b81}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -208,16 +208,19 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019.h">
-      <Filter>Header Files\Solutions 2019</Filter>
+      <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h">
-      <Filter>Header Files\Solutions 2019</Filter>
+      <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_02.h">
-      <Filter>Header Files\Solutions 2019</Filter>
+      <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_03.h">
-      <Filter>Header Files\Solutions 2019</Filter>
+      <Filter>Header Files\2019 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_04.h">
+      <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -233,7 +236,7 @@
     <ClCompile Include="Source\URL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AoCUtil.cpp">
+    <ClCompile Include="Source\AoCUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

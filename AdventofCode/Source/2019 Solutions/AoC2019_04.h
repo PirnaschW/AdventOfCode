@@ -1,7 +1,7 @@
-template<> Number AoC<2019, 3, A>(std::istream& input)
+template<> Number AoC<2019, 4, A>(std::istream& input)
 {
-//  auto v1 = ReadWords(input, ',');
-//  auto v2 = ReadWords(input, ',');
+  //  auto v1 = ReadWords(input, ',');
+  //  auto v2 = ReadWords(input, ',');
 
   const std::string testdata1{ "R8,U5,L5,D3\nU7,R6,D4,L4" };
   const std::string testdata2{ "R75,D30,R83,U83,L12,D49,R71,U7,L72\nU62,R66,U55,R34,D71,R55,D58,R83" };
@@ -12,8 +12,8 @@ template<> Number AoC<2019, 3, A>(std::istream& input)
   auto v2 = ReadWords(input, ',');
 
   struct Point {
-    Number x{0};
-    Number y{0};
+    Number x{ 0 };
+    Number y{ 0 };
     auto operator <=>(const Point&) const noexcept = default;
     Number MDist(void) const noexcept { return std::abs(x) + std::abs(y); }
   };
@@ -21,7 +21,7 @@ template<> Number AoC<2019, 3, A>(std::istream& input)
   struct Line {
     Point from{};
     Point to{};
-    bool horizontal{true};  // all our lines are horizontal or (not horizontal) = vertical
+    bool horizontal{ true };  // all our lines are horizontal or (not horizontal) = vertical
     Point Cross(const Line& l) const noexcept
     {
       constexpr const Point none{ 0,0 };
@@ -79,7 +79,7 @@ template<> Number AoC<2019, 3, A>(std::istream& input)
   return dmin;
 }
 
-template<> Number AoC<2019, 3, B>(std::istream& input)
+template<> Number AoC<2019, 4, B>(std::istream& input)
 {
   //  auto v1 = ReadWords(input, ',');
   //  auto v2 = ReadWords(input, ',');
