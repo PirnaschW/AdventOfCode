@@ -11,22 +11,14 @@ using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2019, 1>();
-  RunDay<2019, 2>();
-  RunDay<2019, 3>();
-  RunDay<2019, 4>();
+  RunDay<2019, 5>();
 
-  //RunEvent(FL,2019);
-  //RunEvent(FL,2020);
-  //RunEvent(FL,2021);
-  //RunEvent(PW,2019);
-  //RunEvent(PW,2020);
-  //RunEvent(PW,2021);
-
-  //Run<2019, 2, A>(User::FL);
-  //Run<2019, 2, B>(User::FL);
-  //Run<2019, 2, A>(User::PW);
-  //Run<2019, 2, B>(User::PW);
+  //RunEvent<2019>(User::FL);
+  //RunEvent<2020>(User::FL);
+  //RunEvent<2021>(User::FL);
+  //RunEvent<2019>(User::PW);
+  //RunEvent<2020>(User::PW);
+  //RunEvent<2021>(User::PW);
 }
 
 

@@ -7,8 +7,8 @@ namespace AdventOfCode
   std::string User::GetSessionID(ID id) { return users.at(id).sessionID; }
 
   const std::unordered_map<User::ID, User::userData> User::users{
-    { PW, { "PirnaschW",       "53616c7465645f5f1ec3ca7f81fdcab3fe7085dcb1ba4220c482e7c7f748df9b8df31296b284e9202c87318c7e7340c0" } },
-    { FL, { "FlEndlessSummer", "53616c7465645f5f2ca3ea3650213c1351416268fa5d7ec81275033de3c5d118f7f870deca75677c14d66be8136f2734" } },
+    { PW, { "PirnaschW",       "53616c7465645f5f47619d50ab3d5395b68542a3e548e1e3fa2714b553dde49577e481d6cf5e825253ca7ab1a635cb434343acac93abfa5f3e7e210abd1a614a" } },
+    { FL, { "FlEndlessSummer", "53616c7465645f5fd1e0e605918017998e1f92356cdef62d922ff404f09222962b00a30ad7d37cf148c61b48fa425bddabbecfc775a263af83868cf2dd1143bb" } },
   };
 
   const std::string GetEventAsString(Event event) noexcept
