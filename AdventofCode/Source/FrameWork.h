@@ -40,7 +40,13 @@ namespace AdventOfCode
       DownloadInput(GetInputURL(event, day), id, path);
 
     std::ifstream inpf(path, std::ios::in);
-    std::istream& inp(inpf);
+
+    // get potential testdata:
+    const char* const testinput = InputData<event, day, part>();               // if the template function is not specialized, there is no test data; the default returns nullptr
+    const char* const testdummy = "";                                          // dummy as we can't deref nullptr
+    std::istringstream testinputstream(testinput?testinput:testdummy);         // the stream 'testinput' MUST exist as an l-lvalue; it points now either to the test input, or to an empty string
+
+    std::istream& inp = (testinput ? static_cast<std::istream&>(testinputstream) : static_cast<std::istream&>(inpf));
     std::cout << "User " << std::setw(16) << std::left << User::AsString(id) << std::right << ": Event " << GetEventAsString(event) << " Puzzle " << GetDayAsString(day, true) << " Part " << GetPartAsString(part) << " started... " << std::flush;
 
     auto start = std::chrono::steady_clock::now();
@@ -48,6 +54,7 @@ namespace AdventOfCode
     auto end = std::chrono::steady_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
+    if (testinput) std::cout << "TEST-";
     std::cout << "Result = " << std::setw(20) << result << "  (" << duration << ")" << std::endl;
   }
 
@@ -123,3 +130,8 @@ Number AoC(std::istream&)
   std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
   return -1;
 }
+
+template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
+auto InputData() { return nullptr; }  // nullptr will result in reading the input file. Specialize this template to use local testdata instead, for example:
+//template<> auto InputData<2022, 1, A>() { return "Test\nData\n"; }
+
