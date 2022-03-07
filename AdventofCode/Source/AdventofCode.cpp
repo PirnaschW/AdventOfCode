@@ -11,7 +11,7 @@ using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2019, 6>();
+  RunDay<2019, 7>();
 
   //RunEvent<2019>(User::FL);
   //RunEvent<2020>(User::FL);
