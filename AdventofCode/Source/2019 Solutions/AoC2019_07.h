@@ -133,14 +133,6 @@ template<> Number AoC<2019, 7, B>(std::istream& input)
 
   auto code = ReadNumbers(input, ',');
 
-  auto RunAmp = [&code](Number phase, Number sig)->Number
-  {
-    IntCodeComputer c(code,phase);
-    c.PushInput(sig);
-    c.ExecuteToOutput();
-    return c.PopOutput();
-  };
-
   Number maxSig = std::numeric_limits<decltype(maxSig)>::min();
   constexpr Number minPhase = 5;
   constexpr Number maxPhase = 9;
