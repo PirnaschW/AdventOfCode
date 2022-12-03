@@ -3,7 +3,11 @@
 
 #include "pch.h"
 
-#include "2019 Solutions/AoC2019.h"
+//#include "2022 Solutions\AoC2022.h"
+#include "2022 Solutions\AoC2022_01.h"
+#include "2022 Solutions\AoC2022_02.h"
+#include "2022 Solutions\AoC2022_03.h"
+#include "2022 Solutions\AoC2022_04.h"
 
 //#define COMPILE_ALL
 
@@ -11,7 +15,12 @@ using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2019, 9>();
+  Run<2022, 04, A>(User::FL);
+  Run<2022, 04, B>(User::FL);
+  Run<2022, 04, A>(User::PW);
+  Run<2022, 04, B>(User::PW);
+
+//  RunDay<2022, 01>();
 
   //RunEvent<2019>(User::FL);
   //RunEvent<2020>(User::FL);

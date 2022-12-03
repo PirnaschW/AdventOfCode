@@ -7,9 +7,9 @@
 #include "2019 Solutions\AoC2019_07.h"
 #include "2019 Solutions\AoC2019_08.h"
 #include "2019 Solutions\AoC2019_09.h"
+#include "2019 Solutions\AoC2019_10.h"
 
 #ifdef NOTYET
-#include "2019 Solutions\AoC2019_10.h"
 #include "2019 Solutions\AoC2019_11.h"
 #include "2019 Solutions\AoC2019_12.h"
 #include "2019 Solutions\AoC2019_13.h"

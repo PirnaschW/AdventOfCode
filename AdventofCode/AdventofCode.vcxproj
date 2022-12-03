@@ -164,6 +164,7 @@
     <ClInclude Include="Source\2019 Solutions\AoC2019_07.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_08.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_09.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019_10.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_02.h" />
@@ -215,6 +216,11 @@
     <ClInclude Include="Source\2021 Solutions\AoC2021_23.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_24.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_25.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_01.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_02.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_03.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_04.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
     <ClInclude Include="Source\FrameWork.h" />

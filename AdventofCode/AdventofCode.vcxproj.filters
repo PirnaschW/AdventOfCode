@@ -34,6 +34,12 @@
     <Filter Include="Header Files\2019 Solutions">
       <UniqueIdentifier>{31cf41f0-42a6-4a0f-9606-d3b0a6f44b81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\2022 Solutions">
+      <UniqueIdentifier>{5e8488ae-5d60-461c-9966-d682c3a4383d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input Files\2022 Input Files">
+      <UniqueIdentifier>{d8b0c17a-5337-4dde-b97e-910065af5d31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\2020 Solutions\AoC2020.h">
@@ -236,6 +242,24 @@
     </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_09.h">
       <Filter>Header Files\2019 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_10.h">
+      <Filter>Header Files\2019 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_01.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_02.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_03.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_04.h">
+      <Filter>Header Files\2022 Solutions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

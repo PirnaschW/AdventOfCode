@@ -7,14 +7,14 @@ namespace AdventOfCode
   std::string User::GetSessionID(ID id) { return users.at(id).sessionID; }
 
   const std::unordered_map<User::ID, User::userData> User::users{
-    { PW, { "PirnaschW",       "53616c7465645f5f47619d50ab3d5395b68542a3e548e1e3fa2714b553dde49577e481d6cf5e825253ca7ab1a635cb434343acac93abfa5f3e7e210abd1a614a" } },
-    { FL, { "FlEndlessSummer", "53616c7465645f5fd1e0e605918017998e1f92356cdef62d922ff404f09222962b00a30ad7d37cf148c61b48fa425bddabbecfc775a263af83868cf2dd1143bb" } },
+    { PW, { "PirnaschW",       "53616c7465645f5fd89943d19def2da32c3194c79b371e2a59473d4453d247126134630eacdf8ccddc62d652b303a217645a23787674e7a6f748f457eb34abf0" } },
+    { FL, { "FlEndlessSummer", "53616c7465645f5fbfaa82a010cddb8197a6f11c9364a7efada8c6948bbb729c698a37064aa173b974e7b608ccebcf83cd4984663d1d7559a121c1144ff88dd5" } },
   };
 
   const std::string GetEventAsString(Event event) noexcept
   {
     assert(event >= 2015);
-    assert(event <= 2022);
+    assert(event <= 2023);
     return std::to_string(event);
   }
 
