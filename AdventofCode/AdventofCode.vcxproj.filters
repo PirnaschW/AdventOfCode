@@ -261,6 +261,33 @@
     <ClInclude Include="Source\2022 Solutions\AoC2022_04.h">
       <Filter>Header Files\2022 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_05.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_06.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_07.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_08.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_09.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_10.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_11.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_12.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_13.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">

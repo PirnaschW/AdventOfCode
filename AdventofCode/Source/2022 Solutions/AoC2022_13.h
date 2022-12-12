@@ -1,4 +1,4 @@
-template<> Number AoC<2022, XX, A>(std::istream& input)
+template<> Number AoC<2022, 13, A>(std::istream& input)
 {
   struct H
   {
@@ -21,7 +21,7 @@ template<> Number AoC<2022, XX, A>(std::istream& input)
   return z;
 }
 
-template<> Number AoC<2022, XX, B>(std::istream& input)
+template<> Number AoC<2022, 13, B>(std::istream& input)
 {
   struct H
   {

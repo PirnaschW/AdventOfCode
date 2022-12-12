@@ -30,14 +30,20 @@ namespace AdventOfCode
 
   const std::string GetInputURL(Event event, Day day);
 
-  void DownloadInput(const std::string& source, User::ID id, const std::string& target);
+  bool DownloadInput(const std::string& source, User::ID id, const std::string& target);
 
   template<Event event, Day day, Part part>
   void Run(User::ID id)
   {
     const std::string path = GetInputPath(id, event, day);
     if (!std::filesystem::exists(path))
-      DownloadInput(GetInputURL(event, day), id, path);
+    {
+      if (!DownloadInput(GetInputURL(event, day), id, path))
+      {
+        std::cout << "User " << std::setw(16) << std::left << User::AsString(id) << std::right << ": Event " << GetEventAsString(event) << " Puzzle " << GetDayAsString(day, true) << " Part " << GetPartAsString(part) << " INPUT DATA NOT YET AVAILABLE!\n" << std::endl;
+        return;
+      }
+    }
 
     std::ifstream inpf(path, std::ios::in);
 

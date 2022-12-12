@@ -52,14 +52,17 @@ namespace AdventOfCode
     return std::string{ "http://adventofcode.com/" + GetEventAsString(event) + "/day/" + GetDayAsString(day,false) + "/input" };
   }
 
-  void DownloadInput(const std::string& source, User::ID id, const std::string& target)
+  bool DownloadInput(const std::string& source, User::ID id, const std::string& target)
   {
     URL::Cookies cookies{};
     cookies.push_back({ "session",User::GetSessionID(id).c_str() });
 
     std::string s = URL::GetHTMLFromURL(source, cookies);
+    if (s == "Please don't repeatedly request this endpoint before it unlocks! The calendar countdown is synchronized with the server time; the link will be enabled on the calendar the instant this puzzle becomes available.\n")
+      return false;
     std::ofstream outf(target, std::ios::out);
     outf << s;
+    return true;
   }
 
 }

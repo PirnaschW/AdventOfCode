@@ -3,11 +3,7 @@
 
 #include "pch.h"
 
-//#include "2022 Solutions\AoC2022.h"
-#include "2022 Solutions\AoC2022_01.h"
-#include "2022 Solutions\AoC2022_02.h"
-#include "2022 Solutions\AoC2022_03.h"
-#include "2022 Solutions\AoC2022_04.h"
+#include "2022 Solutions\AoC2022_13.h"
 
 //#define COMPILE_ALL
 
@@ -15,10 +11,10 @@ using namespace AdventOfCode;
 
 int main()
 {
-  Run<2022, 04, A>(User::FL);
-  Run<2022, 04, B>(User::FL);
-  Run<2022, 04, A>(User::PW);
-  Run<2022, 04, B>(User::PW);
+  Run<2022, 13, A>(User::FL);
+  Run<2022, 13, B>(User::FL);
+  Run<2022, 13, A>(User::PW);
+  Run<2022, 13, B>(User::PW);
 
 //  RunDay<2022, 01>();
 
@@ -84,5 +80,13 @@ int main()
 #include "2021 Solutions\AoC2021_23.h"
 #include "2021 Solutions\AoC2021_24.h"
 #include "2021 Solutions\AoC2021_25.h"
+
+#include "2022 Solutions\AoC2022_01.h"
+#include "2022 Solutions\AoC2022_02.h"
+#include "2022 Solutions\AoC2022_03.h"
+#include "2022 Solutions\AoC2022_04.h"
+#include "2022 Solutions\AoC2022_05.h"
+#include "2022 Solutions\AoC2022_06.h"
+#include "2022 Solutions\AoC2022_07.h"
 
 #endif

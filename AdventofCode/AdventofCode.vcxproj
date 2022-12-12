@@ -221,6 +221,15 @@
     <ClInclude Include="Source\2022 Solutions\AoC2022_02.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_03.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_04.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_05.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_06.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_07.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_08.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_09.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_10.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_11.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_12.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_13.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
     <ClInclude Include="Source\FrameWork.h" />
