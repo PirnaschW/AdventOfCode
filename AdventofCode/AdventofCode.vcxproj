@@ -230,6 +230,9 @@
     <ClInclude Include="Source\2022 Solutions\AoC2022_11.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_12.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_13.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_14.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_15.h" />
+    <ClInclude Include="Source\2022 Solutions\AoC2022_16.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
     <ClInclude Include="Source\FrameWork.h" />

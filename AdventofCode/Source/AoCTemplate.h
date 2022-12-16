@@ -43,4 +43,3 @@ template<> Number AoC<2022, XX, B>(std::istream& input)
   int z{ 0 };
   return z;
 }
-
