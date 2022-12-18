@@ -297,6 +297,12 @@
     <ClInclude Include="Source\2022 Solutions\AoC2022_16.h">
       <Filter>Header Files\2022 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_17.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_18.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">

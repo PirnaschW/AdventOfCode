@@ -1,6 +1,7 @@
-//template<> auto InputData<2022, XX, A>() { return ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>"; };
-//template<> auto InputData<2022, XX, B>() { return ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>"; };
-template<> Number AoC<2022, XX, A>(std::istream& input)
+
+//template<> auto InputData<2022, 18, A>() { return ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>"; };
+
+template<> Number AoC<2022, 18, A>(std::istream& input)
 {
   struct H
   {
@@ -23,7 +24,10 @@ template<> Number AoC<2022, XX, A>(std::istream& input)
   return z;
 }
 
-template<> Number AoC<2022, XX, B>(std::istream& input)
+
+//template<> auto InputData<2022, 18, B>() { return ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>"; };
+
+template<> Number AoC<2022, 18, B>(std::istream& input)
 {
   struct H
   {

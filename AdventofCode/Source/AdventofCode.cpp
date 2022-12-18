@@ -1,9 +1,11 @@
 // proof of ownership "PirnaschW": 1576026 - 20211201 - 811d0bff
 // proof of ownership "FLEndlessSummer": 1969757-20211227-12f34eee
 
+// AoC Leaderboard: 196404-65183b2f
+
 #include "pch.h"
 
-#include "2022 Solutions\AoC2022_16.h"
+#include "2022 Solutions\AoC2022_18.h"
 
 //#define COMPILE_ALL
 
@@ -11,12 +13,13 @@ using namespace AdventOfCode;
 
 int main()
 {
-  Run<2022, 16, A>(User::FL);
-  Run<2022, 16, B>(User::FL);
-  Run<2022, 16, A>(User::PW);
-  Run<2022, 16, B>(User::PW);
+  RunDay<2022, 18>();
 
-//  RunDay<2022, 01>();
+  //Run<2022, 18, A>(User::FL);
+  //Run<2022, 18, B>(User::FL);
+  //Run<2022, 18, A>(User::PW);
+  //Run<2022, 18, B>(User::PW);
+
 
   //RunEvent<2019>(User::FL);
   //RunEvent<2020>(User::FL);
@@ -96,5 +99,8 @@ int main()
 #include "2022 Solutions\AoC2022_13.h"
 #include "2022 Solutions\AoC2022_14.h"
 #include "2022 Solutions\AoC2022_15.h"
+#include "2022 Solutions\AoC2022_16.h"
+#include "2022 Solutions\AoC2022_17.h"
+
 
 #endif
