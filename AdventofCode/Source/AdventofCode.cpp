@@ -5,7 +5,7 @@
 
 #include "pch.h"
 
-#include "2022 Solutions\AoC2022_18.h"
+#include "2022 Solutions\AoC2022_21.h"
 
 //#define COMPILE_ALL
 
@@ -13,12 +13,12 @@ using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2022, 18>();
+  RunDay<2022, 21>();
 
-  //Run<2022, 18, A>(User::FL);
-  //Run<2022, 18, B>(User::FL);
-  //Run<2022, 18, A>(User::PW);
-  //Run<2022, 18, B>(User::PW);
+//  Run<2022, 21, A>(User::FL);
+//  Run<2022, 21, B>(User::FL);
+//  Run<2022, 21, A>(User::PW);
+//  Run<2022, 21, B>(User::PW);
 
 
   //RunEvent<2019>(User::FL);
@@ -101,6 +101,9 @@ int main()
 #include "2022 Solutions\AoC2022_15.h"
 #include "2022 Solutions\AoC2022_16.h"
 #include "2022 Solutions\AoC2022_17.h"
+#include "2022 Solutions\AoC2022_18.h"
+#include "2022 Solutions\AoC2022_19.h"
+#include "2022 Solutions\AoC2022_20.h"
 
 
 #endif
