@@ -312,6 +312,18 @@
     <ClInclude Include="Source\2022 Solutions\AoC2022_21.h">
       <Filter>Header Files\2022 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_22.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_23.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_24.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2022 Solutions\AoC2022_25.h">
+      <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">
@@ -441,6 +453,75 @@
     </Text>
     <Text Include="Input Files\2021 Inputs\AoC2021_16.txt">
       <Filter>Input Files\2021 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_01.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_02.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_03.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_04.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_05.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_06.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_07.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_08.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_09.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_10.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_11.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_12.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_13.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_14.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_15.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_16.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_17.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_18.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_19.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_20.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_21.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_22.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2022 Inputs\AoC2022_23.txt">
+      <Filter>Input Files\2022 Input Files</Filter>
     </Text>
   </ItemGroup>
 </Project>
