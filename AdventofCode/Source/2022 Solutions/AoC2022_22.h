@@ -108,7 +108,7 @@ template<> Number AoC<2022, 22, A>(std::istream& input)
       default: assert(false);
     }
 
-    for (int z = 0; z < n; ++z)
+    for (int j = 0; j < n; ++j)
     {
       int nextx = H::nextx(v, currx, curry, dx);
       int nexty = H::nexty(v, currx, curry, dy);
@@ -144,8 +144,8 @@ template<> Number AoC<2022, 22, A>(std::istream& input)
     assert(curro >= 0 && curro <=3);
   }
 
-  int z = 4 * (currx + 1) + 1000 * (curry + 1) + curro;
-  return z;
+  Number zz = 4 * (currx + 1) + 1000 * (curry + 1) + curro;
+  return zz;
 }
 
 //template<> auto InputData<2022, 22, B>() { return "        ...#\n        .#..\n        #...\n        ....\n...#.......#\n........#...\n..#....#....\n..........#.\n        ...#....\n        .....#..\n        .#......\n        ......#.\n\n10R5L5R10L4R5L5"; };
@@ -723,7 +723,7 @@ template<> Number AoC<2022, 22, B>(std::istream& input)
  //   std::cout << n << (rotateleft ? 'L' : 'R') << std::endl;
     // move
 
-    for (int z = 0; z < n; ++z)
+    for (int i1 = 0; i1 < n; ++i1)
     {
       Pos next = H::GetNextpos(v, curr);
       next.o %= 4;
@@ -754,6 +754,6 @@ template<> Number AoC<2022, 22, B>(std::istream& input)
     assert(curr.o >= 0 && curr.o <= 3);
   }
 
-  int z = 4 * (curr.x + 1) + 1000 * (curr.y + 1) + curr.o;
-  return z;
+  Number zz = 4 * (curr.x + 1) + 1000 * (curr.y + 1) + curr.o;
+  return zz;
 }

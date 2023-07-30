@@ -22,7 +22,7 @@ template<> Number AoC<2022, 8, A>(std::istream& input)
     }
 
     sofar = 0;
-    for (int y = v.size()-1; y >=0; --y)
+    for (Number y = v.size()-1; y >=0; --y)
     {
       if (v[x][y] > sofar)
       {
@@ -44,7 +44,7 @@ template<> Number AoC<2022, 8, A>(std::istream& input)
     }
 
     sofar = 0;
-    for (int x = v[0].size()-1; x>=0; --x)
+    for (Number x = v[0].size()-1; x>=0; --x)
     {
       if (v[x][y] > sofar)
       {

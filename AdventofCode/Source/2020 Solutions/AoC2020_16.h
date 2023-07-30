@@ -148,7 +148,6 @@ void AoC2020_16B(std::istream& input)
 
 
 
-    int zz{ 0 };
     for (auto& r : rules)
     {
       bool noneleft = true;
@@ -158,7 +157,7 @@ void AoC2020_16B(std::istream& input)
       }
       if (noneleft)
       {
-        int i = 2;
+        //int i = 2;
       }
     }
 

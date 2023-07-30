@@ -28,7 +28,7 @@ void AoC2020_20A(std::istream& input)
         e[1][i] = v[i][Dim - 1];               // right
         e[2][i] = v[Dim - 1][Dim - 1 - i];     // bottom
         e[3][i] = v[Dim - 1 - i][0];           // left
-// counterclockwise:                              
+        // counterclockwise:                              
         e[4][i] = v[0][Dim - 1 - i];           // top
         e[5][i] = v[i][0];                     // left
         e[6][i] = v[Dim - 1][i];               // bottom
@@ -36,7 +36,7 @@ void AoC2020_20A(std::istream& input)
       }
       for (int i = 0; i < 8; ++i)
       {
-        edge[i] = e[i];
+        edge[i] = std::string(e[i].begin(), e[i].end());
       }
     }
   public:
@@ -59,9 +59,9 @@ void AoC2020_20A(std::istream& input)
   std::string line{};
   do
   {
-    std::string line{};
-    getline(input, line); // read id line
-    Number id = stoll(line.substr(5, 4));
+    std::string idline{};
+    getline(input, idline); // read id line
+    Number id = stoll(idline.substr(5, 4));
 
     tiles.insert({ id,input });
   } while (getline(input, line));
@@ -142,7 +142,7 @@ void AoC2020_20B(std::istream& input)
       }
       for (int i = 0; i < 8; ++i)
       {
-        edge[i] = e[i];
+        edge[i] = std::string(e[i].begin(), e[i].end());
       }
       assert(edge[0] == GetTopEdge());
       assert(edge[1] == GetRightEdge());

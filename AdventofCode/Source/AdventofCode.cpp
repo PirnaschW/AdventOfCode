@@ -5,30 +5,29 @@
 
 #include "pch.h"
 
-#include "2022 Solutions\AoC2022_25.h"
+//#include "2022 Solutions\AoC2022_25.h"
 
 //#define COMPILE_ALL
+#define COMPILE_2022
 
 using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2022, 25>();
+  //RunDay<2022, 25>();
 
 //  Run<2022, 25, A>(User::FL);
-//  Run<2022, 25, B>(User::FL);
 //  Run<2022, 25, A>(User::PW);
-//  Run<2022, 25, B>(User::PW);
 
 
   //RunEvent<2019>(User::FL);
   //RunEvent<2020>(User::FL);
   //RunEvent<2021>(User::FL);
-  //RunEvent<2022>(User::FL);
+  RunEvent<2022>(User::FL);
   //RunEvent<2019>(User::PW);
   //RunEvent<2020>(User::PW);
   //RunEvent<2021>(User::PW);
-  //RunEvent<2022>(User::PW);
+  RunEvent<2022>(User::PW);
 
 }
 
@@ -113,5 +112,35 @@ int main()
 #include "2022 Solutions\AoC2022_24.h"
 #include "2022 Solutions\AoC2022_25.h"
 
+
+#endif
+
+#ifdef COMPILE_2022
+
+#include "2022 Solutions\AoC2022_01.h"
+#include "2022 Solutions\AoC2022_02.h"
+#include "2022 Solutions\AoC2022_03.h"
+#include "2022 Solutions\AoC2022_04.h"
+#include "2022 Solutions\AoC2022_05.h"
+#include "2022 Solutions\AoC2022_06.h"
+#include "2022 Solutions\AoC2022_07.h"
+#include "2022 Solutions\AoC2022_08.h"
+#include "2022 Solutions\AoC2022_09.h"
+#include "2022 Solutions\AoC2022_10.h"
+#include "2022 Solutions\AoC2022_11.h"
+#include "2022 Solutions\AoC2022_12.h"
+#include "2022 Solutions\AoC2022_13.h"
+#include "2022 Solutions\AoC2022_14.h"
+#include "2022 Solutions\AoC2022_15.h"
+#include "2022 Solutions\AoC2022_16.h"
+#include "2022 Solutions\AoC2022_17.h"
+#include "2022 Solutions\AoC2022_18.h"
+#include "2022 Solutions\AoC2022_19.h"
+#include "2022 Solutions\AoC2022_20.h"
+#include "2022 Solutions\AoC2022_21.h"
+#include "2022 Solutions\AoC2022_22.h"
+#include "2022 Solutions\AoC2022_23.h"
+#include "2022 Solutions\AoC2022_24.h"
+#include "2022 Solutions\AoC2022_25.h"
 
 #endif

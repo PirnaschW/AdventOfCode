@@ -2,10 +2,10 @@ void AoC2020_05B(std::istream& input)
 {
   std::vector<std::string> v{};
   v.reserve(1000);
-  std::string s;
-  while (input >> s)
+  std::string line;
+  while (input >> line)
   {
-    v.emplace_back(s);
+    v.emplace_back(line);
   }
 
   std::vector<int> seat{};
@@ -34,10 +34,10 @@ void AoC2020_05A(std::istream& input)
 {
   std::vector<std::string> v{};
   v.reserve(1000);
-  std::string s;
-  while (input >> s)
+  std::string line;
+  while (input >> line)
   {
-    v.emplace_back(s);
+    v.emplace_back(line);
   }
 
   std::vector<int> seat{};

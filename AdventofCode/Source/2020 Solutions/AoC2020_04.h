@@ -115,7 +115,6 @@ void AoC2020_04B(std::istream& input)
       while (str >> key >> colon >> value)
       {
         assert(colon == ':');
-        int index{ 0 };
         const auto it = m.find(key);
         assert(it != m.cend());
 
@@ -177,7 +176,6 @@ void AoC2020_04A(std::istream& input)
       while (str >> key >> colon >> value)
       {
         assert(colon == ':');
-        int index{ 0 };
         const auto it = m.find(key);
         assert(it != m.cend());
 

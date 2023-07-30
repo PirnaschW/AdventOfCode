@@ -54,9 +54,9 @@ template<> Number AoC<2022, 16, A>(std::istream& input)
 
   struct State
   {
-    int Open{};
-    int Released{};
-    int current{-1};
+    Number Open{};
+    Number Released{};
+    Number current{-1};
     std::vector<bool>opened{};
   };
   State root{ 0,0,-1,std::vector<bool>(valves.size(), false) };
@@ -68,7 +68,7 @@ template<> Number AoC<2022, 16, A>(std::istream& input)
   {
     size_t operator() (const State& s) const noexcept
     {
-      return std::hash<int>()(s.current) + std::hash<std::vector<bool>>()(s.opened) * 113 * 37;
+      return std::hash<Number>()(s.current) + std::hash<std::vector<bool>>()(s.opened) * 113 * 37;
     }
   };
   struct sequal
@@ -192,9 +192,9 @@ template<> Number AoC<2022, 16, B>(std::istream& input)
 
   struct State
   {
-    int Open{};
-    int Released{};
-    int current{ -1 };
+    Number Open{};
+    Number Released{};
+    Number current{ -1 };
     std::vector<bool>opened{};
   };
   State root{ 0,0,-1,std::vector<bool>(valves.size(), false) };
@@ -204,7 +204,7 @@ template<> Number AoC<2022, 16, B>(std::istream& input)
   {
     size_t operator() (const State& s) const noexcept
     {
-      return std::hash<int>()(s.current) + std::hash<std::vector<bool>>()(s.opened) * 113 * 37;
+      return std::hash<Number>()(s.current) + std::hash<std::vector<bool>>()(s.opened) * 113 * 37;
     }
   };
   struct sequal
@@ -294,7 +294,7 @@ template<> Number AoC<2022, 16, B>(std::istream& input)
   z = 26;  // now the elephant
   while (z-- > 0)
   {
-    std::unordered_set<State, shash, sequal> newstates{};
+    std::unordered_set<State, shash, sequal> newstatesE{};
     for (auto& s : states)
     {
       if (!s.opened[s.current] && valves[s.current].flow > 0)  // option: open this one
@@ -303,14 +303,14 @@ template<> Number AoC<2022, 16, B>(std::istream& input)
         ss.opened[ss.current] = true;
         ss.Released += ss.Open;
         ss.Open += valves[ss.current].flow;
-        auto it = newstates.find(ss);
-        if (it == newstates.end()) newstates.insert(ss);
+        auto it = newstatesE.find(ss);
+        if (it == newstatesE.end()) newstatesE.insert(ss);
         else
         {
           if (it->Released + z * it->Open < ss.Released + z * ss.Open)
           {
-            newstates.erase(it);
-            newstates.insert(ss);
+            newstatesE.erase(it);
+            newstatesE.insert(ss);
           }
         }
       }
@@ -319,20 +319,20 @@ template<> Number AoC<2022, 16, B>(std::istream& input)
         State ss = s;
         ss.current = t;
         ss.Released += ss.Open;
-        auto it = newstates.find(ss);
-        if (it == newstates.end()) newstates.insert(ss);
+        auto it = newstatesE.find(ss);
+        if (it == newstatesE.end()) newstatesE.insert(ss);
         else
         {
           if (it->Released + z * it->Open < ss.Released + z * ss.Open)
           {
-            newstates.erase(it);
-            newstates.insert(ss);
+            newstatesE.erase(it);
+            newstatesE.insert(ss);
           }
         }
       }
     }
 
-    std::swap(states, newstates);
+    std::swap(states, newstatesE);
 //    std::cout << z << ' ' << states.size() << '\n';
   }
 

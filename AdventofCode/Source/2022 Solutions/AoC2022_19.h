@@ -189,7 +189,7 @@ template<> Number AoC<2022, 19, A>(std::istream& input)
         }
       }
 
-      std::cout << i << ':' << newoptions.size() << std::endl;
+      //std::cout << i << ':' << newoptions.size() << std::endl;
 
 
       //std::vector<Option> ooo{};
@@ -355,75 +355,75 @@ template<> Number AoC<2022, 19, B>(std::istream& input)
       {
 
        // try to build 0 to n geode robots:
-        int nge = (o.oe >= b.ge.oe && o.cl >= b.ge.cl && o.ob >= b.ge.ob && o.ge >= b.ge.ge) ? 1 : 0;
+        unsigned char nge = (o.oe >= b.ge.oe && o.cl >= b.ge.cl && o.ob >= b.ge.ob && o.ge >= b.ge.ge) ? 1 : 0;
         Option oge = o;
 
         // build:
-        oge.oe -= b.ge.oe * nge;
-        oge.cl -= b.ge.cl * nge;
-        oge.ob -= b.ge.ob * nge;
-        oge.ge -= b.ge.ge * nge;
+        oge.oe -= (unsigned char) b.ge.oe * nge;
+        oge.cl -= (unsigned char) b.ge.cl * nge;
+        oge.ob -= (unsigned char) b.ge.ob * nge;
+        oge.ge -= (unsigned char) b.ge.ge * nge;
         oge.roge += nge;
 
 
           // try to build 0 to n obsidian robots:
-        int nroob = 1;
-        if (b.ob.oe > 0 && nroob > oge.oe / b.ob.oe) nroob = oge.oe / b.ob.oe;
-        if (b.ob.cl > 0 && nroob > oge.cl / b.ob.cl) nroob = oge.cl / b.ob.cl;
-        if (b.ob.ob > 0 && nroob > oge.ob / b.ob.ob) nroob = oge.ob / b.ob.ob;
-        if (b.ob.ge > 0 && nroob > oge.ge / b.ob.ge) nroob = oge.ge / b.ob.ge;
+        unsigned char nroob = 1;
+        if (b.ob.oe > 0 && nroob > oge.oe / b.ob.oe) nroob = (unsigned char) (oge.oe / b.ob.oe);
+        if (b.ob.cl > 0 && nroob > oge.cl / b.ob.cl) nroob = (unsigned char) (oge.cl / b.ob.cl);
+        if (b.ob.ob > 0 && nroob > oge.ob / b.ob.ob) nroob = (unsigned char) (oge.ob / b.ob.ob);
+        if (b.ob.ge > 0 && nroob > oge.ge / b.ob.ge) nroob = (unsigned char) (oge.ge / b.ob.ge);
         //if (i > 21) nroob = 0;
         if (nge >= 1) nroob = 0;
 
-        for (int nob = 0; nob <= nroob; ++nob)
+        for (unsigned char nob = 0; nob <= nroob; ++nob)
         {
           Option oob = oge;
 
           // build:
-          oob.oe -= b.ob.oe * nob;
-          oob.cl -= b.ob.cl * nob;
-          oob.ob -= b.ob.ob * nob;
-          oob.ge -= b.ob.ge * nob;
+          oob.oe -= (unsigned char) b.ob.oe * nob;
+          oob.cl -= (unsigned char) b.ob.cl * nob;
+          oob.ob -= (unsigned char) b.ob.ob * nob;
+          oob.ge -= (unsigned char) b.ob.ge * nob;
           oob.roob += nob;
 
 
           // try to build 0 to n clay robots:
-          int nrocl = 1;
-          if (b.cl.oe > 0 && nrocl > oob.oe / b.cl.oe) nrocl = oob.oe / b.cl.oe;
-          if (b.cl.cl > 0 && nrocl > oob.cl / b.cl.cl) nrocl = oob.cl / b.cl.cl;
-          if (b.cl.ob > 0 && nrocl > oob.ob / b.cl.ob) nrocl = oob.ob / b.cl.ob;
-          if (b.cl.ge > 0 && nrocl > oob.ge / b.cl.ge) nrocl = oob.ge / b.cl.ge;
+          unsigned char nrocl = 1;
+          if (b.cl.oe > 0 && nrocl > oob.oe / b.cl.oe) nrocl = (unsigned char) (oob.oe / b.cl.oe);
+          if (b.cl.cl > 0 && nrocl > oob.cl / b.cl.cl) nrocl = (unsigned char) (oob.cl / b.cl.cl);
+          if (b.cl.ob > 0 && nrocl > oob.ob / b.cl.ob) nrocl = (unsigned char) (oob.ob / b.cl.ob);
+          if (b.cl.ge > 0 && nrocl > oob.ge / b.cl.ge) nrocl = (unsigned char) (oob.ge / b.cl.ge);
           if (nge + nob >= 1) nrocl = 0;
 
-          for (int ncl = 0; ncl <= nrocl; ++ncl)
+          for (unsigned char ncl = 0; ncl <= nrocl; ++ncl)
           {
             Option ocl = oob;
 
             // build:
-            ocl.oe -= b.cl.oe * ncl;
-            ocl.cl -= b.cl.cl * ncl;
-            ocl.ob -= b.cl.ob * ncl;
-            ocl.ge -= b.cl.ge * ncl;
+            ocl.oe -= (unsigned char) (b.cl.oe * ncl);
+            ocl.cl -= (unsigned char) (b.cl.cl * ncl);
+            ocl.ob -= (unsigned char) (b.cl.ob * ncl);
+            ocl.ge -= (unsigned char) (b.cl.ge * ncl);
             ocl.rocl += ncl;
 
 
            // try to build 0 to n ore robots:
-            int nrooe = 1;
-            if (b.oe.oe > 0 && nrooe > ocl.oe / b.oe.oe) nrooe = ocl.oe / b.oe.oe;
-            if (b.oe.cl > 0 && nrooe > ocl.cl / b.oe.cl) nrooe = ocl.cl / b.oe.cl;
-            if (b.oe.ob > 0 && nrooe > ocl.ob / b.oe.ob) nrooe = ocl.ob / b.oe.ob;
-            if (b.oe.ge > 0 && nrooe > ocl.ge / b.oe.ge) nrooe = ocl.ge / b.oe.ge;
+            unsigned char nrooe = 1;
+            if (b.oe.oe > 0 && nrooe > ocl.oe / b.oe.oe) nrooe = (unsigned char) (ocl.oe / b.oe.oe);
+            if (b.oe.cl > 0 && nrooe > ocl.cl / b.oe.cl) nrooe = (unsigned char) (ocl.cl / b.oe.cl);
+            if (b.oe.ob > 0 && nrooe > ocl.ob / b.oe.ob) nrooe = (unsigned char) (ocl.ob / b.oe.ob);
+            if (b.oe.ge > 0 && nrooe > ocl.ge / b.oe.ge) nrooe = (unsigned char) (ocl.ge / b.oe.ge);
             if (nge + nob + ncl >= 1) nrooe = 0;
 
-            for (int noe = 0; noe <= nrooe; ++noe)
+            for (unsigned char noe = 0; noe <= nrooe; ++noe)
             {
               Option ooe = ocl;
 
               // build:
-              ooe.oe -= b.oe.oe * noe;
-              ooe.cl -= b.oe.cl * noe;
-              ooe.ob -= b.oe.ob * noe;
-              ooe.ge -= b.oe.ge * noe;
+              ooe.oe -= (unsigned char) (b.oe.oe * noe);
+              ooe.cl -= (unsigned char) (b.oe.cl * noe);
+              ooe.ob -= (unsigned char) (b.oe.ob * noe);
+              ooe.ge -= (unsigned char) (b.oe.ge * noe);
               ooe.rooe += noe;
 
               ooe.oe += o.rooe;
@@ -442,7 +442,7 @@ template<> Number AoC<2022, 19, B>(std::istream& input)
         }
       }
 
-      std::cout << i << ':' << newoptions.size() << std::endl;
+      //std::cout << i << ':' << newoptions.size() << std::endl;
 
       //std::cout << maxoe    << std::endl;
       //std::cout << maxcl    << std::endl;
@@ -483,16 +483,14 @@ template<> Number AoC<2022, 19, B>(std::istream& input)
       std::swap(newoptions, options);
     }
 
-    int maxge{ 0 };
+    int finalmaxge{ 0 };
     for (const auto& o : options)
     {
-      if (o.ge > maxge) maxge = o.ge;
+      if (o.ge > finalmaxge) finalmaxge = o.ge;
     }
 
-    z *= maxge;
+    z *= finalmaxge;
   }
-
-
 
   return z;
 }

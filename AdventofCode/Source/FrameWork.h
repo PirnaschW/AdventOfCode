@@ -56,12 +56,16 @@ namespace AdventOfCode
     std::cout << "User " << std::setw(16) << std::left << User::AsString(id) << std::right << ": Event " << GetEventAsString(event) << " Puzzle " << GetDayAsString(day, true) << " Part " << GetPartAsString(part) << " started... " << std::flush;
 
     auto start = std::chrono::steady_clock::now();
-    auto result = AoC<event, day, part>(inp);
+    std::stringstream Result{};
+    try { Result << std::setw(20) << AoC<event, day, part>(inp); }
+    catch (const std::string& s) { Result << s; }
+    catch (const char* s)        { Result << s; }
+    catch (const char c)         { Result << c; }
     auto end = std::chrono::steady_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
     if (testinput) std::cout << "TEST-";
-    std::cout << "Result = " << std::setw(20) << result << "  (" << duration << ")" << std::endl;
+    std::cout << "Result = " << std::setw(20) << Result.str() << "  (" << std::setw(20) << duration.count() << " microseconds)" << std::endl;
   }
 
   template<Event event, Day day>
@@ -125,7 +129,6 @@ namespace AdventOfCode
     Run<event, 24, A>(id);
     Run<event, 24, B>(id);
     Run<event, 25, A>(id);
-    Run<event, 25, B>(id);
   }
 
 }

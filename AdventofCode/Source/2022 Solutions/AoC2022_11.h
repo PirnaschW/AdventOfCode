@@ -82,8 +82,8 @@ template<> Number AoC<2022, 11, A>(std::istream& input)
   {
     for (int j = 0; j < monkeys.size(); ++j)
     {
-      int nk = monkeys[j].items.size();
-      for (int k = 0; k < nk; ++k)
+      Number nk = monkeys[j].items.size();
+      for (Number k = 0; k < nk; ++k)
       {
         auto current = monkeys[j].items.front();
         monkeys[j].items.pop_front();
@@ -202,8 +202,8 @@ template<> Number AoC<2022, 11, B>(std::istream& input)
   {
     for (int j = 0; j < monkeys.size(); ++j)
     {
-      int nk = monkeys[j].items.size();
-      for (int k = 0; k < nk; ++k)
+      Number nk = monkeys[j].items.size();
+      for (Number k = 0; k < nk; ++k)
       {
         Number current = monkeys[j].items.front();
         monkeys[j].items.pop_front();

@@ -52,7 +52,7 @@ void AoC2020_08B(std::istream& input)
   class VM8B : public VirtualMachine
   {
   public:
-    void Verify(OpCode op, int param) override
+    void Verify(OpCode /*op*/, int /*param*/) override
     {
       if (used.contains(ptr)) throw acc;
       used.insert(ptr);
@@ -148,7 +148,7 @@ void AoC2020_08A(std::istream& input)
   class VM8A : public VirtualMachine
   {
   public:
-    void Verify(OpCode op, int param) override
+    void Verify(OpCode /*op*/, int /*param*/) override
     {
       if (used.contains(ptr)) throw acc;
       used.insert(ptr);

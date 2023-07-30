@@ -4,17 +4,17 @@ void AoC2020_06B(std::istream& input)
   v.reserve(100);
 
   std::string line{};
-  std::vector<std::string> g{};
+  std::vector<std::string> gv{};
   while (getline(input, line))
   {
     if (line.size() == 0)
     {
-      v.emplace_back(g);
-      g.clear();
+      v.emplace_back(gv);
+      gv.clear();
     }
     else
     {
-      g.emplace_back(line);
+      gv.emplace_back(line);
     }
   }
   // done reading input
@@ -63,17 +63,17 @@ void AoC2020_06A(std::istream& input)
   v.reserve(100);
 
   std::string line{};
-  std::vector<std::string> g{};
+  std::vector<std::string> gv{};
   while (getline(input, line))
   {
     if (line.size() == 0)
     {
-      v.emplace_back(g);
-      g.clear();
+      v.emplace_back(gv);
+      gv.clear();
     }
     else
     {
-      g.emplace_back(line);
+      gv.emplace_back(line);
     }
   }
   // done reading input

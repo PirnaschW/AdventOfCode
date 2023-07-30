@@ -62,14 +62,14 @@ template<> Number AoC<2022, 5, A>(std::istream& input)
     }
   }
 
+  std::string result{};
   for (int i = 0; i < 9; ++i)
   {
-    std::cout << s[i].top();
+    result += s[i].top();
+//    std::cout << s[i].top();
   }
-
-  std::cout << ' ';
-
-  return 0;
+//  std::cout << ' ';
+  throw result;
 }
 
 template<> Number AoC<2022, 5, B>(std::istream& input)
@@ -142,13 +142,14 @@ template<> Number AoC<2022, 5, B>(std::istream& input)
     }
   }
 
+  std::string result{};
   for (int i = 0; i < 9; ++i)
   {
-    std::cout << s[i].top();
+    result += s[i].top();
+//    std::cout << s[i].top();
   }
+  //std::cout << ' ';
 
-  std::cout << ' ';
-
-  return 0;
+  throw result;
 }
 

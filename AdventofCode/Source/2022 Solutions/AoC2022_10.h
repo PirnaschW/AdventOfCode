@@ -38,13 +38,17 @@ template<> Number AoC<2022, 10, B>(std::istream& input)
 {
   struct H
   {
-    static void tick(Number& z, const Number& reg)
+    static void tick(Number& z, const Number& reg, std::string& res)
     {
       bool sprite = reg + 1 == z % 40 || reg == z % 40 || reg - 1 == z % 40;
       char c = sprite ? '#' : ' ';
-      std::cout << c;
+      res += c;
+      //std::cout << c;
       ++z;
-      if (!(z % 40)) std::cout << '\n';
+      if (!(z % 40)) {
+        res += '\n';
+        //std::cout << '\n';
+      }
     }
   };
 
@@ -52,14 +56,17 @@ template<> Number AoC<2022, 10, B>(std::istream& input)
 
   Number z = 0;
   Number reg = 1;
-  std::cout << '\n';
+
+  std::string result{};
+  result += '\n';
+//  std::cout << '\n';
   for (const auto& line : v)
   {
-    H::tick(z, reg);
+    H::tick(z, reg, result);
 
     if (line[0] != 'n')
     {
-      H::tick(z, reg);
+      H::tick(z, reg, result);
       std::istringstream str(line.substr(5));
       Number s{};
       str >> s;
@@ -67,5 +74,5 @@ template<> Number AoC<2022, 10, B>(std::istream& input)
     }
   }
 
-  return 0;
+  throw result;
 }

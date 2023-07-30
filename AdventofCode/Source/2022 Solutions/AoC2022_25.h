@@ -50,30 +50,10 @@ template<> Number AoC<2022, 25, A>(std::istream& input)
     result = c + result;
     z = (z + 2) / 5;
   }
-
-  std::cout << result << std::endl;
-  return z;
+  throw result;
 }
 
-template<> Number AoC<2022, 25, B>(std::istream& input)
+template<> Number AoC<2022, 25, B>(std::istream&)
 {
-  struct H
-  {
-    static int f(void)
-    {
-    }
-  };
-
-  std::vector<std::string> v = ReadLines(input);                // read all lines into vector
-//std::vector<std::string> v = ReadWords()                 // read all words into vector 
-//std::vector<std::vector<std::string>> v = ReadGroups();  // read all lines, grouping multiple lines separated by blank lines into sub-vector 
-
-  std::string line{};
-  getline(input, line);
-  std::istringstream str(line);
-
-
-
-  int z{ 0 };
-  return z;
+  throw "";
 }

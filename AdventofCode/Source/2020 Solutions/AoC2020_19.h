@@ -234,49 +234,49 @@ void AoC2020_19B(std::istream& input)
 
   };
 
-  std::string line{};
-  while (getline(input, line))
+  std::string inputline{};
+  while (getline(input, inputline))
   {
-    if (line.size() == 0) break;
+    if (inputline.size() == 0) break;
 
     RuleID id{ Invalid };
     Rule r{};
     constexpr unsigned int BUFLEN{ 128 };
     char buffer[BUFLEN];
     char pastend{ 0 };
-    if (sscanf_s(line.c_str(), "%zu: %zu %zu %zu | %zu %zu %c", &id, &r.r11, &r.r12, &r.r13, &r.r21, &r.r22, &pastend, 1) == 6)
+    if (sscanf_s(inputline.c_str(), "%zu: %zu %zu %zu | %zu %zu %c", &id, &r.r11, &r.r12, &r.r13, &r.r21, &r.r22, &pastend, 1) == 6)
     {
       r.t = Types::Choice;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu %zu | %zu %zu %c", &id, &r.r11, &r.r12, &r.r21, &r.r22, &pastend, 1) == 5)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu %zu | %zu %zu %c", &id, &r.r11, &r.r12, &r.r21, &r.r22, &pastend, 1) == 5)
     {
       r.t = Types::Choice;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu %zu | %zu %c", &id, &r.r11, &r.r12, &r.r21, &pastend, 1) == 4)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu %zu | %zu %c", &id, &r.r11, &r.r12, &r.r21, &pastend, 1) == 4)
     {
       r.t = Types::Choice;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu | %zu %zu %c", &id, &r.r11, &r.r21, &r.r22, &pastend, 1) == 4)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu | %zu %zu %c", &id, &r.r11, &r.r21, &r.r22, &pastend, 1) == 4)
     {
       r.t = Types::Choice;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu | %zu %c", &id, &r.r11, &r.r21, &pastend, 1) == 3)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu | %zu %c", &id, &r.r11, &r.r21, &pastend, 1) == 3)
     {
       r.t = Types::Choice;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu %zu %zu %c", &id, &r.r11, &r.r12, &r.r13, &pastend, 1) == 4)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu %zu %zu %c", &id, &r.r11, &r.r12, &r.r13, &pastend, 1) == 4)
     {
       r.t = Types::Sequence;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu %zu %c", &id, &r.r11, &r.r12, &pastend, 1) == 3)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu %zu %c", &id, &r.r11, &r.r12, &pastend, 1) == 3)
     {
       r.t = Types::Sequence;
     }
-    else if (sscanf_s(line.c_str(), "%zu: %zu %c", &id, &r.r11, &pastend, 1) == 2)
+    else if (sscanf_s(inputline.c_str(), "%zu: %zu %c", &id, &r.r11, &pastend, 1) == 2)
     {
       r.t = Types::Sequence;
     }
-    else if (sscanf_s(line.c_str(), "%zu: \"%[^\"]\" %c", &id, buffer, BUFLEN - 1, &pastend, 1) == 2)
+    else if (sscanf_s(inputline.c_str(), "%zu: \"%[^\"]\" %c", &id, buffer, BUFLEN - 1, &pastend, 1) == 2)
     {
       r.t = Types::Simple;
       r.text = buffer;

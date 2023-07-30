@@ -83,7 +83,7 @@ void AoC2020_14B(std::istream& input)
               case 'X':
                 {
                   auto maskset0 = maskset;
-                  for (auto& m : maskset0) m |= factor;
+                  for (auto& mm : maskset0) mm |= factor;
                   maskset.insert(maskset.end(), maskset0.begin(), maskset0.end());
                   maskpreclear &= ~factor;
                 }
