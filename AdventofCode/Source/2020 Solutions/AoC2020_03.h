@@ -1,4 +1,4 @@
-void AoC2020_03B(std::istream& input)
+template<> Number AoC<2020, 03, B>(std::istream& input)
 {
   int x1{ 0 };
   int x2{ 0 };
@@ -41,10 +41,10 @@ void AoC2020_03B(std::istream& input)
   }
   long long n = n1 * n2 * n3 * n4 * n5;
   //std::cout << n1 << ' ' << n2 << ' ' << n3 << ' ' << n4 << ' ' << n5 << std::endl;
-  std::cout << n << std::endl;
+  return n;
 }
 
-void AoC2020_03A(std::istream& input)
+template<> Number AoC<2020, 03, A>(std::istream& input)
 {
   int x{ 0 };
   int dx{ 3 };
@@ -56,6 +56,6 @@ void AoC2020_03A(std::istream& input)
     x += dx;
     x %= s.size();
   }
-  std::cout << n << std::endl;
+  return n;
 }
 

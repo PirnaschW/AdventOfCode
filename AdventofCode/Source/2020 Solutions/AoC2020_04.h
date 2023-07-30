@@ -68,7 +68,7 @@ namespace AoC2020_2004A
   }
 }
 
-void AoC2020_04B(std::istream& input)
+template<> Number AoC<2020, 04, B>(std::istream& input)
 {
   int n{ 0 };
 
@@ -126,10 +126,10 @@ void AoC2020_04B(std::istream& input)
       }
     }
   }
-  std::cout << n << std::endl;
+  return n;
 }
 
-void AoC2020_04A(std::istream& input)
+template<> Number AoC<2020, 04, A>(std::istream& input)
 {
   int n{ 0 };
 
@@ -183,5 +183,5 @@ void AoC2020_04A(std::istream& input)
       }
     }
   }
-  std::cout << n << std::endl;
+  return n;
 }

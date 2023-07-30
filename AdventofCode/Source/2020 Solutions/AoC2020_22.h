@@ -1,4 +1,4 @@
-void AoC2020_22A(std::istream& input)
+template<> Number AoC<2020, 22, A>(std::istream& input)
 {
   std::string line{};
   getline(input, line); // discard 'player 1' line
@@ -55,10 +55,10 @@ void AoC2020_22A(std::istream& input)
     p.pop_front();
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_22B(std::istream& input)
+template<> Number AoC<2020, 22, B>(std::istream& input)
 {
   struct H
   {
@@ -69,8 +69,8 @@ void AoC2020_22B(std::istream& input)
       assert(p2.size() < 255);
       s += static_cast<char>(p1.size());
       s += static_cast<char>(p2.size());
-      for (const auto& z : p1) s += z;
-      for (const auto& z : p2) s += z;
+      for (const auto& z : p1) s += (char) z;
+      for (const auto& z : p2) s += (char) z;
       return s;
     }
     static bool Play(std::list<int>& p1, std::list<int>& p2)
@@ -155,7 +155,7 @@ void AoC2020_22B(std::istream& input)
   }
 
   // play
-  bool win1 = H::Play(p1, p2);
+  /*bool win1 =*/ H::Play(p1, p2);
 
   auto& p = p1.size() > 0 ? p1 : p2;
 
@@ -166,5 +166,5 @@ void AoC2020_22B(std::istream& input)
     p.pop_front();
   }
 
-  std::cout << z << std::endl;
+  return z;
 }

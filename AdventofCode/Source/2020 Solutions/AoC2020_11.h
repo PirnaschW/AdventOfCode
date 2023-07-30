@@ -19,7 +19,7 @@ int adjacent(const std::vector<std::vector <State>>& area, int x, int y)
     GetState(area, x + 1, y - 1) + GetState(area, x + 1, y + 0) + GetState(area, x + 1, y + 1);
 }
 
-void AoC2020_11A(std::istream& input)
+template<> Number AoC<2020, 11, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -81,8 +81,7 @@ void AoC2020_11A(std::istream& input)
     }
   }
 
-//  std::cout << z << std::endl;
-  std::cout << n << std::endl;
+  return n;
 }
 
 
@@ -113,7 +112,7 @@ int nextadjacent(const std::vector<std::vector <State>>& area, int x, int y)
 }
 
 
-void AoC2020_11B(std::istream& input)
+template<> Number AoC<2020, 11, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -175,6 +174,5 @@ void AoC2020_11B(std::istream& input)
     }
   }
 
-  //  std::cout << z << std::endl;
-  std::cout << n << std::endl;
+  return n;
 }

@@ -1,4 +1,46 @@
-void AoC2020_06B(std::istream& input)
+template<> Number AoC<2020, 06, A>(std::istream& input)
+{
+  std::vector<std::vector<std::string>> v{};
+  v.reserve(100);
+
+  std::string line{};
+  std::vector<std::string> gv{};
+  while (getline(input, line))
+  {
+    if (line.size() == 0)
+    {
+      v.emplace_back(gv);
+      gv.clear();
+    }
+    else
+    {
+      gv.emplace_back(line);
+    }
+  }
+  // done reading input
+
+  std::vector<size_t> count{};
+  count.reserve(v.size());
+
+  size_t z{ 0 };
+  for (const auto& g : v)
+  {
+    std::unordered_set<char> set{};
+    for (const auto& s : g)
+    {
+      for (auto& c : s)
+      {
+        set.insert(c);
+      }
+    }
+    count.emplace_back(set.size());
+    z += set.size();
+  }
+
+  return z;
+}
+
+template<> Number AoC<2020, 06, B>(std::istream& input)
 {
   std::vector<std::vector<std::string>> v{};
   v.reserve(100);
@@ -54,47 +96,5 @@ void AoC2020_06B(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
-}
-
-void AoC2020_06A(std::istream& input)
-{
-  std::vector<std::vector<std::string>> v{};
-  v.reserve(100);
-
-  std::string line{};
-  std::vector<std::string> gv{};
-  while (getline(input, line))
-  {
-    if (line.size() == 0)
-    {
-      v.emplace_back(gv);
-      gv.clear();
-    }
-    else
-    {
-      gv.emplace_back(line);
-    }
-  }
-  // done reading input
-
-  std::vector<size_t> count{};
-  count.reserve(v.size());
-
-  size_t z{ 0 };
-  for (const auto& g : v)
-  {
-    std::unordered_set<char> set{};
-    for (const auto& s : g)
-    {
-      for (auto& c : s)
-      {
-        set.insert(c);
-      }
-    }
-    count.emplace_back(set.size());
-    z += set.size();
-  }
-
-  std::cout << z << std::endl;
+  return z;
 }

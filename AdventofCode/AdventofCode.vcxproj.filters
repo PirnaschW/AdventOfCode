@@ -42,9 +42,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\2020 Solutions\AoC2020.h">
-      <Filter>Header Files\2020 Solutions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h">
       <Filter>Header Files\2020 Solutions</Filter>
     </ClInclude>

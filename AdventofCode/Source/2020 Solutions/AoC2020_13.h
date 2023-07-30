@@ -1,4 +1,4 @@
-void AoC2020_13A(std::istream& input)
+template<> Number AoC<2020, 13, A>(std::istream& input)
 {
   int timestamp{ 0 };
   {
@@ -45,10 +45,10 @@ void AoC2020_13A(std::istream& input)
     }
   }
 
-  std::cout << minn * bus[mini] << std::endl;
+  return minn * bus[mini];
 }
 
-void AoC2020_13B(std::istream& input)
+template<> Number AoC<2020, 13, B>(std::istream& input)
 {
   int timestamp{ 0 };
   {
@@ -100,5 +100,5 @@ void AoC2020_13B(std::istream& input)
     step *= bus[i];
   }
 
-  std::cout << t << std::endl;
+  return t;
 }

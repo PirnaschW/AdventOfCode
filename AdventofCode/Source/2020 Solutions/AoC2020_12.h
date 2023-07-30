@@ -1,4 +1,4 @@
-void AoC2020_12A(std::istream& input)
+template<> Number AoC<2020, 12, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -38,10 +38,10 @@ void AoC2020_12A(std::istream& input)
 
 
   int z = abs(x) + abs(y);
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_12B(std::istream& input)
+template<> Number AoC<2020, 12, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -87,5 +87,5 @@ void AoC2020_12B(std::istream& input)
 
 
   int z = abs(x) + abs(y);
-  std::cout << z << std::endl;
+  return z;
 }

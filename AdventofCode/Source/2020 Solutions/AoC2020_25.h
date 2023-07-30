@@ -1,4 +1,4 @@
-void AoC2020_25A(std::istream& input)
+template<> Number AoC<2020, 25, A>(std::istream& input)
 {
   struct H
   {
@@ -45,10 +45,10 @@ void AoC2020_25A(std::istream& input)
   }
   assert(zd == zc);
 
-  std::cout << "25A: " << zc << std::endl;
+  return zc;
 }
 
-void AoC2020_25B(std::istream& input)
+template<> Number AoC<2020, 25, B>(std::istream& /*input*/)
 {
-  std::cout << "25B: nothing to do!" << std::endl;
+  throw ' ';
 }

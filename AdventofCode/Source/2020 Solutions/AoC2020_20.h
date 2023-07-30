@@ -1,4 +1,4 @@
-void AoC2020_20A(std::istream& input)
+template<> Number AoC<2020, 20, A>(std::istream& input)
 {
   constexpr int Dim{ 10 };
   using Number = long long;
@@ -98,9 +98,9 @@ void AoC2020_20A(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
-void AoC2020_20B(std::istream& input)
+template<> Number AoC<2020, 20, B>(std::istream& input)
 {
   constexpr int Dim{ 10 };
   using Number = long long;
@@ -265,7 +265,7 @@ void AoC2020_20B(std::istream& input)
 
   // read all tiles
   std::map<Number, Tile> tiles{};
-  std::string line{};
+  std::string line0{};
   do
   {
     std::string line{};
@@ -273,7 +273,7 @@ void AoC2020_20B(std::istream& input)
     Number id = stoll(line.substr(5, 4));
 
     tiles.insert({ id,input });
-  } while (getline(input, line));
+  } while (getline(input, line0));
 
   // collect all edges in a map
   std::unordered_map<std::string, Number> map{};
@@ -525,5 +525,5 @@ void AoC2020_20B(std::istream& input)
       if (largeimage[y][x] == '#')
         ++z;
 
-  std::cout << z << std::endl;
+  return z;
 }

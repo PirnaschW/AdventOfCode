@@ -1,4 +1,4 @@
-void AoC2020_18A(std::istream& input)
+template<> Number AoC<2020, 18, A>(std::istream& input)
 {
   using Type = long long;
 
@@ -114,10 +114,10 @@ void AoC2020_18A(std::istream& input)
     z += total;
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_18B(std::istream& input)
+template<> Number AoC<2020, 18, B>(std::istream& input)
 {
   using Type = long long;
 
@@ -234,5 +234,5 @@ void AoC2020_18B(std::istream& input)
     z += total;
   }
 
-  std::cout << z << std::endl;
+  return z;
 }

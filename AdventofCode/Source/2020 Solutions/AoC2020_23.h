@@ -1,4 +1,4 @@
-void AoC2020_23A(std::istream& input)
+template<> Number AoC<2020, 23, A>(std::istream& input)
 {
   using Container = std::list<int>;
   using Iterator = Container::iterator;
@@ -82,18 +82,18 @@ void AoC2020_23A(std::istream& input)
   cups.pop_front();
   while (cups.size() > 0)
   {
-    s += cups.front() + '0';
+    s += (char) cups.front() + '0';
     cups.pop_front();
   }
 
-  std::cout << s << std::endl;
+  throw s;
 }
 
-void AoC2020_23B(std::istream& input)
+template<> Number AoC<2020, 23, B>(std::istream& input)
 {
   constexpr size_t CupCount = 1'000'000;
   constexpr size_t MoveCount = 10'000'000;
-  constexpr size_t PickupCount = 3;
+  //constexpr size_t PickupCount = 3;
 
   using Container = std::array<int, CupCount + 1>;
   Container& cups = *(new Container());
@@ -155,5 +155,5 @@ void AoC2020_23B(std::istream& input)
   // generate result string
   Number z1 = cups[1];
   Number z2 = cups[z1];
-  std::cout << z1 * z2 << std::endl;
+  return z1 * z2;
 }

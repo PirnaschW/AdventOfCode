@@ -1,4 +1,4 @@
-void AoC2020_19A(std::istream& input)
+template<> Number AoC<2020, 19, A>(std::istream& input)
 {
   enum Types
   {
@@ -144,10 +144,10 @@ void AoC2020_19A(std::istream& input)
     if (patterns.contains(line)) ++z;
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_19B(std::istream& input)
+template<> Number AoC<2020, 19, B>(std::istream& input)
 {
   enum Types
   {
@@ -355,5 +355,5 @@ void AoC2020_19B(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }

@@ -1,4 +1,4 @@
-void AoC2020_24A(std::istream& input)
+template<> Number AoC<2020, 24, A>(std::istream& input)
 {
   struct H
   {
@@ -42,10 +42,10 @@ void AoC2020_24A(std::istream& input)
     if (!black.erase(H::Index(x,y))) black.insert(H::Index(x, y));
   }
 
-  std::cout << "24A: " << black.size() << std::endl;
+  return black.size();
 }
 
-void AoC2020_24B(std::istream& input)
+template<> Number AoC<2020, 24, B>(std::istream& input)
 {
   struct H
   {
@@ -130,5 +130,5 @@ void AoC2020_24B(std::istream& input)
     black = black0;
   }
 
-  std::cout << "24B: " << black.size() << std::endl;
+  return black.size();
 }

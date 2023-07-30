@@ -1,4 +1,4 @@
-void AoC2020_17A(std::istream& input)
+template<> Number AoC<2020, 17, A>(std::istream& input)
 {
   constexpr int ITER{ 6 };
   constexpr int INPUT{ 8 };
@@ -88,10 +88,10 @@ void AoC2020_17A(std::istream& input)
     H::cycle(u);
 
   int z = H::countTotal(u);
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_17B(std::istream& input)
+template<> Number AoC<2020, 17, B>(std::istream& input)
 {
   constexpr int ITER{ 6 };
   constexpr int INPUT{ 8 };
@@ -189,5 +189,5 @@ void AoC2020_17B(std::istream& input)
     H::cycle(u);
 
   int z = H::countTotal(u);
-  std::cout << z << std::endl;
+  return z;
 }

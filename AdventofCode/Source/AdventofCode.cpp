@@ -5,10 +5,9 @@
 
 #include "pch.h"
 
-//#include "2022 Solutions\AoC2022_25.h"
-
 //#define COMPILE_ALL
-//#define COMPILE_2020
+//#define COMPILE_2019
+#define COMPILE_2020
 #define COMPILE_2021
 #define COMPILE_2022
 
@@ -16,23 +15,51 @@ using namespace AdventOfCode;
 
 int main()
 {
-  RunDay<2021, 24>();
+  //RunDay<2021, 24>();
   //RunDay<2022, 25>();
 
-//  Run<2022, 25, A>(User::FL);
-//  Run<2022, 25, A>(User::PW);
+  //Run<2022, 25, A>(User::FL);
+  //Run<2022, 25, A>(User::PW);
 
 
   //RunEvent<2019>(User::FL);
-  //RunEvent<2020>(User::FL);
+  RunEvent<2020>(User::FL);
   //RunEvent<2021>(User::FL);
   //RunEvent<2022>(User::FL);
   //RunEvent<2019>(User::PW);
-  //RunEvent<2020>(User::PW);
+  RunEvent<2020>(User::PW);
   //RunEvent<2021>(User::PW);
   //RunEvent<2022>(User::PW);
 
 }
+
+#if defined COMPILE_ALL || defined COMPILE_2019
+#include "2019 Solutions\AoC2019_01.h"
+#include "2019 Solutions\AoC2019_02.h"
+#include "2019 Solutions\AoC2019_03.h"
+#include "2019 Solutions\AoC2019_04.h"
+#include "2019 Solutions\AoC2019_05.h"
+#include "2019 Solutions\AoC2019_06.h"
+#include "2019 Solutions\AoC2019_07.h"
+#include "2019 Solutions\AoC2019_08.h"
+#include "2019 Solutions\AoC2019_09.h"
+#include "2019 Solutions\AoC2019_10.h"
+//#include "2019 Solutions\AoC2019_11.h"
+//#include "2019 Solutions\AoC2019_12.h"
+//#include "2019 Solutions\AoC2019_13.h"
+//#include "2019 Solutions\AoC2019_14.h"
+//#include "2019 Solutions\AoC2019_15.h"
+//#include "2019 Solutions\AoC2019_16.h"
+//#include "2019 Solutions\AoC2019_17.h"
+//#include "2019 Solutions\AoC2019_18.h"
+//#include "2019 Solutions\AoC2019_19.h"
+//#include "2019 Solutions\AoC2019_20.h"
+//#include "2019 Solutions\AoC2019_21.h"
+//#include "2019 Solutions\AoC2019_22.h"
+//#include "2019 Solutions\AoC2019_23.h"
+//#include "2019 Solutions\AoC2019_24.h"
+//#include "2019 Solutions\AoC2019_25.h"
+#endif
 
 #if defined COMPILE_ALL || defined COMPILE_2020
 #include "2020 Solutions\AoC2020_01.h"

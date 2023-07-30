@@ -1,4 +1,4 @@
-void AoC2020_15A(std::istream& input)
+template<> Number AoC<2020, 15, A>(std::istream& input)
 {
   std::unordered_map<int, int> map{};   // number spoken (int 1) in round (int 2)
   int i{ 0 };
@@ -27,11 +27,11 @@ void AoC2020_15A(std::istream& input)
     }
   }
 
-  std::cout << n << std::endl;
+  return n;
 }
 
 
-void AoC2020_15B(std::istream& input)
+template<> Number AoC<2020, 15, B>(std::istream& input)
 {
   std::unordered_map<long long, long long> map{};   // number spoken (long long 1) in round (long long 2)
   long long i{ 0 };
@@ -60,5 +60,5 @@ void AoC2020_15B(std::istream& input)
     }
   }
 
-  std::cout << n << std::endl;
+  return n;
 }

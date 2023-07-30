@@ -1,4 +1,4 @@
-void AoC2020_16A(std::istream& input)
+template<> Number AoC<2020, 16, A>(std::istream& input)
 {
   constexpr unsigned int bufsiz = 128;
   struct Rule
@@ -58,10 +58,10 @@ void AoC2020_16A(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2020_16B(std::istream& input)
+template<> Number AoC<2020, 16, B>(std::istream& input)
 {
   constexpr unsigned int bufsiz = 128;
   struct Rule
@@ -213,5 +213,5 @@ void AoC2020_16B(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }

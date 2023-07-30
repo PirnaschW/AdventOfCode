@@ -1,4 +1,4 @@
-void AoC2020_09A(std::istream& input)
+template<> Number AoC<2020, 9, A>(std::istream& input)
 {
   constexpr size_t preamble{ 25 };
 
@@ -26,14 +26,16 @@ void AoC2020_09A(std::istream& input)
       }
     if (!found)
     {
-      std::cout << z << std::endl;
-      return;
+      return z;
     }
   }
+
+  assert(false);
+  throw ' ';
 }
 
 
-void AoC2020_09B(std::istream& input)
+template<> Number AoC<2020, 9, B>(std::istream& input)
 {
   constexpr size_t preamble{ 25 };
 
@@ -86,11 +88,13 @@ void AoC2020_09B(std::istream& input)
               if (list0[k0] < zmin) zmin = list0[k0];
               if (list0[k0] > zmax) zmax = list0[k0];
             }
-            std::cout << zmin + zmax << std::endl;
-            return;
+            return zmin + zmax;
           }
         }
       }
     }
   }
+
+  assert(false);
+  throw ' ';
 }
