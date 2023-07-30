@@ -1,5 +1,4 @@
-
-void AoC2021_17A(std::istream& input)
+template<> Number AoC<2021, 17, A>(std::istream& input)
 {
   struct H
   {
@@ -55,10 +54,10 @@ void AoC2021_17A(std::istream& input)
     }
 
 
-  std::cout << "17A: " << maxmaxy << std::endl;
+  return maxmaxy;
 }
 
-void AoC2021_17B(std::istream& input)
+template<> Number AoC<2021, 17, B>(std::istream& input)
 {
   struct H
   {
@@ -114,5 +113,5 @@ void AoC2021_17B(std::istream& input)
     }
 
 
-  std::cout << "17B: " << hits.size() << std::endl;
+  return hits.size();
 }

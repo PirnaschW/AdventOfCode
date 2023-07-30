@@ -1,11 +1,11 @@
-void AoC2021_13A(std::istream& input)
+template<> Number AoC<2021, 13, A>(std::istream& input)
 {
   std::vector<std::vector<bool>> sheet{};
   sheet.resize(1400);
   for (auto& s : sheet) s.resize(900);
 
   std::string line{};
-  int y{ 0 };
+  //int y{ 0 };
   int xmax{ 0 };
   int ymax{ 0 };
   while (getline(input, line))
@@ -70,17 +70,17 @@ void AoC2021_13A(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_13B(std::istream& input)
+template<> Number AoC<2021, 13, B>(std::istream& input)
 {
   std::vector<std::vector<bool>> sheet{};
   sheet.resize(1400);
   for (auto& s : sheet) s.resize(900);
 
   std::string line{};
-  int y{ 0 };
+  //int y{ 0 };
   int xmax{ 0 };
   int ymax{ 0 };
   while (getline(input, line))
@@ -137,19 +137,25 @@ void AoC2021_13B(std::istream& input)
 
   }
 
-  for (int x = 0; x < xmax; ++x)
+  std::string result{};
+  result += '\n';
+  for (int y = 0; y < ymax; ++y)
   {
-    for (int y = 0; y < ymax; ++y)
+    for (int x = 0; x < xmax; ++x)
     {
       if (sheet[x][y])
       {
-        std::cout << 'x';
+        //std::cout << 'x';
+        result += 'x';
       }
       else
       {
-        std::cout << ' ';
+        //std::cout << ' ';
+        result += ' ';
       }
     }
-    std::cout << std::endl;
+    //std::cout << std::endl;
+    result += '\n';
   }
+  throw result;
 }

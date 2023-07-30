@@ -1,4 +1,4 @@
-void AoC2021_15A(std::istream& input)
+template<> Number AoC<2021, 15, A>(std::istream& input)
 {
   struct H
   {
@@ -10,7 +10,7 @@ void AoC2021_15A(std::istream& input)
 
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
-  using Number = int;
+//  using Number = int;
   struct Path
   {
     Number risk{ 0 };
@@ -30,11 +30,11 @@ void AoC2021_15A(std::istream& input)
   do
   {
     more = false;
-    for (const auto p : path)
+    for (const auto pp : path)
     {
-      if (p.second.x < v[0].size() - 1)
+      if (pp.second.x < v[0].size() - 1)
       {
-        Path p0 = p.second;
+        Path p0 = pp.second;
         p0.x++;
         p0.s += v[p0.y][p0.x];
         p0.risk += v[p0.y][p0.x] - '0';
@@ -54,9 +54,9 @@ void AoC2021_15A(std::istream& input)
           }
         }
       }
-      if (p.second.x > 0)
+      if (pp.second.x > 0)
       {
-        Path p0 = p.second;
+        Path p0 = pp.second;
         p0.x--;
         p0.s += v[p0.y][p0.x];
         p0.risk += v[p0.y][p0.x] - '0';
@@ -76,9 +76,9 @@ void AoC2021_15A(std::istream& input)
           }
         }
       }
-      if (p.second.y < v.size() - 1)
+      if (pp.second.y < v.size() - 1)
       {
-        Path p0 = p.second;
+        Path p0 = pp.second;
         p0.y++;
         p0.s += v[p0.y][p0.x];
         p0.risk += v[p0.y][p0.x] - '0';
@@ -98,9 +98,9 @@ void AoC2021_15A(std::istream& input)
           }
         }
       }
-      if (p.second.y > 0)
+      if (pp.second.y > 0)
       {
-        Path p0 = p.second;
+        Path p0 = pp.second;
         p0.y--;
         p0.s += v[p0.y][p0.x];
         p0.risk += v[p0.y][p0.x] - '0';
@@ -131,10 +131,11 @@ void AoC2021_15A(std::istream& input)
   {
     z += it->second.s[i] - '0';
   }
-  std::cout << it->second.risk << ' ' << z << std::endl;
+  // std::cout << it->second.risk << ' ' << z << std::endl;
+  return z;
 }
 
-void AoC2021_15B(std::istream& input)
+template<> Number AoC<2021, 15, B>(std::istream& input)
 {
 
   struct H
@@ -210,12 +211,12 @@ void AoC2021_15B(std::istream& input)
   {
     more = false;
     path0.clear();
-    for (auto& p : path)
+    for (auto& pp : path)
     {
-      if (p.second.x < v[0].size() - 1 && p.second.try_xp)
+      if (pp.second.x < v[0].size() - 1 && pp.second.try_xp)
       {
-        Path p0 = p.second;
-        p.second.try_xp = false;
+        Path p0 = pp.second;
+        pp.second.try_xp = false;
         p0.x++;
         p0.try_xm = true;
         p0.try_xp = true;
@@ -260,10 +261,10 @@ void AoC2021_15B(std::istream& input)
           }
         }
       }
-      if (p.second.x > 0 && p.second.try_xm)
+      if (pp.second.x > 0 && pp.second.try_xm)
       {
-        Path p0 = p.second;
-        p.second.try_xm = false;
+        Path p0 = pp.second;
+        pp.second.try_xm = false;
         p0.x--;
         p0.try_xm = true;
         p0.try_xp = true;
@@ -308,10 +309,10 @@ void AoC2021_15B(std::istream& input)
           }
         }
       }
-      if (p.second.y < v.size() - 1 && p.second.try_yp)
+      if (pp.second.y < v.size() - 1 && pp.second.try_yp)
       {
-        Path p0 = p.second;
-        p.second.try_yp = false;
+        Path p0 = pp.second;
+        pp.second.try_yp = false;
         p0.y++;
         p0.try_xm = true;
         p0.try_xp = true;
@@ -356,10 +357,10 @@ void AoC2021_15B(std::istream& input)
           }
         }
       }
-      if (p.second.y > 0 && p.second.try_ym)
+      if (pp.second.y > 0 && pp.second.try_ym)
       {
-        Path p0 = p.second;
-        p.second.try_ym = false;
+        Path p0 = pp.second;
+        pp.second.try_ym = false;
         p0.y--;
         p0.try_xm = true;
         p0.try_xp = true;
@@ -415,7 +416,7 @@ void AoC2021_15B(std::istream& input)
   {
     z += it->second.s[i] - '0';
   }
-  std::cout << it->second.risk << ' ' << z << std::endl;
-  std::cout << it->second.s << std::endl;
-
+  //std::cout << it->second.risk << ' ' << z << std::endl;
+  //std::cout << it->second.s << std::endl;
+  return z;
 }

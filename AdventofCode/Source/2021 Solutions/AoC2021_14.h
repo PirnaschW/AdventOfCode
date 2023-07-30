@@ -1,4 +1,4 @@
-void AoC2021_14A(std::istream& input)
+template<> Number AoC<2021, 14, A>(std::istream& input)
 {
   struct H
   {
@@ -27,11 +27,11 @@ void AoC2021_14A(std::istream& input)
     poly0.resize(2 * poly.size());
 
     int z{ 0 };
-    for (int i = 0; i < poly.size(); i++)
+    for (int j = 0; j < poly.size(); j++)
     {
-      if (poly[i] == ' ') break;
-      poly0[z++] = poly[i];
-      auto it = map.find(poly.substr(i, 2));
+      if (poly[j] == ' ') break;
+      poly0[z++] = poly[j];
+      auto it = map.find(poly.substr(j, 2));
       if (it != map.end())
       {
         poly0[z++] = it->second;
@@ -52,28 +52,25 @@ void AoC2021_14A(std::istream& input)
       Number mini{ 0 };
       Number maxu{ 0 };
       Number maxi{ 0 };
-      Number i{ 0 };
+      Number zz{ 0 };
       for (auto u : usage)
       {
         if (u.second > maxu)
         {
           maxu = u.second;
-          maxi = i;
+          maxi = zz;
         }
         if (u.second < minu)
         {
           minu = u.second;
-          mini = i;
+          mini = zz;
         }
-        i++;
+        zz++;
       }
 
-      Number z = maxu - minu;
-      std::cout << z << std::endl;
+      //Number res = maxu - minu;
+      //std::cout << res << std::endl;
     }
-
-
-
   }
 
   std::map<char, Number> usage{};
@@ -103,12 +100,11 @@ void AoC2021_14A(std::istream& input)
     i++;
   }
 
-
   Number z = maxu - minu;
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_14B(std::istream& input)
+template<> Number AoC<2021, 14, B>(std::istream& input)
 {
 
   struct H
@@ -197,5 +193,5 @@ void AoC2021_14B(std::istream& input)
 
 
   Number z = (maxu - minu) / 2;
-  std::cout << z << std::endl;
+  return z;
 }

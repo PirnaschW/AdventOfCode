@@ -1,8 +1,8 @@
-void AoC2021_20A(std::istream& input)
+template<> Number AoC<2021, 20, A>(std::istream& input)
 {
   struct H
   {
-    static void Print(const std::vector<std::string>& image)
+    static void Print(const std::vector<std::string>& /*image*/)
     {
       //for (int y = 0; y < image.size(); ++y)
       //{
@@ -68,15 +68,15 @@ void AoC2021_20A(std::istream& input)
   H::Print(image2);
 
 
-  int z = H::Count(image2);
-  std::cout << z << std::endl;
+  Number z = H::Count(image2);
+  return z;
 }
 
-void AoC2021_20B(std::istream& input)
+template<> Number AoC<2021, 20, B>(std::istream& input)
 {
   struct H
   {
-    static void Print(const std::vector<std::string>& image)
+    static void Print(const std::vector<std::string>& /*image*/)
     {
       //for (int y = 0; y < image.size(); ++y)
       //{
@@ -144,6 +144,6 @@ void AoC2021_20B(std::istream& input)
   }
 
   H::Print(image0);;
-  int z = H::Count(image0);
-  std::cout << z << std::endl;
+  Number z = H::Count(image0);
+  return z;
 }

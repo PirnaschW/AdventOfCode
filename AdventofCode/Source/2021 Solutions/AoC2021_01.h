@@ -1,7 +1,5 @@
-void AoC2021_01A(std::istream& input)
+template<> Number AoC<2021, 1, A>(std::istream& input)
 {
-  auto start = std::chrono::steady_clock::now();
-
   int z = std::numeric_limits<int>::max();
   int p = z;
   int n = 0;
@@ -11,14 +9,10 @@ void AoC2021_01A(std::istream& input)
     p = z;
   }
 
-  std::cout << n << std::endl;
-  auto end = std::chrono::steady_clock::now();
-  auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-  std::cout << n << " (" << duration << ")" << std::endl;
-
+  return n;
 }
 
-void AoC2021_01B(std::istream& input)
+template<> Number AoC<2021, 1, B>(std::istream& input)
 {
   int z = std::numeric_limits<int>::max();
   int p1 = z;
@@ -32,6 +26,6 @@ void AoC2021_01B(std::istream& input)
     p2 = p1;
     p1 = z;
   }
-  std::cout << n << std::endl;
+  return n;
 }
 

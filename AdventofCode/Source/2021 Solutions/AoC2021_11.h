@@ -28,7 +28,7 @@ int spread(std::vector<std::vector<int>>& e, int x, int y)
 }
 
 
-void AoC2021_11A(std::istream& input)
+template<> Number AoC<2021, 11, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -72,10 +72,10 @@ void AoC2021_11A(std::istream& input)
     e = e0;
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_11B(std::istream& input)
+template<> Number AoC<2021, 11, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -93,7 +93,7 @@ void AoC2021_11B(std::istream& input)
   }
 
   int z{ 0 };
-  for (int l = 0; l < 100000000; ++l) // do a hndred times
+  for (int l = 0; l < 100000000; ++l) // do many times
   {
     auto e0 = e;
     for (int i = 0; i < v.size(); ++i)
@@ -126,12 +126,12 @@ void AoC2021_11B(std::istream& input)
     }
     if (sync)
     {
-      std::cout << l+1 << std::endl;  /// not sure why 1 too low!!!
-      return;
+//      std::cout << l+1 << std::endl;  /// not sure why 1 too low!!!
+      return l+1;
     }
 
     e = e0;
   }
 
-  std::cout << z << std::endl;
+  return z;
 }

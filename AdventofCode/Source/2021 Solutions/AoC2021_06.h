@@ -1,4 +1,4 @@
-void AoC2021_06A(std::istream& input)
+template<> Number AoC<2021, 6, A>(std::istream& input)
 {
   std::string line{};
   getline(input, line);
@@ -28,12 +28,11 @@ void AoC2021_06A(std::istream& input)
     for (int j = 0; j < n; ++j) f.emplace_back(8);
   }
 
-  std::cout << f.size() << std::endl;
+  return f.size();
 }
 
 
-
-void AoC2021_06B(std::istream& input)
+template<> Number AoC<2021, 6, B>(std::istream& input)
 {
   std::string line{};
   getline(input, line);
@@ -69,8 +68,9 @@ void AoC2021_06B(std::istream& input)
     }
   }
 
-  long long z00{ 0 };
+  Number z00{ 0 };
   for (size_t i = 0; i < f.size(); ++i) z00 += ff[i];
-  std::cout << z00 << std::endl;
+
+  return z00;
 }
 

@@ -1,4 +1,4 @@
-void AoC2021_21A(std::istream& input)
+template<> Number AoC<2021, 21, A>(std::istream& input)
 {
   struct H
   {
@@ -44,11 +44,10 @@ void AoC2021_21A(std::istream& input)
   }
   int zz = (score1 > 1000 ? score2 : score1)* n * 3;
 
-
-  std::cout << zz << std::endl;
+  return zz;
 }
 
-void AoC2021_21B(std::istream& input)
+template<> Number AoC<2021, 21, B>(std::istream& input)
 {
   struct H
   {
@@ -66,11 +65,11 @@ void AoC2021_21B(std::istream& input)
   int p2{ 0 };
   assert(sscanf_s(line.c_str(), "Player %d starting position : %d", &z, &p2) == 2);
 
-  int die{ 0 };
+  //int die{ 0 };
 
-  int score1 = { 0 };
-  int score2 = { 0 };
-  int n{ 0 };
+  //int score1 = { 0 };
+  //int score2 = { 0 };
+  //int n{ 0 };
 
 
   struct Scores
@@ -150,5 +149,5 @@ void AoC2021_21B(std::istream& input)
   }
 
   Number m = std::max(p1wins, p2wins);
-  std::cout << m << std::endl;
+  return m;
 }

@@ -1,4 +1,4 @@
-void AoC2021_10A(std::istream& input)
+template<> Number AoC<2021, 10, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -44,10 +44,10 @@ void AoC2021_10A(std::istream& input)
 
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_10B(std::istream& input)
+template<> Number AoC<2021, 10, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -113,6 +113,5 @@ void AoC2021_10B(std::istream& input)
 
   std::sort(scores.begin(), scores.end());
 
-
-  std::cout << scores[scores.size() / 2] << std::endl;
+  return scores[scores.size() / 2];
 }

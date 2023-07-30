@@ -1,4 +1,4 @@
-void AoC2021_18A(std::istream& input)
+template<> Number AoC<2021, 18, A>(std::istream& input)
 {
   struct Token
   {
@@ -39,7 +39,7 @@ void AoC2021_18A(std::istream& input)
 
       return l;
     }
-    static void Print(const List& l)
+    static void Print(const List& /*l*/)
     {
       //for (auto it = l.begin(); it != l.end(); ++it)
       //{
@@ -159,7 +159,7 @@ void AoC2021_18A(std::istream& input)
     }
     static void Split(List& l, const List::iterator& it)
     {
-      int n = it->number;
+      char n = (char) it->number;
       auto next = it;
       ++next;
       l.insert(next, Token('0' + n / 2));
@@ -171,39 +171,42 @@ void AoC2021_18A(std::istream& input)
     }
     static Number Magnitude(const List& l, List::iterator& it)
     {
-      for (; it != l.end(); ++it)
+      assert(it != l.end());
+
+      assert(!it->isNumber);
+      assert(it->code == '[');
+
+      ++it;
+      assert(it != l.end());
+      Number left{ 0 };
+      if (it->isNumber) left = it->number;
+      else
       {
-        assert(!it->isNumber);
         assert(it->code == '[');
-        ++it;
-        Number left{ 0 };
-        if (it->isNumber) left = it->number;
-        else
-        {
-          assert(it->code == '[');
-          left = Magnitude(l, it);
-        }
-
-        ++it;
-        assert(!it->isNumber);
-        assert(it->code == ',');
-
-        ++it;
-        Number right{ 0 };
-        if (it->isNumber) right = it->number;
-        else
-        {
-          assert(it->code == '[');
-          right = Magnitude(l, it);
-        }
-
-        ++it;
-        assert(!it->isNumber);
-        assert(it->code == ']');
-
-        return 3 * left + 2 * right;
+        left = Magnitude(l, it);
       }
-      return 0;
+
+      ++it;
+      assert(it != l.end());
+      assert(!it->isNumber);
+      assert(it->code == ',');
+
+      ++it;
+      assert(it != l.end());
+      Number right{ 0 };
+      if (it->isNumber) right = it->number;
+      else
+      {
+        assert(it->code == '[');
+        right = Magnitude(l, it);
+      }
+
+      ++it;
+      assert(it != l.end());
+      assert(!it->isNumber);
+      assert(it->code == ']');
+
+      return 3 * left + 2 * right;
     }
   };
 
@@ -220,10 +223,10 @@ void AoC2021_18A(std::istream& input)
 
   auto ll = list.begin();
   Number m = H::Magnitude(list,ll);
-  std::cout << m << std::endl;
+  return m;
 }
 
-void AoC2021_18B(std::istream& input)
+template<> Number AoC<2021, 18, B>(std::istream& input)
 {
   struct Token
   {
@@ -264,7 +267,7 @@ void AoC2021_18B(std::istream& input)
 
       return l;
     }
-    static void Print(const List& l)
+    static void Print(const List& /*l*/)
     {
       //for (auto it = l.begin(); it != l.end(); ++it)
       //{
@@ -383,7 +386,7 @@ void AoC2021_18B(std::istream& input)
     }
     static void Split(List& l, const List::iterator& it)
     {
-      int n = it->number;
+      char n = (char) it->number;
       auto next = it;
       ++next;
       l.insert(next, Token('0' + n / 2));
@@ -395,39 +398,41 @@ void AoC2021_18B(std::istream& input)
     }
     static Number Magnitude(const List& l, List::iterator& it)
     {
-      for (; it != l.end(); ++it)
+      assert(it != l.end());
+      assert(!it->isNumber);
+      assert(it->code == '[');
+
+      ++it;
+      assert(it != l.end());
+      Number left{ 0 };
+      if (it->isNumber) left = it->number;
+      else
       {
-        assert(!it->isNumber);
         assert(it->code == '[');
-        ++it;
-        Number left{ 0 };
-        if (it->isNumber) left = it->number;
-        else
-        {
-          assert(it->code == '[');
-          left = Magnitude(l, it);
-        }
-
-        ++it;
-        assert(!it->isNumber);
-        assert(it->code == ',');
-
-        ++it;
-        Number right{ 0 };
-        if (it->isNumber) right = it->number;
-        else
-        {
-          assert(it->code == '[');
-          right = Magnitude(l, it);
-        }
-
-        ++it;
-        assert(!it->isNumber);
-        assert(it->code == ']');
-
-        return 3 * left + 2 * right;
+        left = Magnitude(l, it);
       }
-      return 0;
+
+      ++it;
+      assert(it != l.end());
+      assert(!it->isNumber);
+      assert(it->code == ',');
+
+      ++it;
+      assert(it != l.end());
+      Number right{ 0 };
+      if (it->isNumber) right = it->number;
+      else
+      {
+        assert(it->code == '[');
+        right = Magnitude(l, it);
+      }
+
+      ++it;
+      assert(it != l.end());
+      assert(!it->isNumber);
+      assert(it->code == ']');
+
+      return 3 * left + 2 * right;
     }
   };
 
@@ -457,5 +462,5 @@ void AoC2021_18B(std::istream& input)
       if (m > maxm) maxm = m;
     }
   }
-  std::cout << maxm << std::endl;
+  return maxm;
 }

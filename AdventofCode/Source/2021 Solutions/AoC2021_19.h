@@ -1,4 +1,4 @@
-void AoC2021_19A(std::istream& input)
+template<> Number AoC<2021, 19, A>(std::istream& input)
 {
   constexpr int m{ 2048 };
   constexpr int b{ 16 };
@@ -156,8 +156,8 @@ void AoC2021_19A(std::istream& input)
     Scanner s;
     if (!getline(input, line)) break;
     if (line.size() == 0) break;
-    int n = sscanf_s(line.c_str(), "--- scanner %d", &s.id);
-    assert(n == 1);
+    int n0 = sscanf_s(line.c_str(), "--- scanner %d", &s.id);
+    assert(n0 == 1);
     while (getline(input, line))
     {
       Loc l;
@@ -236,10 +236,10 @@ void AoC2021_19A(std::istream& input)
 
 
   size_t z= scans[0].locs.size();
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_19B(std::istream& input)
+template<> Number AoC<2021, 19, B>(std::istream& input)
 {
   constexpr int m{ 2048 };
   constexpr int b{ 16 };
@@ -355,7 +355,7 @@ void AoC2021_19B(std::istream& input)
       return res;
     }
 
-    static void CalcDeltas(const RotList& orientations, const RevertList& revert, Scanner& s)
+    static void CalcDeltas(const RotList& orientations, const RevertList& /*revert*/, Scanner& s)
     {
       for (int ori = 0; ori < orientations.size(); ++ori)
       {
@@ -411,8 +411,8 @@ void AoC2021_19B(std::istream& input)
     {
       Loc l;
       if (line.size() == 0) break;
-      int n = sscanf_s(line.c_str(), "%lld,%lld,%lld", &l.x, &l.y, &l.z);
-      assert(n == 3);
+      int n1 = sscanf_s(line.c_str(), "%lld,%lld,%lld", &l.x, &l.y, &l.z);
+      assert(n1 == 3);
       s.locs.push_back(l);
     }
     scans.push_back(s);
@@ -491,5 +491,5 @@ void AoC2021_19B(std::istream& input)
       if (d > maxd) maxd = d;
     }
 
-  std::cout << maxd << std::endl;
+  return maxd;
 }

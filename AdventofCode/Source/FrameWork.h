@@ -1,4 +1,4 @@
-
+﻿
 namespace AdventOfCode
 {
 
@@ -65,7 +65,7 @@ namespace AdventOfCode
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
     if (testinput) std::cout << "TEST-";
-    std::cout << "Result = " << std::setw(20) << Result.str() << "  (" << std::setw(20) << duration.count() << " microseconds)" << std::endl;
+    std::cout << "Result = " << std::setw(20) << Result.str() << "  (" << std::setw(20) << duration.count() << " us)" << std::endl;
   }
 
   template<Event event, Day day>

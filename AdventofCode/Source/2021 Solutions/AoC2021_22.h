@@ -1,4 +1,4 @@
-void AoC2021_22A(std::istream& input)
+template<> Number AoC<2021, 22, A>(std::istream& input)
 {
   struct H
   {
@@ -27,8 +27,8 @@ void AoC2021_22A(std::istream& input)
     int z1;
     int z2;
     //on x=-28..25,y=-34..15,z=-36..13
-    int z = sscanf_s(line.c_str(), "%3c x=%d..%d,y=%d..%d,z=%d..%d", toggle, 3, &x1, &x2, &y1, &y2, &z1, &z2);
-    assert(z == 7);
+    int n0 = sscanf_s(line.c_str(), "%3c x=%d..%d,y=%d..%d,z=%d..%d", toggle, 3, &x1, &x2, &y1, &y2, &z1, &z2);
+    assert(n0 == 7);
 
     if (x1 < -50 || y1 < -50 || z1 < -50 || x2 >50 || y2 > 50 || z2 > 50) continue;
     bool setting = toggle[1] == 'n' ? true : false;
@@ -46,10 +46,10 @@ void AoC2021_22A(std::istream& input)
         if (reactor[x][y][z]) ++n;
 
 
-  std::cout << "22A: " << n << std::endl;
+  return n;
 }
 
-void AoC2021_22B(std::istream& input)
+template<> Number AoC<2021, 22, B>(std::istream& input)
 {
   struct H
   {
@@ -138,5 +138,5 @@ void AoC2021_22B(std::istream& input)
           n += (xCuts[x + 1] - xCuts[x]) * (yCuts[y + 1] - yCuts[y]) * (zCuts[z + 1] - zCuts[z]);
         }
 
-  std::cout << "22B: " << n << std::endl;
+  return n;
 }

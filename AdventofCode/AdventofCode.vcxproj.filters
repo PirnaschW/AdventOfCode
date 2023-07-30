@@ -105,9 +105,6 @@
     <ClInclude Include="Source\2020 Solutions\AoC2020_21.h">
       <Filter>Header Files\2020 Solutions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\2021 Solutions\AoC2021.h">
-      <Filter>Header Files\2021 Solutions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\2021 Solutions\AoC2021_01.h">
       <Filter>Header Files\2021 Solutions</Filter>
     </ClInclude>
@@ -161,9 +158,6 @@
     </ClInclude>
     <ClInclude Include="Source\pch.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\2021 Solutions\AoC2021_16.h">
-      <Filter>Header Files\2021 Solutions</Filter>
     </ClInclude>
     <ClInclude Include="Source\2020 Solutions\AoC2020_22.h">
       <Filter>Header Files\2020 Solutions</Filter>
@@ -246,9 +240,6 @@
     <ClInclude Include="Source\2019 Solutions\AoC2019_10.h">
       <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\2022 Solutions\AoC2022.h">
-      <Filter>Header Files\2022 Solutions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\2022 Solutions\AoC2022_01.h">
       <Filter>Header Files\2022 Solutions</Filter>
     </ClInclude>
@@ -323,6 +314,12 @@
     </ClInclude>
     <ClInclude Include="Source\2022 Solutions\AoC2022_25.h">
       <Filter>Header Files\2022 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BreadthFirstSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2021 Solutions\AoC2021_16.h">
+      <Filter>Header Files\2021 Solutions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-void AoC2021_16A(std::istream& input)
+template<> Number AoC<2021, 16, A>(std::istream& input)
 {
   std::string line{};
   getline(input, line);
@@ -102,10 +102,10 @@ void AoC2021_16A(std::istream& input)
 
   } while (off + 7 < s.size());
 
-  std::cout << vsum << std::endl;
+  return vsum;
 }
 
-void AoC2021_16B(std::istream& input)
+template<> Number AoC<2021, 16, B>(std::istream& input)
 {
   using Number = long long;
 
@@ -138,6 +138,7 @@ void AoC2021_16B(std::istream& input)
     }
 
   }
+  assert(s.size() == line.size() * 4);
 
   struct H
   {
@@ -171,10 +172,10 @@ void AoC2021_16B(std::istream& input)
 
     static Number ReadPacket(const std::string& s, int& off)
     {
-      int version = H::toInt(s, off, 3);
+      /*int version =*/ H::toInt(s, off, 3); // not needed
       int typeID = H::toInt(s, off, 3);
       Number value{ 0 };
-      bool flag{ false };
+      //bool flag{ false };
       switch (typeID)
       {
         case 0: value = 0; break;  // sum
@@ -231,7 +232,6 @@ void AoC2021_16B(std::istream& input)
   };
 
   int off{ 0 };
-
   Number value{ 0 };
   do
   {
@@ -239,6 +239,5 @@ void AoC2021_16B(std::istream& input)
 
   } while (off + 7 < s.size());
 
-  std::cout << value << std::endl;
-
+  return value;
 }

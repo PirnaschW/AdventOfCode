@@ -1,4 +1,4 @@
-void AoC2021_07A(std::istream& input)
+template<> Number AoC<2021, 7, A>(std::istream& input)
 {
   std::string line{};
   getline(input, line);
@@ -37,11 +37,11 @@ void AoC2021_07A(std::istream& input)
     }
   }
 
-  int n = fuel[mini];
-  std::cout << n << std::endl;
+  Number n = fuel[mini];
+  return n;
 }
 
-void AoC2021_07B(std::istream& input)
+template<> Number AoC<2021, 7, B>(std::istream& input)
 {
   std::string line{};
   getline(input, line);
@@ -81,7 +81,6 @@ void AoC2021_07B(std::istream& input)
     }
   }
 
-  int n = fuel[mini];
-  std::cout << n << std::endl;
-
+  Number n = fuel[mini];
+  return n;
 }

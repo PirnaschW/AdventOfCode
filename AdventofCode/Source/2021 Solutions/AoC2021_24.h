@@ -1,4 +1,4 @@
-void AoC2021_24A(std::istream& input)
+template<> Number AoC<2021, 24, A>(std::istream& input)
 {
   struct Status
   {
@@ -8,8 +8,8 @@ void AoC2021_24A(std::istream& input)
     bool tbd{ false };
   };
   std::vector<Status> stati{};
-  Status s{};
-  stati.push_back(s); // start with only one, all 0, no input
+  Status s0{};
+  stati.push_back(s0); // start with only one, all 0, no input
 
   struct H
   {
@@ -26,7 +26,7 @@ void AoC2021_24A(std::istream& input)
 
     static void RemoveDuplicates(std::vector<Status>& stati)
     {
-      auto n1 = std::erase_if(stati, [](const auto& s) {return s.alu[3] > 26*26*26*26*26; });
+      /*auto n1 = */ std::erase_if(stati, [](const auto& s) {return s.alu[3] > 26*26*26*26*26; });
  //     std::cout << "z too large, removed " << n1 << std::endl;
 
       //for (int i = 0; i < 10 && i < stati.size(); ++i)
@@ -55,7 +55,7 @@ void AoC2021_24A(std::istream& input)
           stati[i].tbd = true;
         }
       }
-      auto n2 = std::erase_if(stati, [](const auto& s) {return s.tbd; });
+      /*auto n2 = */ std::erase_if(stati, [](const auto& s) {return s.tbd; });
 //      std::cout << "duplicate, removed " << n2 << std::endl;
       //for (int i = 0; i < 10 && i < stati.size(); ++i)
       //{
@@ -89,14 +89,14 @@ void AoC2021_24A(std::istream& input)
         H::RemoveDuplicates(stati);
         // add an input digit
         std::vector<Status> stati0{};
-        for (auto s : stati)
+        for (auto ss : stati)
         {
-          s.n++;
+          ss.n++;
           for (int i = 1; i < 10; ++i)
           {
-            s.inputs[s.n-1] = i;
-            s.alu[p1] = i;
-            stati0.push_back(s);
+            ss.inputs[ss.n-1] = i;
+            ss.alu[p1] = i;
+            stati0.push_back(ss);
           }
         }
         std::swap(stati, stati0);
@@ -136,14 +136,19 @@ void AoC2021_24A(std::istream& input)
     }
   }
 
-  auto n = std::erase_if(stati, [](const auto& s) {return s.alu[3] != 0; });
+  /*auto n = */ std::erase_if(stati, [](const auto& s) {return s.alu[3] != 0; });
 
-  for (auto i: stati[0].inputs)
-    std::cout << i;
-  std::cout << std::endl;
+  std::string result{};
+  for (auto z : stati[0].inputs)
+  {
+    //std::cout << z;
+    result += '0' + (char) z;
+  }
+  //std::cout << std::endl;
+  throw result;
 }
 
-void AoC2021_24B(std::istream& input)
+template<> Number AoC<2021, 24, B>(std::istream& input)
 {
   struct Status
   {
@@ -153,8 +158,8 @@ void AoC2021_24B(std::istream& input)
     bool tbd{ false };
   };
   std::vector<Status> stati{};
-  Status s{};
-  stati.push_back(s); // start with only one, all 0, no input
+  Status s0{};
+  stati.push_back(s0); // start with only one, all 0, no input
 
   struct H
   {
@@ -171,7 +176,7 @@ void AoC2021_24B(std::istream& input)
 
     static void RemoveDuplicates(std::vector<Status>& stati)
     {
-      auto n1 = std::erase_if(stati, [](const auto& s) {return s.alu[3] > 26 * 26 * 26 * 26 * 26; });
+      /*auto n1 =*/ std::erase_if(stati, [](const auto& s) {return s.alu[3] > 26 * 26 * 26 * 26 * 26; });
 //      std::cout << "z too large, removed " << n1 << std::endl;
 
       //for (int i = 0; i < 10 && i < stati.size(); ++i)
@@ -200,7 +205,7 @@ void AoC2021_24B(std::istream& input)
           stati[i].tbd = true;
         }
       }
-      auto n2 = std::erase_if(stati, [](const auto& s) {return s.tbd; });
+      /*auto n2 =*/ std::erase_if(stati, [](const auto& s) {return s.tbd; });
 //      std::cout << "duplicate, removed " << n2 << std::endl;
       //for (int i = 0; i < 10 && i < stati.size(); ++i)
       //{
@@ -281,9 +286,15 @@ void AoC2021_24B(std::istream& input)
     }
   }
 
-  auto n = std::erase_if(stati, [](const auto& s) {return s.alu[3] != 0; });
+  /*auto n =*/ std::erase_if(stati, [](const auto& s) {return s.alu[3] != 0; });
 
-  for (auto i : stati[0].inputs)
-    std::cout << i;
-  std::cout << std::endl;
+  std::string result{};
+  for (auto z : stati[0].inputs)
+  {
+    //std::cout << z;
+    result += '0' + (char) z;
+  }
+//  std::cout << std::endl;
+
+  throw result;
 }

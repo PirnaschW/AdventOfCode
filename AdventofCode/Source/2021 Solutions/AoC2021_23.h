@@ -1,4 +1,4 @@
-void AoC2021_23A(std::istream& input)
+template<> Number AoC<2021, 23, A>(std::istream& input)
 {
   struct H
   {
@@ -640,10 +640,10 @@ void AoC2021_23A(std::istream& input)
   c.TryAll(0);
 
   int z = result.minE;
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_23B(std::istream& input)
+template<> Number AoC<2021, 23, B>(std::istream& input)
 {
   struct H
   {
@@ -682,12 +682,12 @@ void AoC2021_23B(std::istream& input)
     {
       Cave c = *this;
       std::swap(c.cave[from], c.cave[to]);
-      if (level > 100)
-        std::cout << level << std::string(level * 2, ' ') << "Move " << c.cave[to] << " from " << from << " to " << to << std::endl;
-      if (++result.nCases % 1'000'000 == 0)
-      {
-        std::cout << result.nCases << std::endl;
-      }
+      //if (level > 100)
+      //  std::cout << level << std::string(level * 2, ' ') << "Move " << c.cave[to] << " from " << from << " to " << to << std::endl;
+      //if (++result.nCases % 1'000'000 == 0)
+      //{
+      //  std::cout << result.nCases << std::endl;
+      //}
       return c;
     }
 
@@ -710,7 +710,7 @@ void AoC2021_23B(std::istream& input)
         if (e < result.minE)
         {
           result.minE = e;
-          std::cout << "new min: " << result.minE << std::endl;
+          //std::cout << "new min: " << result.minE << std::endl;
         }
         return true;
       }
@@ -1365,6 +1365,6 @@ void AoC2021_23B(std::istream& input)
 
   c.TryAll(0);
 
-  int z = result.minE;
-  std::cout << z << std::endl;
+  Number z = result.minE;
+  return z;
 }

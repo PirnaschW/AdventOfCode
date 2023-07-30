@@ -1,4 +1,4 @@
-void AoC2021_05B(std::istream& input)
+template<> Number AoC<2021, 5, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -38,13 +38,11 @@ void AoC2021_05B(std::istream& input)
       if (board[x][y] > 1)++z;
     }
 
-  std::cout << z << std::endl;
-
+  return z;
 }
 
 
-
-void AoC2021_05A(std::istream& input)
+template<> Number AoC<2021, 5, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -74,5 +72,5 @@ void AoC2021_05A(std::istream& input)
       if (board[x][y] > 1)++z;
     }
 
-  std::cout << z << std::endl;
+  return z;
 }

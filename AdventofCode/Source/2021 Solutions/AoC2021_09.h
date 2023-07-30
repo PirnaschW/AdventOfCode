@@ -13,14 +13,14 @@ bool isReallySmaller(const std::vector<std::vector <int>>& d, int x0, int y0, in
   return false;
 }
 
-bool isPart(const std::vector<std::vector <int>>& d, int x0, int y0, int x, int y)
+bool isPart(const std::vector<std::vector <int>>& d, int /*x0*/, int /*y0*/, int x, int y)
 {
   if (x < 0 || y < 0 || x >= d.size() || y >= d[0].size()) return false;
   if (d[x][y] > 8) return false;
   return true;
 }
 
-void AoC2021_09A(std::istream& input)
+template<> Number AoC<2021, 9, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -50,7 +50,7 @@ void AoC2021_09A(std::istream& input)
     }
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
 
@@ -79,7 +79,7 @@ void spread(std::vector<std::vector <int>>& d, int x, int y, int bid)
   }
 }
 
-void AoC2021_09B(std::istream& input)
+template<> Number AoC<2021, 9, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -131,5 +131,6 @@ void AoC2021_09B(std::istream& input)
 
   std::sort(basins.begin(), basins.end());
 
-  std::cout << basins[basins.size() - 1] * basins[basins.size() - 2] * basins[basins.size() - 3] << std::endl;
+//  std::cout << basins[basins.size() - 1] * basins[basins.size() - 2] * basins[basins.size() - 3] << std::endl;
+  return basins[basins.size() - 1] * basins[basins.size() - 2] * basins[basins.size() - 3];
 }

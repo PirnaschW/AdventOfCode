@@ -81,7 +81,7 @@ void TryAllB(const std::unordered_multimap<std::string, std::string>& conn, std:
   }
 }
 
-void AoC2021_12A(std::istream& input)
+template<> Number AoC<2021, 12, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -102,10 +102,10 @@ void AoC2021_12A(std::istream& input)
   path.emplace_back("start");
   TryAll(conn, paths, path, "start");
 
-  std::cout << paths.size() << std::endl;
+  return paths.size();
 }
 
-void AoC2021_12B(std::istream& input)
+template<> Number AoC<2021, 12, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
@@ -126,5 +126,5 @@ void AoC2021_12B(std::istream& input)
   path.emplace_back("start");
   TryAllB(conn, paths, path, "start", true);
 
-  std::cout << paths.size() << std::endl;
+  return paths.size();
 }

@@ -1,4 +1,4 @@
-void AoC2021_08A(std::istream& input)
+template<> Number AoC<2021, 8, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
   int z{ 0 };
@@ -50,7 +50,7 @@ void AoC2021_08A(std::istream& input)
 
   }
 
-  std::cout << z << std::endl;
+  return z;
 }
 
 
@@ -60,7 +60,7 @@ int find_index(const std::vector<int>& v, int z)
   return -1;
 }
 
-void AoC2021_08B(std::istream& input)
+template<> Number AoC<2021, 8, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
   int z{ 0 };
@@ -108,17 +108,17 @@ void AoC2021_08B(std::istream& input)
             if (!all) ident[i] = 6;
             else
             {
-              bool all = true;
+              bool all2 = true;
               std::string four = codes[find_index(ident, 4)];
               for (const char& c : four)
               {
                 if (!codes[i].contains(c))
                 {
-                  all = false;  // only 0 doesn't contain all of 4
+                  all2 = false;  // only 0 doesn't contain all of 4
                   break;
                 }
               }
-              if (!all) ident[i] = 0;
+              if (!all2) ident[i] = 0;
               else ident[i] = 9;
             }
           }
@@ -183,6 +183,5 @@ void AoC2021_08B(std::istream& input)
     z += zz;
   }
 
-  std::cout << z << std::endl;
-
+  return z;
 }

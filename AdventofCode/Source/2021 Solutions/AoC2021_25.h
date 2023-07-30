@@ -1,4 +1,4 @@
-void AoC2021_25A(std::istream& input)
+template<> Number AoC<2021, 25, A>(std::istream& input)
 {
   using Area = std::vector<std::string>;
 
@@ -40,14 +40,13 @@ void AoC2021_25A(std::istream& input)
       std::swap(v0, v);
       return moved;
     }
-    static void Print(const Area& v)
+    static void Print(const Area& /*v*/)
     {
-      return;
-      for (int y = 0; y < v.size(); ++y)
-      {
-        std::cout << v[y] << std::endl;
-      }
-      std::cout << std::endl;
+      //for (int y = 0; y < v.size(); ++y)
+      //{
+      //  std::cout << v[y] << std::endl;
+      //}
+      //std::cout << std::endl;
     }
 
   };
@@ -66,9 +65,10 @@ void AoC2021_25A(std::istream& input)
     ++z;
   } while (moved);
 
-  std::cout << z << std::endl;
+  return z;
 }
 
-void AoC2021_25B(std::istream& input)
+template<> Number AoC<2021, 25, B>(std::istream& /*input*/)
 {
+  throw ' ';
 }

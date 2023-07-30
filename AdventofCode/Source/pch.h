@@ -19,5 +19,7 @@
 
 using Number = long long int;
 #include "FrameWork.h"
+#include "BreadthFirstSearch.h"
+
 using namespace AdventOfCode;
 #include "AoCUtil.h"

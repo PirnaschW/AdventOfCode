@@ -73,7 +73,7 @@ int BingoCard::GetRemainder(void) const noexcept
 }
 
 
-void AoC2021_04A(std::istream& input)
+template<> Number AoC<2021, 4, A>(std::istream& input)
 {
   std::string line{};
 
@@ -115,13 +115,55 @@ void AoC2021_04A(std::istream& input)
     }
   }
 
-  int z1 = board[mini].GetRemainder() * draw[min];  // AoC solution is min BingoCard's remainder times the winning number
-  std::cout << "AoC2021 Day 4 Part 1: " << z1 << std::endl;
-
-  int z2 = board[maxi].GetRemainder() * draw[max];  // AoC solution is max BingoCard's remainder times the winning number
-  std::cout << "AoC2021 Day 4 Part 2: " << z2 << std::endl;
+  Number z1 = board[mini].GetRemainder() * draw[min];  // AoC solution is min BingoCard's remainder times the winning number
+  return z1;
 }
 
+template<> Number AoC<2021, 4, B>(std::istream& input)
+{
+  std::string line{};
+
+  // read all numbers drawn during the game
+  std::vector<int> draw{};
+  getline(input, line);
+  std::istringstream str(line);
+  int z0{ 0 };
+  while (str >> z0) {
+    draw.emplace_back(z0);
+    char comma{};
+    str >> comma; // read the comma and ignore it
+  }
+
+  // read all Bingocards
+  std::vector<BingoCard> board{};
+  while (getline(input, line))     // the success of this blank line read means there is another board coming
+  {
+    board.emplace_back(BingoCard::Create(input));
+  }
+
+  // find the BingoCards with the earliest [Part 1] and latest [Part 2] 'bingo' (that is, the minimum / maximum of DrawNumbers return value)
+  size_t min{ std::numeric_limits<size_t>::max() };
+  size_t mini{ 0 };
+  size_t max{ 0 };
+  size_t maxi{ 0 };
+  for (int i = 0; i < board.size(); ++i)
+  {
+    auto n = board[i].DrawNumbers(draw);
+    if (n < min)
+    {
+      min = n;
+      mini = i;
+    }
+    if (n > max)
+    {
+      max = n;
+      maxi = i;
+    }
+  }
+
+  Number z2 = board[maxi].GetRemainder() * draw[max];  // AoC solution is max BingoCard's remainder times the winning number
+  return z2;
+}
 
 #else
 
@@ -200,7 +242,7 @@ int remainder(const std::vector<int>& v, const std::vector<int>& n, int z)
 }
 
 
-void AoC2021_04A(std::istream& input)
+template<> Number AoC<2021, 4, A>(std::istream& input)
 {
   //std::vector<std::string> v = ReadLines(input);                // read all lines into vector
   //std::vector<std::string> v = ReadWords()                 // read all words into vector 
@@ -248,7 +290,7 @@ void AoC2021_04A(std::istream& input)
   std::cout << z[min] * sum << std::endl;
 }
 
-void AoC2021_04B(std::istream& input)
+template<> Number AoC<2021, 4, B>(std::istream& input)
 {
   //std::vector<std::string> v = ReadLines(input);                // read all lines into vector
   //std::vector<std::string> v = ReadWords()                 // read all words into vector 

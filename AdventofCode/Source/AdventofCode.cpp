@@ -8,12 +8,15 @@
 //#include "2022 Solutions\AoC2022_25.h"
 
 //#define COMPILE_ALL
+//#define COMPILE_2020
+#define COMPILE_2021
 #define COMPILE_2022
 
 using namespace AdventOfCode;
 
 int main()
 {
+  RunDay<2021, 24>();
   //RunDay<2022, 25>();
 
 //  Run<2022, 25, A>(User::FL);
@@ -23,17 +26,15 @@ int main()
   //RunEvent<2019>(User::FL);
   //RunEvent<2020>(User::FL);
   //RunEvent<2021>(User::FL);
-  RunEvent<2022>(User::FL);
+  //RunEvent<2022>(User::FL);
   //RunEvent<2019>(User::PW);
   //RunEvent<2020>(User::PW);
   //RunEvent<2021>(User::PW);
-  RunEvent<2022>(User::PW);
+  //RunEvent<2022>(User::PW);
 
 }
 
-
-#ifdef COMPILE_ALL
-
+#if defined COMPILE_ALL || defined COMPILE_2020
 #include "2020 Solutions\AoC2020_01.h"
 #include "2020 Solutions\AoC2020_02.h"
 #include "2020 Solutions\AoC2020_03.h"
@@ -59,7 +60,9 @@ int main()
 #include "2020 Solutions\AoC2020_23.h"
 #include "2020 Solutions\AoC2020_24.h"
 #include "2020 Solutions\AoC2020_25.h"
+#endif
 
+#if defined COMPILE_ALL || defined COMPILE_2021
 #include "2021 Solutions\AoC2021_01.h"
 #include "2021 Solutions\AoC2021_02.h"
 #include "2021 Solutions\AoC2021_03.h"
@@ -85,38 +88,9 @@ int main()
 #include "2021 Solutions\AoC2021_23.h"
 #include "2021 Solutions\AoC2021_24.h"
 #include "2021 Solutions\AoC2021_25.h"
-
-#include "2022 Solutions\AoC2022_01.h"
-#include "2022 Solutions\AoC2022_02.h"
-#include "2022 Solutions\AoC2022_03.h"
-#include "2022 Solutions\AoC2022_04.h"
-#include "2022 Solutions\AoC2022_05.h"
-#include "2022 Solutions\AoC2022_06.h"
-#include "2022 Solutions\AoC2022_07.h"
-#include "2022 Solutions\AoC2022_08.h"
-#include "2022 Solutions\AoC2022_09.h"
-#include "2022 Solutions\AoC2022_10.h"
-#include "2022 Solutions\AoC2022_11.h"
-#include "2022 Solutions\AoC2022_12.h"
-#include "2022 Solutions\AoC2022_13.h"
-#include "2022 Solutions\AoC2022_14.h"
-#include "2022 Solutions\AoC2022_15.h"
-#include "2022 Solutions\AoC2022_16.h"
-#include "2022 Solutions\AoC2022_17.h"
-#include "2022 Solutions\AoC2022_18.h"
-#include "2022 Solutions\AoC2022_19.h"
-#include "2022 Solutions\AoC2022_20.h"
-#include "2022 Solutions\AoC2022_21.h"
-#include "2022 Solutions\AoC2022_22.h"
-#include "2022 Solutions\AoC2022_23.h"
-#include "2022 Solutions\AoC2022_24.h"
-#include "2022 Solutions\AoC2022_25.h"
-
-
 #endif
 
-#ifdef COMPILE_2022
-
+#if defined COMPILE_ALL || defined COMPILE_2022
 #include "2022 Solutions\AoC2022_01.h"
 #include "2022 Solutions\AoC2022_02.h"
 #include "2022 Solutions\AoC2022_03.h"
@@ -142,5 +116,4 @@ int main()
 #include "2022 Solutions\AoC2022_23.h"
 #include "2022 Solutions\AoC2022_24.h"
 #include "2022 Solutions\AoC2022_25.h"
-
 #endif

@@ -157,7 +157,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Source\2021 Solutions\AoC2021_16.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_02.h" />
@@ -195,7 +194,6 @@
     <ClInclude Include="Source\2020 Solutions\AoC2020_23.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_24.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_25.h" />
-    <ClInclude Include="Source\2021 Solutions\AoC2021.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_01.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_02.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_03.h" />
@@ -211,6 +209,7 @@
     <ClInclude Include="Source\2021 Solutions\AoC2021_13.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_14.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_15.h" />
+    <ClInclude Include="Source\2021 Solutions\AoC2021_16.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_17.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_18.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_19.h" />
@@ -220,7 +219,6 @@
     <ClInclude Include="Source\2021 Solutions\AoC2021_23.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_24.h" />
     <ClInclude Include="Source\2021 Solutions\AoC2021_25.h" />
-    <ClInclude Include="Source\2022 Solutions\AoC2022.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_01.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_02.h" />
     <ClInclude Include="Source\2022 Solutions\AoC2022_03.h" />
@@ -249,6 +247,7 @@
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
     <ClInclude Include="Source\FrameWork.h" />
+    <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\pch.h" />
     <ClInclude Include="Source\URL.h" />
   </ItemGroup>
