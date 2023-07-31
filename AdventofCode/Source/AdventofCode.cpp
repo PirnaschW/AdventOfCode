@@ -6,7 +6,7 @@
 #include "pch.h"
 
 //#define COMPILE_ALL
-//#define COMPILE_2019
+#define COMPILE_2019
 #define COMPILE_2020
 #define COMPILE_2021
 #define COMPILE_2022
@@ -15,6 +15,11 @@ using namespace AdventOfCode;
 
 int main()
 {
+  //Run<2019, 10, B>(User::FL);
+  //Run<2019, 10, B>(User::FL);
+
+  RunDay<2019, 10>();
+
   //RunDay<2021, 24>();
   //RunDay<2022, 25>();
 
@@ -23,11 +28,11 @@ int main()
 
 
   //RunEvent<2019>(User::FL);
-  RunEvent<2020>(User::FL);
+  //RunEvent<2020>(User::FL);
   //RunEvent<2021>(User::FL);
   //RunEvent<2022>(User::FL);
   //RunEvent<2019>(User::PW);
-  RunEvent<2020>(User::PW);
+  //RunEvent<2020>(User::PW);
   //RunEvent<2021>(User::PW);
   //RunEvent<2022>(User::PW);
 

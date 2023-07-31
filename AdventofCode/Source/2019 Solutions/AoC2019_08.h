@@ -93,15 +93,15 @@ template<> Number AoC<2019, 8, B>(std::istream& input)
     image[i] = GetPixel(GetPixel, i, 0L);
   }
 
-  std::cout << '\n';
+  std::string result{};
+  result += '\n';
   for (int y = 0; y < imageHeight; ++y)
   {
     for (int x = 0; x < imageWidth; ++x)
     {
-      std::cout << (image[y * imageWidth + x] == '0' ? ' ' : '#');
+      result += (image[y * imageWidth + x] == '0' ? ' ' : '#');
     }
-    std::cout << '\n';
+    result += '\n';
   }
-  std::cout << '\n';
-  return 0;
+  throw result;
 }

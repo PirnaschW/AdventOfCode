@@ -157,7 +157,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\2019 Solutions\AoC2019.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_02.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_03.h" />

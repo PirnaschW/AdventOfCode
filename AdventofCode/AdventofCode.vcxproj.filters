@@ -204,9 +204,6 @@
     <ClInclude Include="Source\FrameWork.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\2019 Solutions\AoC2019.h">
-      <Filter>Header Files\2019 Solutions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\2019 Solutions\AoC2019_01.h">
       <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
