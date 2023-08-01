@@ -47,7 +47,8 @@ template<> Number AoC<2019, 10, A>(std::istream& input)
       if (a == b) return a;
       if (a == 0) return b;
       if (b == 0) return a;
-      return a > b ? gcd(a - b, b) : gcd(b - a, a);
+      return a > b ? gcd(a % b, b) : gcd(b % a, a);
+      //return a > b ? gcd(a - b, b) : gcd(b - a, a);
     }
 
     static bool isLocation(Coord xMax, Coord yMax, Coord x, Coord y)

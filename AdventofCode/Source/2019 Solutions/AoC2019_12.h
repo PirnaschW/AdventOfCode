@@ -1,298 +1,170 @@
-//template<> auto InputData<2019, 12, A>() { return ".#..#\n.....\n#####\n....#\n...##\n"; }  // best is [3][4] -> 8
-//template<> auto InputData<2019, 12, A>() { return "......#.#.\n#..#.#....\n..#######.\n.#.#.###..\n.#..#.....\n..#....#.#\n#..#....#.\n.##.#..###\n##...#..#.\n.#....####\n"; }  // best is [5][8] -> 33
+//template<> auto InputData<2019, 12, A>() { return "<x=-1, y=0, z=2>\n<x=2, y=-10, z=-7>\n<x=4, y=-8, z=8>\n<x=3, y=5, z=-1>\n10\n"; }  // after 10 steps: 179
+//template<> auto InputData<2019, 12, A>() { return "<x=-8, y=-10, z=0>\n<x=5, y=5, z=10>\n<x=2, y=-7, z=3>\n<x=9, y=-8, z=-3>\n100\n"; }  // after 100 steps: 1940
 
 template<> Number AoC<2019, 12, A>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
-  using Coord = char;
+  using Coord = short;  // char turns out to be not sufficient!
+  constexpr size_t moonCount{ 4 };
 
-  using AsteroidMap = std::vector<std::vector<bool>>;
-  AsteroidMap aMap{};
-  aMap.resize(v[0].size());
-  for (Coord x = 0; x < v[0].size(); ++x)
-  {    
-    aMap[x].resize(v.size());
-  }
+  std::array<Coord,moonCount> x{};
+  std::array<Coord,moonCount> y{};
+  std::array<Coord,moonCount> z{};
+  std::array<Coord,moonCount> vx{};
+  std::array<Coord,moonCount> vy{};
+  std::array<Coord,moonCount> vz{};
 
-  using Count = std::vector<std::vector<Coord>>;
-  Count aCount{};
-  aCount.resize(v[0].size());
-  for (Coord x = 0; x < v[0].size(); ++x)
-  {    
-    aCount[x].resize(v.size());
-  }
-
-  for (Coord y = 0; y < v.size(); ++y)
+  for (int m = 0; m < moonCount; ++m)
   {
-    const auto& line = v[y];
-    for (Coord x = 0; x < line.size(); ++x)
+    const auto& line = v[m];
+    int n = sscanf_s(line.c_str(), "<x=%hd, y=%hd, z=%hd>", &x[m], &y[m], &z[m]);
+    assert(n == 3);
+  }
+
+  auto diff = [](const Coord& c1, const Coord& c2)->Coord { if (c1 > c2) return 1; if (c1 < c2) return -1; return 0; };
+
+  Number tmax{ 1000 };
+  if (v.size() == 5) // it's a test case! the tmax is coming in an extra line
+  {
+    int n = sscanf_s(v[moonCount].c_str(), "%lld", &tmax);
+    assert(n == 1);
+  }
+  for (int t = 0; t < tmax; ++t)
+  {
+    std::array<Coord,moonCount> dvx{};
+    std::array<Coord,moonCount> dvy{};
+    std::array<Coord,moonCount> dvz{};
+
+    for (int m1 = 0; m1 < moonCount; ++m1)
     {
-      aMap[x][y] = (line[x] == '#') ? true : false;
+      for (int m2 = 0; m2 < moonCount; ++m2)
+      {
+        dvx[m1] += diff(x[m2], x[m1]);
+        dvy[m1] += diff(y[m2], y[m1]);
+        dvz[m1] += diff(z[m2], z[m1]);
+      }
+    }
+    for (int m = 0; m < moonCount; ++m)
+    {
+      vx[m] += dvx[m];
+      vy[m] += dvy[m];
+      vz[m] += dvz[m];
+    }
+
+    for (int m = 0; m < moonCount; ++m)
+    {
+      x[m] += vx[m];
+      y[m] += vy[m];
+      z[m] += vz[m];
+
+      assert(x[m] < std::numeric_limits<Coord>::max() - 1);
+      assert(y[m] < std::numeric_limits<Coord>::max() - 1);
+      assert(z[m] < std::numeric_limits<Coord>::max() - 1);
+      assert(x[m] > std::numeric_limits<Coord>::min() + 1);
+      assert(y[m] > std::numeric_limits<Coord>::min() + 1);
+      assert(z[m] > std::numeric_limits<Coord>::min() + 1);
     }
   }
 
-  struct H
+  auto tenergy = [](const std::array<Coord, moonCount>& x, const std::array<Coord, moonCount>& y, const std::array<Coord, moonCount>& z, int m)->Number
+    { return (Number) (x[m] > 0 ? x[m] : -x[m]) + (Number) (y[m] > 0 ? y[m] : -y[m]) + (Number) (z[m] > 0 ? z[m] : -z[m]); };
+  
+  Number res{ 0 };
+  for (int m = 0; m < moonCount; ++m)
   {
-    constexpr static bool isSmallPrime(Number a)
-    {
-      return a == 2 || a == 3 || a == 5 || a == 7 || a == 11 || a == 13 || a == 17 || a == 19 || a == 23 || a == 29;
-    }
-    constexpr static bool coPrime(Number a, Number b)
-    {
-      return gcd(a,b) > 1;
-    }
-    constexpr static Number gcd(Number a, Number b)
-    {
-      if (a == b) return a;
-      if (a == 0) return b;
-      if (b == 0) return a;
-      return a > b ? gcd(a - b, b) : gcd(b - a, a);
-    }
-
-    static bool isLocation(Coord xMax, Coord yMax, Coord x, Coord y)
-    {
-      if (x < 0 || x >= xMax) return false;
-      if (y < 0 || y >= yMax) return false;
-      return true;
-    }
-    static bool canSee(const AsteroidMap& aMap, Coord x0, Coord y0, Coord x, Coord y)
-    {
-      if (x == x0 && y == y0) return false;
-      Coord dx = x - x0;
-      Coord dy = y - y0;
-      Coord adx = dx > 0 ? dx : -dx;
-      Coord ady = dy > 0 ? dy : -dy;
-      //if (adx != ady && !(H::isSmallPrime(adx) && H::isSmallPrime(ady)))
-      //{
-      const Coord div = (Coord) H::gcd(adx, ady);
-      dx /= div;
-      dy /= div;
-      //}
-
-      for (Coord n = 1; x0 + n * dx != x || y0 + n * dy != y; ++n)
-      {
-        assert(isLocation((Coord) aMap[0].size(), (Coord) aMap.size(), x0 + n * dx, y0 + n * dy));
-        if (aMap[x0 + n * dx][y0 + n * dy]) return false;
-      }
-      return true;
-    }
-  };
-
-  // try all possible positions
-  Number zmax{ 0 };
-  Coord xmax{ -1 };
-  Coord ymax{ -1 };
-  for (Coord y = 0; y < v.size(); ++y)
-  {
-    for (Coord x = 0; x < v[0].size(); ++x)
-    {
-      if (!aMap[x][y]) continue; // must be on an asteroid
-
-      Number z{ 0 };
-
-      for (Coord ya = 0; ya < v.size(); ++ya)
-      {
-        for (Coord xa = 0; xa < v[0].size(); ++xa)
-        {
-          if (aMap[xa][ya])
-          {
-            if (H::canSee(aMap, xa, ya, x, y)) ++z;
-          }
-        }
-      }
-
-      if (z > zmax)
-      {
-        zmax = z;
-        xmax = x;
-        ymax = y;
-      }
-      aCount[x][y] = (Coord) z;
-    }
+    res += tenergy(x,y,z,m) * tenergy(vx,vy,vz,m);
   }
 
-  //std::cout << std::endl;
-  //for (Coord y = 0; y < v.size(); ++y)
-  //{
-  //  for (Coord x = 0; x < v[0].size(); ++x)
-  //  {
-  //    std::cout << (char) (aMap[x][y] ? aCount[x][y] + '0' : '.');
-  //  }
-  //  std::cout << std::endl;
-  //}
-
-  return zmax;
+  return res;
 }
 
-//template<> auto InputData<2019, 12, B>() { return ".#..#\n.....\n#####\n....#\n...##\n"; }  // best is [3][4] -> 8
-//template<> auto InputData<2019, 12, B>() { return "......#.#.\n#..#.#....\n..#######.\n.#.#.###..\n.#..#.....\n..#....#.#\n#..#....#.\n.##.#..###\n##...#..#.\n.#....####\n"; }  // best is [5][8] -> 33
+//template<> auto InputData<2019, 12, B>() { return "<x=-1, y=0, z=2>\n<x=2, y=-10, z=-7>\n<x=4, y=-8, z=8>\n<x=3, y=5, z=-1>\n10\n"; }  // after 10 steps: 179
+//template<> auto InputData<2019, 12, B>() { return "<x=-8, y=-10, z=0>\n<x=5, y=5, z=10>\n<x=2, y=-7, z=3>\n<x=9, y=-8, z=-3>\n100\n"; }  // after 100 steps: 1940
 template<> Number AoC<2019, 12, B>(std::istream& input)
 {
   std::vector<std::string> v = ReadLines(input);                // read all lines into vector
 
-  using Coord = char;
+  using Coord = short;  // char turns out to be not sufficient!
+  constexpr size_t moonCount{ 4 };
 
-  using AsteroidMap = std::vector<std::vector<bool>>;
-  AsteroidMap aMap{};
-  aMap.resize(v[0].size());
-  for (Coord x = 0; x < v[0].size(); ++x)
+  std::array<Coord,moonCount> x{};
+  std::array<Coord,moonCount> y{};
+  std::array<Coord,moonCount> z{};
+  std::array<Coord,moonCount> vx{};
+  std::array<Coord,moonCount> vy{};
+  std::array<Coord,moonCount> vz{};
+
+  for (int m = 0; m < moonCount; ++m)
   {
-    aMap[x].resize(v.size());
+    const auto& line = v[m];
+    int n = sscanf_s(line.c_str(), "<x=%hd, y=%hd, z=%hd>", &x[m], &y[m], &z[m]);
+    assert(n == 3);
   }
 
-  using Count = std::vector<std::vector<Coord>>;
-  Count aCount{};
-  aCount.resize(v[0].size());
-  for (Coord x = 0; x < v[0].size(); ++x)
-  {
-    aCount[x].resize(v.size());
-  }
+  auto diff = [](const Coord& c1, const Coord& c2)->Coord { if (c1 > c2) return 1; if (c1 < c2) return -1; return 0; };
 
-  for (Coord y = 0; y < v.size(); ++y)
+  const std::array<Coord,moonCount> x0{x};
+  const std::array<Coord,moonCount> y0{y};
+  const std::array<Coord,moonCount> z0{z};
+  const std::array<Coord,moonCount> vx0{vx};
+  const std::array<Coord,moonCount> vy0{vy};
+  const std::array<Coord,moonCount> vz0{vz};
+  Number xrepeat{ 0 };
+  Number yrepeat{ 0 };
+  Number zrepeat{ 0 };
+  for (int t = 0; !(xrepeat && yrepeat && zrepeat); ++t)
   {
-    const auto& line = v[y];
-    for (Coord x = 0; x < line.size(); ++x)
+    std::array<Coord, moonCount> dvx{};
+    std::array<Coord, moonCount> dvy{};
+    std::array<Coord, moonCount> dvz{};
+
+    for (int m1 = 0; m1 < moonCount; ++m1)
     {
-      aMap[x][y] = (line[x] == '#') ? true : false;
+      for (int m2 = 0; m2 < moonCount; ++m2)
+      {
+        dvx[m1] += diff(x[m2], x[m1]);
+        dvy[m1] += diff(y[m2], y[m1]);
+        dvz[m1] += diff(z[m2], z[m1]);
+      }
     }
+    for (int m = 0; m < moonCount; ++m)
+    {
+      vx[m] += dvx[m];
+      vy[m] += dvy[m];
+      vz[m] += dvz[m];
+    }
+
+    for (int m = 0; m < moonCount; ++m)
+    {
+      x[m] += vx[m];
+      y[m] += vy[m];
+      z[m] += vz[m];
+    }
+
+    if (!xrepeat && x0 == x && vx0 == vx) xrepeat = t + 1;
+    if (!yrepeat && y0 == y && vy0 == vy) yrepeat = t + 1;
+    if (!zrepeat && z0 == z && vz0 == vz) zrepeat = t + 1;
   }
 
   struct H
   {
-    constexpr static bool isSmallPrime(Number a)
-    {
-      return a == 2 || a == 3 || a == 5 || a == 7 || a == 11 || a == 13 || a == 17 || a == 19 || a == 23 || a == 29;
-    }
-    constexpr static bool coPrime(Number a, Number b)
-    {
-      return gcd(a, b) > 1;
-    }
     constexpr static Number gcd(Number a, Number b)
     {
       if (a == b) return a;
       if (a == 0) return b;
       if (b == 0) return a;
-      return a > b ? gcd(a - b, b) : gcd(b - a, a);
+      return a > b ? gcd(a % b, b) : gcd(b % a, a);
     }
 
-    static bool isLocation(Coord xMax, Coord yMax, Coord x, Coord y)
+    constexpr static Number lcm(Number a, Number b)
     {
-      if (x < 0 || x >= xMax) return false;
-      if (y < 0 || y >= yMax) return false;
-      return true;
-    }
-    static bool canSee(const AsteroidMap& aMap, Coord x0, Coord y0, Coord x, Coord y)
-    {
-      if (x == x0 && y == y0) return false;
-      Coord dx = x - x0;
-      Coord dy = y - y0;
-      Coord adx = dx > 0 ? dx : -dx;
-      Coord ady = dy > 0 ? dy : -dy;
-      //if (adx != ady && !(H::isSmallPrime(adx) && H::isSmallPrime(ady)))
-      //{
-      const Coord div = (Coord) H::gcd(adx, ady);
-      dx /= div;
-      dy /= div;
-      //}
-
-      for (Coord n = 1; x0 + n * dx != x || y0 + n * dy != y; ++n)
-      {
-        assert(isLocation((Coord) aMap[0].size(), (Coord) aMap.size(), x0 + n * dx, y0 + n * dy));
-        if (aMap[x0 + n * dx][y0 + n * dy]) return false;
-      }
-      return true;
-    }
-    static Coord depthTo(const AsteroidMap& aMap, Coord x0, Coord y0, Coord x, Coord y)
-    {
-      Coord depth{ 1 };
-      assert(x != x0 || y != y0);
-
-      Coord dx = x - x0;
-      Coord dy = y - y0;
-      Coord adx = dx > 0 ? dx : -dx;
-      Coord ady = dy > 0 ? dy : -dy;
-      const Coord div = (Coord) H::gcd(adx, ady);
-      dx /= div;
-      dy /= div;
-
-      for (Coord n = 1; x0 + n * dx != x || y0 + n * dy != y; ++n)
-      {
-        assert(isLocation((Coord) aMap[0].size(), (Coord) aMap.size(), x0 + n * dx, y0 + n * dy));
-        if (aMap[x0 + n * dx][y0 + n * dy]) ++depth;
-      }
-      return depth;
+      if (a == 0 && b == 0) return 0;
+      return a / gcd(a, b) * b;
     }
   };
 
-  // try all possible positions
-  Number zmax{ 0 };
-  Coord xmax{ -1 };
-  Coord ymax{ -1 };
-  for (Coord y = 0; y < v.size(); ++y)
-  {
-    for (Coord x = 0; x < v[0].size(); ++x)
-    {
-      if (!aMap[x][y]) continue; // must be on an asteroid
+  Number res = H::lcm(H::lcm(xrepeat, yrepeat), zrepeat);
 
-      Number z{ 0 };
-
-      for (Coord ya = 0; ya < v.size(); ++ya)
-      {
-        for (Coord xa = 0; xa < v[0].size(); ++xa)
-        {
-          if (aMap[xa][ya])
-          {
-            if (H::canSee(aMap, xa, ya, x, y)) ++z;
-          }
-        }
-      }
-
-      if (z > zmax)
-      {
-        zmax = z;
-        xmax = x;
-        ymax = y;
-      }
-      aCount[x][y] = (Coord) z;
-    }
-  }
-
-  // best position is now known
-  Coord x0 = xmax;
-  Coord y0 = ymax;
-
-  class AsteroidDepth
-  {
-  public:
-    double angle{};  // viewing angle, with 0 = north, then clockwise to 2*pi
-    Coord depth{};    // viewing depth of the asteroid (1 = visible, 2 = once hidden, etc.
-    Coord x{};  // location of the asteroid
-    Coord y{};  // location of the asteroid
-  };
-
-  using DepthList = std::vector<AsteroidDepth>;
-  DepthList adList{};
-
-  for (Coord ya = 0; ya < v.size(); ++ya)
-  {
-    for (Coord xa = 0; xa < v[0].size(); ++xa)
-    {
-      if (xa == x0 && ya == y0) continue;
-
-      if (aMap[xa][ya])
-      {
-        Coord depth = H::depthTo(aMap, xa, ya, x0, y0);
-        double dx = xa - x0;
-        double dy = ya - y0;
-        double angle = -atan2(dx,dy);
-        adList.push_back(AsteroidDepth{ angle,depth,xa,ya });
-      }
-    }
-  }
-
-  std::sort(adList.begin(), adList.end(), [](const AsteroidDepth& a, const AsteroidDepth& b) { if (a.depth > b.depth) return false; if (a.depth < b.depth) return true; return a.angle < b.angle; });
-
-  Number z = 100 * adList[199].x + adList[199].y;
-  return z;
+  return res;
 }
