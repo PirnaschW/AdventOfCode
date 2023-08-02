@@ -18,7 +18,7 @@ int main()
   //Run<2019, 10, B>(User::FL);
   //Run<2019, 10, B>(User::FL);
 
-  RunDay<2019, 12>();
+  RunDay<2019, 14>();
 
   //RunDay<2021, 24>();
   //RunDay<2022, 25>();
@@ -51,8 +51,8 @@ int main()
 #include "2019 Solutions\AoC2019_10.h"
 #include "2019 Solutions\AoC2019_11.h"
 #include "2019 Solutions\AoC2019_12.h"
-//#include "2019 Solutions\AoC2019_13.h"
-//#include "2019 Solutions\AoC2019_14.h"
+#include "2019 Solutions\AoC2019_13.h"
+#include "2019 Solutions\AoC2019_14.h"
 //#include "2019 Solutions\AoC2019_15.h"
 //#include "2019 Solutions\AoC2019_16.h"
 //#include "2019 Solutions\AoC2019_17.h"
