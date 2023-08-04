@@ -20,6 +20,7 @@
 using Number = long long int;
 #include "FrameWork.h"
 #include "BreadthFirstSearch.h"
+#include "IntCodeComputer2019.h"
 
 using namespace AdventOfCode;
 #include "AoCUtil.h"

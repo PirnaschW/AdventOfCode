@@ -7,9 +7,9 @@
 
 //#define COMPILE_ALL
 #define COMPILE_2019
-#define COMPILE_2020
-#define COMPILE_2021
-#define COMPILE_2022
+//#define COMPILE_2020
+//#define COMPILE_2021
+//#define COMPILE_2022
 
 using namespace AdventOfCode;
 
