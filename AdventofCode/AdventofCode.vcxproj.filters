@@ -336,6 +336,12 @@
     <ClInclude Include="Source\IntCodeComputer2019.h">
       <Filter>Header Files\2019 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_16.h">
+      <Filter>Header Files\2019 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2019 Solutions\AoC2019_17.h">
+      <Filter>Header Files\2019 Solutions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">
