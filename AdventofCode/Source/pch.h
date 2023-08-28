@@ -1,10 +1,12 @@
 #include <algorithm>
+#include <bitset>
 #include <cassert>
 #include <chrono>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <regex>
 
 #include <array>
 #include <vector>

@@ -1,6 +1,4 @@
 
-// BreadthFirstSearch was developed from usage patterns but is UNUSED and UNTESTED!
-
 namespace BFS
 {
   template <class State>
@@ -12,47 +10,43 @@ namespace BFS
   public: bool operator() (const State& s1, const State& s2) const noexcept { return s1 == s2; }
   };
   
-  template <class State> using StateMap = std::unordered_set<State, StateHash<State>, StateEqual<State>>;
+  template <class State> using StateSet = std::unordered_set<State, StateHash<State>, StateEqual<State>>;
+  template <class State> using StateVec = std::vector<State>;
 
   template <class State, class GlobalInfo>
   class BreadthFirstSearch
   {
   public:
-    BreadthFirstSearch(const State& start)
+    BreadthFirstSearch(const State& start, const GlobalInfo& g, size_t reserve = 2048) : g_(g)
     {
+      states_.reserve(reserve);
       states_.insert(start);
     }
     void DoForAll(auto& func) { for (auto s : states_) func(s); }
-    StateMap<State>& GetMap() { return states_; }
+    StateSet<State>& GetSet() { return states_; }
     size_t NextLevel()
     {
-      StateMap<State> oldstates{}; // this will collect the (potentially modified) existing states
-      StateMap<State> newstates{}; // this will collect only the really new states
-      for (auto s : states_)
+      StateVec<State> newstates{}; // this will collect the new states
+      for (const auto& s : states_)
       {
-        std::vector<State> addedstates = s.Iterate();  // note that this allows 's' to be modified inside Iterate
-        oldstates.insert(s); // s might have been modified; insert existing s before adding any new ones
-        for (auto const& ss : addedstates)
+        if (s.IsAlive())
         {
-          if (!states_.contains(ss) && !newstates.contains(ss))  // avoid duplicates
-            newstates.insert(ss);
+          const StateVec<State> addedstates = s.Iterate(g_);
+          newstates.append_range(addedstates);
         }
       }
 
-      assert(oldstates.size() == states_.size());
-      std::swap(oldstates, states_);
-
-      for (auto const& s : newstates)  // now insert all the really new ones
+      // now insert all the new ones
+      for (auto const& s : newstates)
       {
-        assert(!states_.contains(s));  // should not have any duplicates
-        states_.insert(s);
+        if (!states_.contains(s)) states_.insert(s);
       }
-
-      return states_.size();
+      return newstates.size();
     }
 
   private:
-    StateMap<State> states_{};
+    StateSet<State> states_{};
+    const GlobalInfo& g_;
   };
 
 

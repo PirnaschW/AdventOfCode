@@ -7,11 +7,15 @@ template<> Number AoC<2019, 15, A>(std::istream& input)
   using Coord = signed char;
 
   using namespace BFS; // BreadthFirstSearch
+  class GlobalInfo {};
+  GlobalInfo g{};
   class Space
   {
   public:
     Space(Coord x, Coord y, Coord fx, Coord fy) : x_(x), y_(y), fromx_(fx), fromy_(fy) {}
 //    Space() = delete;
+    bool IsAlive() const noexcept { return !visited_; }
+
     bool IsHome() const noexcept { return x_ == 0 && y_ == 0; }
     void SetVisited() const noexcept { visited_ = true; }
     bool IsVisited() const noexcept { return visited_; }
@@ -30,7 +34,7 @@ template<> Number AoC<2019, 15, A>(std::istream& input)
     size_t Hash() const noexcept { return (x_ << 8) + y_; }
     bool operator ==(const Space& s) const noexcept { return s.x_ == x_ && s.y_ == y_; }
 
-    std::vector<Space> Iterate()
+    std::vector<Space> Iterate([[maybe_unused]] const GlobalInfo& g) const
     {
       std::vector<Space> v;
       if (!iterated_)
@@ -45,16 +49,15 @@ template<> Number AoC<2019, 15, A>(std::istream& input)
     }
   };
 
-  class GlobalInfo {};
   Space s0(0,0,0,0);
   s0.SetVisited();
   
-  BreadthFirstSearch<Space, GlobalInfo> bfs(s0);
+  BreadthFirstSearch<Space, GlobalInfo> bfs(s0,g);
 
   while (true)
   {
     /*auto z =*/ bfs.NextLevel();
-    auto& spacelist = bfs.GetMap();
+    auto& spacelist = bfs.GetSet();
 
     for (auto& s : spacelist)
     {
@@ -128,11 +131,16 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
   using Coord = signed char;
 
   using namespace BFS; // BreadthFirstSearch
+  class GlobalInfo {};
+  GlobalInfo g{};
   class Space
   {
   public:
     Space(Coord x, Coord y, Coord fx, Coord fy) : x_(x), y_(y), fromx_(fx), fromy_(fy) {}
     //    Space() = delete;
+    bool IsAlive() const noexcept { return !visited_; }
+    static void Cleanup([[maybe_unused]] StateSet<Space>& deadstates, [[maybe_unused]] StateSet<Space>& livestates) {} // allow optional removal of inferior States
+
     bool IsHome() const noexcept { return x_ == fromx_ && y_ == fromy_; }
     void SetVisited() const noexcept { visited_ = true; }
     bool IsVisited() const noexcept { return visited_; }
@@ -151,7 +159,7 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
     size_t Hash() const noexcept { return (x_ << 8) + y_; }
     bool operator ==(const Space& s) const noexcept { return s.x_ == x_ && s.y_ == y_; }
 
-    std::vector<Space> Iterate()
+    std::vector<Space> Iterate([[maybe_unused]] const GlobalInfo& g) const
     {
       std::vector<Space> v;
       if (!iterated_)
@@ -166,20 +174,19 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
     }
   };
 
-  class GlobalInfo {};
-
   struct H
   {
     static Space findOxy(IntCodeComputer_2019_200&c)
     {
+      GlobalInfo g{};
       Space s0(0, 0, 0, 0);
       s0.SetVisited();
 
-      BreadthFirstSearch<Space, GlobalInfo> bfs(s0);
+      BreadthFirstSearch<Space, GlobalInfo> bfs(s0,g);
       while (true)
       {
         /*auto z =*/ bfs.NextLevel();
-        auto& spacelist = bfs.GetMap();
+        auto& spacelist = bfs.GetSet();
 
         for (auto& s : spacelist)
         {
@@ -249,7 +256,7 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
   oxy.fromy_ = oxy.y_;
   oxy.SetVisited();
 
-  BreadthFirstSearch<Space, GlobalInfo> bfs(oxy);
+  BreadthFirstSearch<Space, GlobalInfo> bfs(oxy,g);
 
   size_t max{0};
   bool more{ true };
@@ -257,7 +264,7 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
   {
     more = false;
     /*auto z =*/ bfs.NextLevel();
-    auto& spacelist = bfs.GetMap();
+    auto& spacelist = bfs.GetSet();
 
     for (auto& s : spacelist)
     {

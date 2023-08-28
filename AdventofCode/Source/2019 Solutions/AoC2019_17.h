@@ -1,5 +1,3 @@
-#include <regex>
-
 //template<> auto InputData<2019, 17, A>() { return "12345678\n4\n"; };  // 01029498
 template<> Number AoC<2019, 17, A>(std::istream& input)
 {
