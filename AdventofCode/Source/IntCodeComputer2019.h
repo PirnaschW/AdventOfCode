@@ -1,9 +1,12 @@
-class IntCodeComputer_2019_200  // 2.00 2023-08-01
+// 2.00 2023-08-01
+// 2.01 2023-09-01 added HasOutput
+class IntCodeComputer_2019_200
 {
 public:
   IntCodeComputer_2019_200(const std::vector<Number>& code) : code_(code) { code_.resize(memsize); }
   void PushInput(Number n) { in_.push(n); }
   Number PopOutput() { auto f = out_.front(); out_.pop(); return f; }
+  bool HasOutput() { return !out_.empty(); }
   bool ExecuteToOutput() { return Execute_(); }
   bool Process(Number& signal)
   {

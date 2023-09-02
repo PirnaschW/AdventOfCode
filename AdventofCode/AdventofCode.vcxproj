@@ -177,6 +177,8 @@
     <ClInclude Include="Source\2019 Solutions\AoC2019_18.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_19.h" />
     <ClInclude Include="Source\2019 Solutions\AoC2019_20.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019_21.h" />
+    <ClInclude Include="Source\2019 Solutions\AoC2019_22.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_02.h" />
     <ClInclude Include="Source\2020 Solutions\AoC2020_03.h" />
