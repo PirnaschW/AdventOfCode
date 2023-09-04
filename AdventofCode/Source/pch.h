@@ -20,6 +20,8 @@
 #include "URL.h"
 
 using Number = long long int;
+#include <__msvc_int128.hpp>  // for extra long arithmetic...
+
 #include "FrameWork.h"
 #include "BreadthFirstSearch.h"
 #include "IntCodeComputer2019.h"

@@ -1,194 +1,222 @@
-//template<> auto InputData<2019, 22, A>() { return " Testdata\n";}; // 
+//template<> auto InputData<2019, 22, A>() { return "deal with increment 7\ndeal into new stack\ndeal into new stack\n10\n";}; // Result: 0 3 6 9 2 5 8 1 4 7
+//template<> auto InputData<2019, 22, A>() { return "cut 6\ndeal with increment 7\ndeal into new stack\n10\n";}; // Result: 3 0 7 4 1 8 5 2 9 6
+//template<> auto InputData<2019, 22, A>() { return "deal with increment 7\ndeal with increment 9\ncut -2\n10\n";}; // Result: 6 3 0 7 4 1 8 5 2 9
+//template<> auto InputData<2019, 22, A>() { return "deal with increment 3\n10\n";}; // Result: 0 7 4 1 8 5 2 9 6 3
+//template<> auto InputData<2019, 22, A>() { return "deal with increment 7\n10\n";}; // Result: 0 3 6 9 2 5 8 1 4 7
+//template<> auto InputData<2019, 22, A>() { return "deal with increment 9\n10\n";}; // Result: 0 9 8 7 6 5 4 3 2 1
+//template<> auto InputData<2019, 22, A>() { return "deal into new stack\ncut -2\ndeal with increment 7\ncut 8\ncut -4\ndeal with increment 7\ncut 3\ndeal with increment 9\ndeal with increment 3\ncut -1\n10\n";}; // Result: 9 2 5 8 1 4 7 0 3 6
 template<> Number AoC<2019, 22, A>(std::istream& input)
 {
-  using Coord = char;
-  using Point = std::pair<Coord, Coord>;
+  class SpaceCards
+  {
+  public:
+    SpaceCards(Number count) : count_(count) { list_.resize(count_); }
+    void Apply_DealIntoNewStack() noexcept { position_ = count_ - 1 - position_; step_ *= -1; Normalize(); }
+    void Apply_CutAt(Number n) noexcept { position_ -= n; Normalize(); }
+    void Apply_DealWithIncrement(Number n) noexcept { step_ *= n; position_ = n * position_;  Normalize(); }
+    Number GetAt(Number n) const noexcept { FillList(); return list_[n]; }
+    Number GetPos(Number n) const noexcept { return (position_ + step_ * n) % count_; }
+    void PrintList() const noexcept
+    {
+      FillList();
+      for (auto i = 0; i < count_; ++i)
+        std::cout << list_[i] << ' ';
+      std::cout << "   pos=" << position_ << "  step=" << step_ << std::endl;
+    }
+
+  private:
+    void Normalize() noexcept { position_ += count_; position_ %= count_; step_ += count_; step_ %= count_; }
+    void FillList() const noexcept { for (auto i = 0; i < count_; ++i) list_[(position_ + i * step_) % count_] = i; }
+
+  private:
+    const Number count_{};
+    Number position_{ 0 };
+    Number step_{ 1 };
+    mutable std::vector<Number> list_{};
+  };
 
   using Input = std::vector<std::string>;
-  const Input v = ReadLines(input);  // read all lines into vector
-  assert(v.size() < std::numeric_limits<Coord>::max());
-  assert(v[0].size() < std::numeric_limits<Coord>::max());
-  const Coord xSize{ static_cast<Coord>(v[0].size()) };
-  const Coord ySize{ static_cast<Coord>(v.size()) };
+  Input v = ReadLines(input);  // read all lines into vector
 
-  auto Char = [&v](Coord x, Coord y) -> char { return v[y][x]; };
-  auto Name = [&v, &Char](Coord x1, Coord y1, Coord x2, Coord y2) -> std::string { return std::string({ Char(x1,y1),Char(x2,y2) }); };
-
-  using TeleporterList = std::multimap<std::string, Point>;
-  TeleporterList tl{};
-  // check for horizontal teleporter points
-  for (Coord y = 0; y < ySize; ++y)
+  Number count{ 10007 };
+  bool Testing{ false };
+  if (v[v.size() - 1].size() < 4)  // this is a testcase!
   {
-    for (Coord x = 1; x < xSize - 1; ++x)
-    {
-      if (Char(x - 1, y) == '.' && isalpha(Char(x, y)) && isalpha(Char(x + 1, y)))
-      {
-        tl.emplace(Name(x, y, x + 1, y), Point{ x,y });
-      }
-      if (Char(x + 1, y) == '.' && isalpha(Char(x, y)) && isalpha(Char(x - 1, y)))
-      {
-        tl.emplace(Name(x - 1, y, x, y), Point{ x,y });
-      }
-    }
-  }
-  // check for vertical teleporter points
-  for (Coord x = 0; x < xSize; ++x)
-  {
-    for (Coord y = 1; y < ySize - 1; ++y)
-    {
-      if (Char(x, y - 1) == '.' && isalpha(Char(x, y)) && isalpha(Char(x, y + 1)))
-      {
-        tl.emplace(Name(x, y, x, y + 1), Point{ x,y });
-      }
-      if (Char(x, y + 1) == '.' && isalpha(Char(x, y)) && isalpha(Char(x, y - 1)))
-      {
-        tl.emplace(Name(x, y - 1, x, y), Point{ x,y });
-      }
-    }
+    std::stringstream s(v[v.size() - 1]);
+    s >> count;
+    v.pop_back();
+    Testing = true;
   }
 
-  assert(tl.size() > 0);
-  assert(tl.size() % 2 == 0);
+  //for (Number n = -10; n <= 10; ++n)
+  //{
+  //  SpaceCards pack(count);
+  //  pack.Apply_CutAt(n);
+  //  pack.List();
+  //}
 
-  using TeleporterMap = std::unordered_map < Point, Point, decltype([](const Point& p) { return p.first << 8 | p.second; }) > ;
-  TeleporterMap tm{};
-  // build teleporter map
+  //for (Number n = 3; n <= 13; ++n)
+  //{
+  //  if (gcd(n, 10) > 1) continue;
+  //  SpaceCards pack(count);
+  //  pack.Apply_DealWithIncrement(n);
+  //  pack.List();
+  //  std::cout << std::endl;
+  //}
 
-  Point aa{};
-  Point zz{};
-  for (auto it = tl.begin(); it != tl.end(); ++it)
+  //for (Number n = 0; n < 10; ++n)
+  //{
+  //  for (Number n2 = 3; n2 < 10; ++n2)
+  //  {
+  //    if (gcd(n2, 10) > 1) continue;
+  //    std::cout << "Cut " << n << ", Deal Increment " << n2 << std::endl;
+
+  //    SpaceCards pack(count);
+  //    pack.Apply_CutAt(n);
+  //    pack.List();
+  //    pack.Apply_DealWithIncrement(n2);
+  //    pack.List();
+  //    pack.Apply_DealIntoNewStack();
+  //    pack.List();
+  //    std::cout << std::endl;
+  //  }
+  //  std::cout << std::endl;
+  //}
+
+  SpaceCards pack(count);
+
+  auto CheckFor = [](const std::string& str, const std::string& test, Number& n) -> bool
+    {
+      if (str.substr(0, test.size()) == test)
+      {
+        std::stringstream s(str.substr(test.size()));
+        s >> n;
+        return true;
+      }
+      else
+        return false;
+    };
+
+  if (Testing) pack.PrintList();
+  for (auto i = 0; i < v.size(); ++i)
   {
-    const std::string& n1 = it->first;
-    const Point p1 = it->second;
-
-    if (n1 == "AA")
+    Number n{};
+    if (CheckFor(v[i], "cut ", n))
     {
-      aa = p1;
-    }
-    else if (n1 == "ZZ")
-    {
-      zz = p1;
+      pack.Apply_CutAt(n);
     }
     else
     {
-      ++it; assert(it != tl.end());
-      const std::string& n2 = it->first;
-      const Point p2 = it->second;
-      assert(n1 == n2);
-      tm.emplace(p1, p2);
-      tm.emplace(p2, p1);
-    }
-  }
-  //ShowBucketHistogram(tm);
-  assert(tm.size() > 0);
-  assert(tm.size() + 2 == tl.size());
-
-
-  using namespace BFS;
-
-  class GlobalInfo
-  {
-  public:
-    constexpr GlobalInfo(const Input& v, const TeleporterMap& tm, Point aa, Point zz) : v_(v), tm_(tm), sizex_(static_cast<Coord>(v[0].size())), sizey_(static_cast<Coord>(v.size())), aa_(aa), zz_(zz) {};
-    constexpr char GetContent(const Point& p) const noexcept
-    {
-      if (p.first < 0 || p.first >= sizex_) return '\0';
-      if (p.second < 0 || p.second >= sizey_) return '\0';
-      return v_[p.second][p.first];
-    }
-    std::pair<bool, Point> GetDestination(Point p) const noexcept
-    {
-      if (p == zz_) return { true,zz_ };
-      const auto it = tm_.find(p);
-      return { it != tm_.end(),(it != tm_.end() ? it->second : p) };
-    }
-  private:
-
-  public:
-  private:
-    const Input& v_{};
-    const TeleporterMap& tm_{};
-    const Coord sizex_{};
-    const Coord sizey_{};
-    const Point aa_{};
-    const Point zz_{};
-    mutable Number curSteps_{ 0 };
-  };
-  GlobalInfo g(v, tm, aa, zz);
-
-  class State;
-  using StateVec = std::vector<State>;
-  class State
-  {
-  public:
-    State(Point p, Number steps) : p_(p), steps_(steps) {}
-    State() = delete;
-
-  public:
-    size_t Hash() const noexcept { return p_.first << 8 | p_.second; }
-    constexpr bool operator ==(const State& s) const noexcept { return s.p_ == p_; }
-    constexpr bool IsAlive() const noexcept { return !iterated_; }
-    constexpr Number GetSteps() const noexcept { return steps_; }
-    constexpr void TryPoint(const GlobalInfo& g, const Point& p0, Coord dx, Coord dy, StateVec& n) const noexcept
-    {
-      const Point p{ static_cast<Coord>(p0.first + dx), static_cast<Coord>(p0.second + dy) };
-      const char content = g.GetContent(p);
-      switch (content)
+      if (CheckFor(v[i], "deal with increment ", n))
       {
-        case '\0': break; // can't go there
-        case '#':  break; // wall
-        case ' ':  break; // can't go there
-        case '.': n.emplace_back(State(p, steps_ + 1)); break;
-        default:
-          std::pair<bool, Point> res = g.GetDestination(p);
-          if (res.first) n.emplace_back(State(res.second, steps_)); break; // found Transporter
+        pack.Apply_DealWithIncrement(n);
+      }
+      else
+      {
+        if (CheckFor(v[i], "deal into new stack", n))
+        {
+          pack.Apply_DealIntoNewStack();
+        }
+        else
+        {
+          assert(false);
+        }
       }
     }
-
-    constexpr StateVec Iterate(const GlobalInfo& g) const
-    {
-      StateVec newlist{};
-      if (!iterated_)
-      {
-        TryPoint(g, p_, +1, +0, newlist);
-        TryPoint(g, p_, -1, +0, newlist);
-        TryPoint(g, p_, +0, +1, newlist);
-        TryPoint(g, p_, +0, -1, newlist);
-        iterated_ = true;
-      }
-      return newlist;
-    }
-
-  public:
-    const Point p_{};
-    const Number steps_{};
-    mutable bool iterated_{ false };
-  };
-
-  using StateSet = std::unordered_set < State, decltype([](const State& s)->size_t {return s.Hash(); }), decltype([](const State& s1, const State& s2)->bool {return s1 == s2; }) > ;
-
-  State saa(aa, 0);
-  State szz(zz, 0);
-  BreadthFirstSearch<State, GlobalInfo> bfs(saa, g);
-
-
-  Number n{ 0 };
-  while (true)
-  {
-    ++n;
-    bfs.NextLevel();
-    const auto& set{ bfs.GetSet() };
-    const auto it = set.find(szz);
-    if (it != set.end())
-    {
-      return it->GetSteps() - 1;
-    }
+    if (Testing) pack.PrintList();
   }
-  throw "error";
+
+//  pack.PrintList();
+  return pack.GetPos(2019);
 }
 
 //template<> auto InputData<2019, 22, B>() { return " Testdata\n";}; // 
 template<> Number AoC<2019, 22, B>(std::istream& input)
 {
-  return 0;
+  class SpaceCards
+  {
+  public:
+    SpaceCards(Number count) : count_(count) { }
+    void Apply_DealIntoNewStack() noexcept { position_ = count_ - 1 - position_; step_ *= -1; Normalize(); }
+    void Apply_CutAt(Number n) noexcept { position_ -= n; Normalize(); }
+    void Apply_DealWithIncrement(Number n) noexcept { step_ *= n; position_ = n * position_;  Normalize(); }
+    Number GetPos(Number n) const noexcept { return (position_ + step_ * n) % count_; }
+
+  private:
+    void Normalize() noexcept { position_ += count_; position_ %= count_; step_ += count_; step_ %= count_; }
+
+  private:
+    const Number count_{};
+    Number position_{ 0 };
+    Number step_{ 1 };
+  };
+
+  using Input = std::vector<std::string>;
+  Input v = ReadLines(input);  // read all lines into vector
+
+  constexpr Number PackSize{ 119315717514047 };
+  constexpr Number RepeatCount{ 101741582076661 };
+
+  SpaceCards pack(PackSize);
+
+  auto CheckFor = [](const std::string& str, const std::string& test, Number& n) -> bool
+    {
+      if (str.substr(0, test.size()) == test)
+      {
+        std::stringstream s(str.substr(test.size()));
+        s >> n;
+        return true;
+      }
+      else
+        return false;
+    };
+
+  // run once to get effect
+  for (auto i = 0; i < v.size(); ++i)
+  {
+    Number n{};
+    if (CheckFor(v[i], "cut ", n))
+    {
+      pack.Apply_CutAt(n);
+    }
+    else
+    {
+      if (CheckFor(v[i], "deal with increment ", n))
+      {
+        pack.Apply_DealWithIncrement(n);
+      }
+      else
+      {
+        if (CheckFor(v[i], "deal into new stack", n))
+        {
+          pack.Apply_DealIntoNewStack();
+        }
+        else
+        {
+          assert(false);
+        }
+      }
+    }
+  }
+  const Number position = pack.GetPos(0);
+  const Number step = pack.GetPos(1) - position;
+
+  // pos(1)(i) = pos + step * i
+  // pos(2)(i) = pos + step * pos(1)(i)
+  //           = pos + step * pos + step * step * i
+  //
+  // pos(n)(i) = pos * (step^0 +step^1 + step^2... + step^(n-1)) + step^n*i
+  //           = pos * (step^n - 1)/(step - 1) + step^n * i
+  //           = pos * Quotient + StepN * i
+  //
+
+  const Number StepN = ModuloPower(step, RepeatCount, PackSize);
+  const Number invStep1 = ModularInverse(step - 1, PackSize);
+  const Number Quotient = ModuloMultiply(StepN - 1,invStep1,PackSize);
+
+  const Number invStepN = ModularInverse(StepN, PackSize);
+  const Number Left = (PackSize + 2020 - ModuloMultiply(Quotient, position, PackSize)) % PackSize;
+  const Number res = ModuloMultiply(Left,invStepN,PackSize);
+
+  return res; // pack.GetAt(2020);
 }
