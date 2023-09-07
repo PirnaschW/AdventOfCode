@@ -165,10 +165,6 @@ template<> Number AoC<2019, 24, B>(std::istream& input)
             s += GetAt(x + 0, y + 1, z, Direction::S);
             s += GetAt(x + 0, y - 1, z, Direction::N);
 
-            if (s > 0)
-            {
-              int b = 0;
-            }
             if (areas_[z][y][x])
             {
               newareas[z][y][x] = s == 1 ? 1 : 0;

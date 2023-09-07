@@ -18,7 +18,6 @@ int main()
   //Run<2019, 10, B>(User::FL);
   //Run<2019, 10, B>(User::FL);
 
-  RunDay<2019, 24>();
   RunDay<2019, 25>();
 
   //RunDay<2021, 24>();
