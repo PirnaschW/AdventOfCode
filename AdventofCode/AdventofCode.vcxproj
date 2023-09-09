@@ -403,6 +403,7 @@
     <ClInclude Include="Source\FrameWork.h" />
     <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\IntCodeComputer2019.h" />
+    <ClInclude Include="Source\MD5.h" />
     <ClInclude Include="Source\pch.h" />
     <ClInclude Include="Source\URL.h" />
   </ItemGroup>

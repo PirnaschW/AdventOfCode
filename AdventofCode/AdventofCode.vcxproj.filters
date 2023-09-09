@@ -798,6 +798,9 @@
     <ClInclude Include="Source\2023 Solutions\AoC2023_25.h">
       <Filter>Header Files\2023 Solutions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\MD5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AdventofCode.cpp">
