@@ -20,7 +20,7 @@ template<> Number AoC<2015, 8, A>(std::istream& input)
       zMem -= 2; // for beginning and end "
       continue;
     }
-    char cc = static_cast<char>(c);
+    //char cc = static_cast<char>(c);
 
     zCode += 1;
     zMem += 1;
@@ -70,7 +70,6 @@ template<> Number AoC<2015, 8, B>(std::istream& input)
       zEncode += 2; // for beginning and end "
       continue;
     }
-    char cc = static_cast<char>(c);
 
     ++zCode;
     ++zEncode;
