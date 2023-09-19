@@ -93,7 +93,7 @@ template<> Number AoC<2015, 12, B>(std::istream& input)
     }
     static bool CheckAttribute(const char*& cur, const std::string& check)
     {
-      int i{ 0 };
+      unsigned int i{ 0 };
       bool match = { true };
       while (*cur != '\"')
       {
