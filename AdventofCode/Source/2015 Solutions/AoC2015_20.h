@@ -2,7 +2,7 @@
 template<> Number AoC<2015, 20, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;
-  Input v = ReadLines(input);  // read all lines into vector
+  const Input v = ReadLines(input);  // read all lines into vector
 
   return 0;
 }
@@ -11,6 +11,7 @@ template<> Number AoC<2015, 20, A>(std::istream& input)
 template<> Number AoC<2015, 20, B>(std::istream& input)
 {
   using Input = std::vector<std::string>;
-  Input v = ReadLines(input);  // read all lines into vector
+  const Input v = ReadLines(input);  // read all lines into vector
+
   return 0;
 }
