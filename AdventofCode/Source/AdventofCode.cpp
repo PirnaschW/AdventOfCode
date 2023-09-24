@@ -6,8 +6,8 @@
 #include "pch.h"
 
 //#define COMPILE_ALL
-#define COMPILE_2015
-//#define COMPILE_2016
+//#define COMPILE_2015
+#define COMPILE_2016
 //#define COMPILE_2017
 //#define COMPILE_2018
 //#define COMPILE_2019
@@ -23,7 +23,7 @@ int main()
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2015, 25>();
+  RunDay<2016, 2>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
