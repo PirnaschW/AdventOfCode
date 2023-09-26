@@ -12,5 +12,6 @@ template<> Number AoC<2016, 7, B>(std::istream& input)
 {
   using Input = std::vector<std::string>;
   const Input v = ReadLines(input);  // read all lines into vector
+
   return 0;
 }
