@@ -21,7 +21,7 @@ template<> Number AoC<2016, 6, A>(std::istream& input)
   maxc.resize(v[0].size());
   for (int i = 0; i < v[0].size(); ++i)
   {
-    for (int j = 0; j < counts[0].size(); ++j)
+    for (char j = 0; j < counts[0].size(); ++j)
     {
       if (counts[i][j] > maxn[i])
       {
@@ -64,7 +64,7 @@ template<> Number AoC<2016, 6, B>(std::istream& input)
   for (int i = 0; i < v[0].size(); ++i)
   {
     minn[i] = std::numeric_limits<int>::max();
-    for (int j = 0; j < counts[0].size(); ++j)
+    for (char j = 0; j < counts[0].size(); ++j)
     {
       if (counts[i][j] == 0) continue;
       if (counts[i][j] < minn[i])
