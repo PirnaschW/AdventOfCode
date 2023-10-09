@@ -46,7 +46,7 @@ std::vector<Number> ReadNumbers(std::istream& input, char separator) // read inp
     long long int z;
     while (str >> z)
     {
-      v.emplace_back(std::move(z));
+      v.emplace_back(z);
 
       char sep;
       if (!(str >> sep)) break;

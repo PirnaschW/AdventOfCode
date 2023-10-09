@@ -1,5 +1,4 @@
-﻿
-namespace AdventOfCode
+﻿namespace AdventOfCode
 {
 
   class User
@@ -31,6 +30,21 @@ namespace AdventOfCode
   const std::string GetInputURL(Event event, Day day);
 
   bool DownloadInput(const std::string& source, User::ID id, const std::string& target);
+
+  template<Event event, Day day, Part part>
+  auto InputData() { return nullptr; }  // nullptr will result in reading the input file. Specialize this template to use local testdata instead, for example:
+  //template<> auto InputData<2022, 1, A>() { return "Test\nData\n"; }
+}
+
+template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
+Number AoC(std::istream&)
+{
+  std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
+  return -1;
+}
+
+namespace AdventOfCode
+{
 
   template<Event event, Day day, Part part>
   void Run(User::ID id)
@@ -132,15 +146,3 @@ namespace AdventOfCode
   }
 
 }
-
-template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
-Number AoC(std::istream&)
-{
-  std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
-  return -1;
-}
-
-template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
-auto InputData() { return nullptr; }  // nullptr will result in reading the input file. Specialize this template to use local testdata instead, for example:
-//template<> auto InputData<2022, 1, A>() { return "Test\nData\n"; }
-

@@ -335,7 +335,7 @@ namespace MD5
 
       _wfopen_s(&file, _wfilename, L"rb");
       if (file == NULL)
-          printf("%Ls can't be opened\n", _wfilename);
+          printf("%ls can't be opened\n", _wfilename);
       else
       {
         while ((len = fread(buffer, 1, 1024, file)) != 0)
