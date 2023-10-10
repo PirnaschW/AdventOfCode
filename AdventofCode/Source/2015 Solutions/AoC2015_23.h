@@ -212,4 +212,5 @@ template<> Number AoC<2015, 23, B>(std::istream& input)
   }
   while (cpu.p < code.size());
 
-  return cpu.b;}
+  return cpu.b;
+}
