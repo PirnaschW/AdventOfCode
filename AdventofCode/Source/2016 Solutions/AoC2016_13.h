@@ -69,7 +69,7 @@ template<> Number AoC<2016, 13, A>(std::istream& input)
   BFS::BreadthFirstSearch<myState, myGlobalInfo> bfs(s0,g);
   while (!g.done)
   {
-    auto z = bfs.NextLevel();
+    bfs.NextLevel();
   }
 
   return g.best;
@@ -134,7 +134,7 @@ template<> Number AoC<2016, 13, B>(std::istream& input)
   BFS::BreadthFirstSearch<myState, myGlobalInfo> bfs(s0,g);
   while (!g.done)
   {
-    auto z = bfs.NextLevel();
+    bfs.NextLevel();
   }
 
   return bfs.GetSet().size();
