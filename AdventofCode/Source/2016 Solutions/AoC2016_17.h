@@ -4,6 +4,8 @@ template<> Number AoC<2016, 17, A>(std::istream& input)
   using Input = std::vector<std::string>;
   const Input v = ReadLines(input);  // read all lines into vector
 
+  MD5::MD5 md5;
+
   return 0;
 }
 
