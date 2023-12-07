@@ -9,21 +9,21 @@ using namespace AdventOfCode;
 
 //#define COMPILE_ALL
 //#define COMPILE_2015
-#define COMPILE_2016
+//#define COMPILE_2016
 //#define COMPILE_2017
 //#define COMPILE_2018
 //#define COMPILE_2019
 //#define COMPILE_2020
 //#define COMPILE_2021
 //#define COMPILE_2022
-//#define COMPILE_2023
+#define COMPILE_2023
 
 int main()
 {
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2016, 19>();
+  RunDay<2023, 02>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
