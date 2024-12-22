@@ -73,18 +73,30 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Source</IncludePath>
+    <IntDir>O:\Projects\$(Solutionname)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>O:\Projects\$(Solutionname)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Source</IncludePath>
+    <IntDir>O:\Projects\$(Solutionname)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>O:\Projects\$(Solutionname)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Source</IncludePath>
+    <OutDir>O:\Projects\$(Solutionname)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>O:\Projects\$(Solutionname)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Source</IncludePath>
+    <IntDir>O:\Projects\$(Solutionname)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>O:\Projects\$(Solutionname)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -386,11 +398,37 @@
     <ClInclude Include="Source\2023 Solutions\AoC2023_23.h" />
     <ClInclude Include="Source\2023 Solutions\AoC2023_24.h" />
     <ClInclude Include="Source\2023 Solutions\AoC2023_25.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_01.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_02.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_03.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_04.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_05.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_06.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_07.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_08.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_09.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_10.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_11.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_12.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_13.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_14.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_15.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_16.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_17.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_18.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_19.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_20.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_21.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_22.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_23.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_24.h" />
+    <ClInclude Include="Source\2024 Solutions\AoC2024_25.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
     <ClInclude Include="Source\FrameWork.h" />
     <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\IntCodeComputer2019.h" />
+    <ClInclude Include="Source\MD5.h" />
     <ClInclude Include="Source\pch.h" />
     <ClInclude Include="Source\URL.h" />
   </ItemGroup>

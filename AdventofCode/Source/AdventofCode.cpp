@@ -5,8 +5,10 @@
 
 #include "pch.h"
 
+using namespace AdventOfCode;
+
 //#define COMPILE_ALL
-#define COMPILE_2015
+//#define COMPILE_2015
 //#define COMPILE_2016
 //#define COMPILE_2017
 //#define COMPILE_2018
@@ -14,16 +16,15 @@
 //#define COMPILE_2020
 //#define COMPILE_2021
 //#define COMPILE_2022
-//#define COMPILE_2023
-
-using namespace AdventOfCode;
+#define COMPILE_2023
+//#define COMPILE_2024
 
 int main()
 {
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2015, 1>();
+  RunDay<2023, 03>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
@@ -34,6 +35,7 @@ int main()
   //RunEvent<2021>(User::FL);
   //RunEvent<2022>(User::FL);
   //RunEvent<2023>(User::FL);
+  //RunEvent<2024>(User::FL);
   //
   //RunEvent<2015>(User::PW);
   //RunEvent<2016>(User::PW);
@@ -44,6 +46,7 @@ int main()
   //RunEvent<2021>(User::PW);
   //RunEvent<2022>(User::PW);
   //RunEvent<2023>(User::PW);
+  //RunEvent<2024>(User::PW);
 }
 
 #if defined COMPILE_ALL || defined COMPILE_2015
@@ -296,4 +299,32 @@ int main()
 #include "2023 Solutions\AoC2023_23.h"
 #include "2023 Solutions\AoC2023_24.h"
 #include "2023 Solutions\AoC2023_25.h"
+#endif
+
+#if defined COMPILE_ALL || defined COMPILE_2024
+#include "2024 Solutions\AoC2024_01.h"
+#include "2024 Solutions\AoC2024_02.h"
+#include "2024 Solutions\AoC2024_03.h"
+#include "2024 Solutions\AoC2024_04.h"
+#include "2024 Solutions\AoC2024_05.h"
+#include "2024 Solutions\AoC2024_06.h"
+#include "2024 Solutions\AoC2024_07.h"
+#include "2024 Solutions\AoC2024_08.h"
+#include "2024 Solutions\AoC2024_09.h"
+#include "2024 Solutions\AoC2024_10.h"
+#include "2024 Solutions\AoC2024_11.h"
+#include "2024 Solutions\AoC2024_12.h"
+#include "2024 Solutions\AoC2024_13.h"
+#include "2024 Solutions\AoC2024_14.h"
+#include "2024 Solutions\AoC2024_15.h"
+#include "2024 Solutions\AoC2024_16.h"
+#include "2024 Solutions\AoC2024_17.h"
+#include "2024 Solutions\AoC2024_18.h"
+#include "2024 Solutions\AoC2024_19.h"
+#include "2024 Solutions\AoC2024_20.h"
+#include "2024 Solutions\AoC2024_21.h"
+#include "2024 Solutions\AoC2024_22.h"
+#include "2024 Solutions\AoC2024_23.h"
+#include "2024 Solutions\AoC2024_24.h"
+#include "2024 Solutions\AoC2024_25.h"
 #endif

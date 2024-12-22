@@ -100,6 +100,9 @@
     <Filter Include="Header Files\2023 Solutions">
       <UniqueIdentifier>{47e0e10b-9e52-458e-a543-6ed1bf25c9c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\2024 Solutions">
+      <UniqueIdentifier>{7299fd33-72fe-4bc0-a0a6-a1ba0f4cf7ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h">
@@ -797,6 +800,84 @@
     </ClInclude>
     <ClInclude Include="Source\2023 Solutions\AoC2023_25.h">
       <Filter>Header Files\2023 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MD5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_01.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_02.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_03.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_04.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_05.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_06.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_07.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_08.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_09.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_10.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_11.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_12.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_13.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_14.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_15.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_16.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_17.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_18.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_19.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_20.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_21.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_22.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_23.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_24.h">
+      <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\2024 Solutions\AoC2024_25.h">
+      <Filter>Header Files\2024 Solutions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,15 +6,20 @@ namespace AdventOfCode
   std::string User::AsString(ID id) { return users.at(id).name; }
   std::string User::GetSessionID(ID id) { return users.at(id).sessionID; }
 
+  // Instructions:
+  // log on in Chrome
+  // Inspect (CTRL+Shift+I)
+  // Reload (CTRL+R)
+  // Application / Storage / Cookies / Session
   const std::unordered_map<User::ID, User::userData> User::users{
-    { PW, { "PirnaschW",       "53616c7465645f5f541814c65144c3561e653ce16fcd014005c8621d720641cab6a2b64b4c9ce32ae90a6e91731bfa2e17d42d7d76a2e3d68e60791fe116cfc9" } },
-    { FL, { "FlEndlessSummer", "53616c7465645f5fe8a3700fb67cd7bbf296530cbca1e90033010fdab0ae42e59e50ca8bd879600f18c7d113da386bc30e83b4d0c6d27d7b0daf669f22295e43" } },
+    { PW, { "PirnaschW",       "53616c7465645f5fb6c72779c8bc8ee0a497c573a51a4542d8dfd3365a2e077647c07e284148af81101008e21123ce5c5113dbacd173b47a4b20d0b4b304244e" } },
+    { FL, { "FlEndlessSummer", "53616c7465645f5f431ff96073ab62a6c4eab244f6a1fd6971618c52b9f8f58d968e2230d16bd86f608846961045bf4175b6a6f917df7c340e78bfe0e0ca778f" } },
   };
 
   const std::string GetEventAsString(Event event) noexcept
   {
     assert(event >= 2015);
-    assert(event <= 2023);
+    assert(event <= 2024);
     return std::to_string(event);
   }
 

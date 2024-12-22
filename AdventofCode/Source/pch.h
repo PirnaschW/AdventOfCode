@@ -17,6 +17,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "MD5.h"
 #include "URL.h"
 
 using Number = long long int;
