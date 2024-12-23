@@ -1,4 +1,4 @@
-//template<> auto AdventOfCode::InputData<2016, 13, A>() { return "10\n7\n4\n";}; // Result: ?
+//template<> auto InputData<2016, 13, A>() { return "10\n7\n4\n";}; // Result: ?
 template<> Number AoC<2016, 13, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

@@ -1,4 +1,17 @@
-//template<> auto InputData<2023, 3, A>() { return "Testdata\n";}; // Result: ?
+template<> auto InputData<2023, 3, A>()
+  {
+    return
+      "467..114..\n"
+      "...*......\n"
+      "..35..633.\n"
+      "......#...\n"
+      "617*......\n"
+      ".....+.58.\n"
+      "..592.....\n"
+      "......755.\n"
+      "...$.*....\n"
+      ".664.598..\n";
+  }; // Result: 4361
 template<> Number AoC<2023, 3, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

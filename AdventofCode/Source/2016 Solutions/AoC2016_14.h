@@ -1,4 +1,4 @@
-//template<> auto AdventOfCode::InputData<2016, 14, A>() { return "abc\n";}; // Result: 22728
+//template<> auto InputData<2016, 14, A>() { return "abc\n";}; // Result: 22728
 template<> Number AoC<2016, 14, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;
@@ -116,7 +116,7 @@ template<> Number AoC<2016, 14, A>(std::istream& input)
   return potentials[i-1].n;
 }
 
-//template<> auto AdventOfCode::InputData<2016, 14, B>() { return "abc\n";}; // Result: 22551
+//template<> auto InputData<2016, 14, B>() { return "abc\n";}; // Result: 22551
 template<> Number AoC<2016, 14, B>(std::istream& input)
 {
   using Input = std::vector<std::string>;

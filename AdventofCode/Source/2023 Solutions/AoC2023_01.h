@@ -42,7 +42,7 @@ template<> Number AoC<2023, 1, B>(std::istream& input)
 
   auto GetFirstStringNumber = [&numbers](const std::string& line, size_t minpos, int number) -> int
     {
-      for (int i = 0; i < numbers.size(); ++i)
+      for (size_t i = 0; i < numbers.size(); ++i)
       {
         size_t pos = line.find(numbers[i]);
         if (pos == std::string::npos) continue;
@@ -56,7 +56,7 @@ template<> Number AoC<2023, 1, B>(std::istream& input)
     };
   auto GetLastStringNumber = [&numbers](const std::string& line, size_t maxpos, int number) -> int
     {
-      for (int i = 0; i < numbers.size(); ++i)
+      for (size_t i = 0; i < numbers.size(); ++i)
       {
         size_t pos = line.rfind(numbers[i]);
         if (pos == std::string::npos) continue;

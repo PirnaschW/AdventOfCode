@@ -48,7 +48,7 @@ template<> Number AoC<2023, 2, A>(std::istream& input)
         assert(z1 == 1);
         pos += off;
 
-        for (auto i = 0; i < colors.size(); ++i)
+        for (size_t i = 0; i < colors.size(); ++i)
         {
           if (std::strncmp(pos, colors[i].c_str(), colors[i].size()) == 0)
           {
@@ -71,7 +71,7 @@ template<> Number AoC<2023, 2, A>(std::istream& input)
   {
     for (const auto& d : g.draws)
     {
-      for (auto i = 0; i < colors.size(); ++i)
+      for (size_t i = 0; i < colors.size(); ++i)
       {
         if (d.counts[i] > g.maxdraw.counts[i])
         {
@@ -81,7 +81,7 @@ template<> Number AoC<2023, 2, A>(std::istream& input)
     }
 
     bool possible{ true };
-    for (int i = 0; i < colors.size(); ++i)
+    for (size_t i = 0; i < colors.size(); ++i)
     {
       if (g.maxdraw.counts[i] > elf.counts[i])
       {
@@ -149,7 +149,7 @@ template<> Number AoC<2023, 2, B>(std::istream& input)
         assert(z1 == 1);
         pos += off;
 
-        for (int i = 0; i < colors.size(); ++i)
+        for (size_t i = 0; i < colors.size(); ++i)
         {
           if (std::strncmp(pos, colors[i].c_str(), colors[i].size()) == 0)
           {
@@ -172,7 +172,7 @@ template<> Number AoC<2023, 2, B>(std::istream& input)
   {
     for (const auto& d : g.draws)
     {
-      for (int i = 0; i < colors.size(); ++i)
+      for (size_t i = 0; i < colors.size(); ++i)
       {
         if (d.counts[i] > g.maxdraw.counts[i])
         {
@@ -182,7 +182,7 @@ template<> Number AoC<2023, 2, B>(std::istream& input)
     }
 
     Number product{ 1LL };
-    for (int i = 0; i < colors.size(); ++i)
+    for (size_t i = 0; i < colors.size(); ++i)
     {
       product *= g.maxdraw.counts[i];
     }

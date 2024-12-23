@@ -1,4 +1,4 @@
-//template<> auto AdventOfCode::InputData<2016, 15, A>() { return "Disc #1 has 5 positions; at time=0, it is at position 4.\nDisc #2 has 2 positions; at time=0, it is at position 1.\n";}; // Result: 5
+//template<> auto InputData<2016, 15, A>() { return "Disc #1 has 5 positions; at time=0, it is at position 4.\nDisc #2 has 2 positions; at time=0, it is at position 1.\n";}; // Result: 5
 template<> Number AoC<2016, 15, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

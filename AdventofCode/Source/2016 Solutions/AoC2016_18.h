@@ -1,5 +1,5 @@
-//template<> auto AdventOfCode::InputData<2016, 18, A>() { return "..^^.\n3\n";}; // Result: 6
-//template<> auto AdventOfCode::InputData<2016, 18, A>() { return ".^^.^.^^^^\n10\n";}; // Result: 38
+//template<> auto InputData<2016, 18, A>() { return "..^^.\n3\n";}; // Result: 6
+//template<> auto InputData<2016, 18, A>() { return ".^^.^.^^^^\n10\n";}; // Result: 38
 template<> Number AoC<2016, 18, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

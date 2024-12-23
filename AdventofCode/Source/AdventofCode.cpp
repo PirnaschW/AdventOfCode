@@ -5,7 +5,6 @@
 
 #include "pch.h"
 
-using namespace AdventOfCode;
 
 //#define COMPILE_ALL
 //#define COMPILE_2015
@@ -21,6 +20,8 @@ using namespace AdventOfCode;
 
 int main()
 {
+  using namespace AdventOfCode;
+
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
@@ -48,6 +49,9 @@ int main()
   //RunEvent<2023>(User::PW);
   //RunEvent<2024>(User::PW);
 }
+
+namespace AdventOfCode
+{
 
 #if defined COMPILE_ALL || defined COMPILE_2015
 #include "2015 Solutions\AoC2015_01.h"
@@ -328,3 +332,5 @@ int main()
 #include "2024 Solutions\AoC2024_24.h"
 #include "2024 Solutions\AoC2024_25.h"
 #endif
+
+}

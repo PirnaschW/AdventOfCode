@@ -103,6 +103,12 @@
     <Filter Include="Header Files\2024 Solutions">
       <UniqueIdentifier>{7299fd33-72fe-4bc0-a0a6-a1ba0f4cf7ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input Files %28FL%29\2024 Input Files">
+      <UniqueIdentifier>{5d29c300-eefd-405e-993f-e25101e51738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input Files %28PW%29\2024 Input Files">
+      <UniqueIdentifier>{759af7ff-13c3-42e3-b4ce-215a6f9036d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\2020 Solutions\AoC2020_01.h">
@@ -2100,6 +2106,285 @@
     </Text>
     <Text Include="Input Files\PirnaschW\2017 Inputs\AoC2017_25.txt">
       <Filter>Input Files %28PW%29\2017 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_01.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_02.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_03.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_04.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_05.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_06.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_07.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_08.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_09.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_10.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_11.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_12.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_13.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_14.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_15.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_16.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_17.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_18.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_19.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_20.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_21.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_22.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_23.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_24.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2023 Inputs\AoC2023_25.txt">
+      <Filter>Input Files %28FL%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_01.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_02.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_03.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_04.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_05.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_06.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_07.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_08.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_09.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_10.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_11.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_12.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_13.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_14.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_15.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_16.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_17.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_18.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_19.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_20.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\FLEndlessSummer\2024 Inputs\AoC2024_21.txt">
+      <Filter>Input Files %28FL%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_01.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_02.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_03.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_04.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_05.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_06.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_07.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_08.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_09.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_10.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_11.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_12.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_13.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_14.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_15.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_16.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_17.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_18.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_19.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_20.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_21.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_22.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_23.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_24.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_25.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2023 Inputs\AoC2023_99.txt">
+      <Filter>Input Files %28PW%29\2023 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_01.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_02.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_03.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_04.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_05.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_06.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_07.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_08.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_09.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_10.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_11.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_12.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_13.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_14.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_15.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_16.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_17.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_18.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_19.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_20.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
+    </Text>
+    <Text Include="Input Files\PirnaschW\2024 Inputs\AoC2024_21.txt">
+      <Filter>Input Files %28PW%29\2024 Input Files</Filter>
     </Text>
   </ItemGroup>
 </Project>

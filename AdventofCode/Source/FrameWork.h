@@ -34,17 +34,13 @@
   template<Event event, Day day, Part part>
   auto InputData() { return nullptr; }  // nullptr will result in reading the input file. Specialize this template to use local testdata instead, for example:
   //template<> auto InputData<2022, 1, A>() { return "Test\nData\n"; }
-}
 
-template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
-Number AoC(std::istream&)
-{
-  std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
-  return -1;
-}
-
-namespace AdventOfCode
-{
+  template<AdventOfCode::Event event, AdventOfCode::Day day, AdventOfCode::Part part>
+  Number AoC(std::istream&)
+  {
+    std::cout << "*** AoC<" << AdventOfCode::GetEventAsString(event) << "_" << AdventOfCode::GetDayAsString(day, false) << AdventOfCode::GetPartAsString(part) << " not yet implemented! ***";
+    return -1;
+  }
 
   template<Event event, Day day, Part part>
   void Run(User::ID id)
@@ -64,7 +60,7 @@ namespace AdventOfCode
     // get potential testdata:
     const char* const testinput = InputData<event, day, part>();               // if the template function is not specialized, there is no test data; the default returns nullptr
     const char* const testdummy = "";                                          // dummy as we can't deref nullptr
-    std::istringstream testinputstream(testinput?testinput:testdummy);         // the stream 'testinput' MUST exist as an l-lvalue; it points now either to the test input, or to an empty string
+    std::istringstream testinputstream(testinput ? testinput : testdummy);         // the stream 'testinput' MUST exist as an l-lvalue; it points now either to the test input, or to an empty string
 
     std::istream& inp = (testinput ? static_cast<std::istream&>(testinputstream) : static_cast<std::istream&>(inpf));
     std::cout << "User " << std::setw(16) << std::left << User::AsString(id) << std::right << ": Event " << GetEventAsString(event) << " Puzzle " << GetDayAsString(day, true) << " Part " << GetPartAsString(part) << " started... " << std::flush;
@@ -73,8 +69,8 @@ namespace AdventOfCode
     std::stringstream Result{};
     try { Result << std::setw(20) << AoC<event, day, part>(inp); }
     catch (const std::string& s) { Result << s; }
-    catch (const char* s)        { Result << s; }
-    catch (const char c)         { Result << c; }
+    catch (const char* s) { Result << s; }
+    catch (const char c) { Result << c; }
     auto end = std::chrono::steady_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
@@ -94,24 +90,24 @@ namespace AdventOfCode
   template<Event event>
   void RunEvent(User::ID id)
   {
-    Run<event,  1, A>(id);
-    Run<event,  1, B>(id);
-    Run<event,  2, A>(id);
-    Run<event,  2, B>(id);
-    Run<event,  3, A>(id);
-    Run<event,  3, B>(id);
-    Run<event,  4, A>(id);
-    Run<event,  4, B>(id);
-    Run<event,  5, A>(id);
-    Run<event,  5, B>(id);
-    Run<event,  6, A>(id);
-    Run<event,  6, B>(id);
-    Run<event,  7, A>(id);
-    Run<event,  7, B>(id);
-    Run<event,  8, A>(id);
-    Run<event,  8, B>(id);
-    Run<event,  9, A>(id);
-    Run<event,  9, B>(id);
+    Run<event, 1, A>(id);
+    Run<event, 1, B>(id);
+    Run<event, 2, A>(id);
+    Run<event, 2, B>(id);
+    Run<event, 3, A>(id);
+    Run<event, 3, B>(id);
+    Run<event, 4, A>(id);
+    Run<event, 4, B>(id);
+    Run<event, 5, A>(id);
+    Run<event, 5, B>(id);
+    Run<event, 6, A>(id);
+    Run<event, 6, B>(id);
+    Run<event, 7, A>(id);
+    Run<event, 7, B>(id);
+    Run<event, 8, A>(id);
+    Run<event, 8, B>(id);
+    Run<event, 9, A>(id);
+    Run<event, 9, B>(id);
     Run<event, 10, A>(id);
     Run<event, 10, B>(id);
     Run<event, 11, A>(id);

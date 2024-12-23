@@ -1,4 +1,4 @@
-//template<> auto AdventOfCode::InputData<2016, 11, A>() { return "The first floor contains a hydrogen-compatible microchip and a lithium-compatible microchip.\nThe second floor contains a hydrogen generator.\nThe third floor contains a lithium generator.\nThe fourth floor contains nothing relevant.\n";}; // Result: 11
+//template<> auto InputData<2016, 11, A>() { return "The first floor contains a hydrogen-compatible microchip and a lithium-compatible microchip.\nThe second floor contains a hydrogen generator.\nThe third floor contains a lithium generator.\nThe fourth floor contains nothing relevant.\n";}; // Result: 11
 template<> Number AoC<2016, 11, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

@@ -1,6 +1,12 @@
 // 2.00 2023-08-01
 // 2.01 2023-09-01 added HasOutput
 // 2.02 2023-09-04 added HasInput, ExecuteToInput, holdForInput
+
+
+
+#pragma warning( push, 4 ) // save current warning settings
+#pragma warning( disable : 4244 )  // 'argument': conversion from 'Number' to 'const unsigned int', possible loss of data
+
 class IntCodeComputer_2019_200
 {
 public:
@@ -80,3 +86,5 @@ private:
     }
   }
 };
+
+#pragma warning( pop )  // back to previous warning settings
