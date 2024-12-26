@@ -25,7 +25,7 @@ int main()
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2023, 05>();
+  RunDay<2023, 06>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
