@@ -1,4 +1,4 @@
-//template<> auto InputData<2023, 6, A>() { return "Testdata\n";}; // Result: ?
+template<> auto InputData<2023, 6, A>() { return "Time:      7  15   30\nDistance:  9  40  200\n";}; // Result: 288
 template<> Number AoC<2023, 6, A>(std::istream& input)
 {
   using Input = std::vector<std::string>;

@@ -18,27 +18,27 @@ template<> Number AoC<2023, 3, A>(std::istream& input)
   Input v = ReadLines(input);  // read all lines into vector
 
 
-  auto IsSymbol = [&v](Number x, Number y) -> bool
+  auto IsSymbol = [&v](int x, int y) -> bool
     {
       if (x < 0) return false;
-      if (x >= v[0].size()) return false;
+      if (x >= static_cast<int>(v[0].size())) return false;
       if (y < 0) return false;
-      if (y >= v.size()) return false;
+      if (y >= static_cast<int>(v.size())) return false;
 
       if (v[y][x] == '.' || isdigit(v[y][x])) return false;
       return true;
     };
-  auto HasSymbol = [&v,&IsSymbol](Number x, Number y, Number d) -> bool
+  auto HasSymbol = [&v,&IsSymbol](int x, int y, int d) -> bool
     {
-      for (Number i = x - d - 1; i <= x; ++i)
-        for (Number j = y - 1; j <= y + 1; ++j)
+      for (int i = x - d - 1; i <= x; ++i)
+        for (int j = y - 1; j <= y + 1; ++j)
           if (IsSymbol(i, j)) return true;
       return false;
     };
 
   Number total{0};  // accumulated total
   Number z{0};  // number found
-  Number d{0};  // digit count
+  int d{0};  // digit count
   for (size_t y = 0; y < v.size(); y++)
   {
     for (size_t x = 0; x < v[y].size(); x++)
@@ -116,20 +116,20 @@ template<> Number AoC<2023, 3, B>(std::istream& input)
   };
   std::vector<Gear> g{};
 
-  auto IsStarSymbol = [&v](Number x, Number y) -> bool
+  auto IsStarSymbol = [&v](int x, int y) -> bool
     {
       if (x < 0) return false;
-      if (x >= v[0].size()) return false;
+      if (x >= static_cast<int>(v[0].size())) return false;
       if (y < 0) return false;
-      if (y >= v.size()) return false;
+      if (y >= static_cast<int>(v.size())) return false;
 
       if (v[y][x] == '*') return true;
       return false;
     };
-  auto HasStarSymbol = [&v,&IsStarSymbol](Number& x, Number& y, Number d) -> bool
+  auto HasStarSymbol = [&v,&IsStarSymbol](int& x, int& y, int d) -> bool
     {
-      for (Number i = x - d - 1; i <= x; ++i)
-        for (Number j = y - 1; j <= y + 1; ++j)
+      for (int i = x - d - 1; i <= x; ++i)
+        for (int j = y - 1; j <= y + 1; ++j)
           if (IsStarSymbol(i, j))
           {
             x = i;
@@ -139,7 +139,7 @@ template<> Number AoC<2023, 3, B>(std::istream& input)
       return false;
     };
 
-  auto LogGear = [&g,&HasStarSymbol](Number& d, Number& z, Number x, Number y) -> void
+  auto LogGear = [&g,&HasStarSymbol](int& d, Number& z, int x, int y) -> void
     {
       if (d > 0)
       {
@@ -165,7 +165,7 @@ template<> Number AoC<2023, 3, B>(std::istream& input)
     };
 
   Number z{0};  // number found
-  Number d{0};  // digit count
+  int d{0};  // digit count
   for (size_t y = 0; y < v.size(); y++)
   {
     for (size_t x = 0; x < v[y].size(); x++)
