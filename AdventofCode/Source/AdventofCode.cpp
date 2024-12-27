@@ -5,7 +5,6 @@
 
 #include "pch.h"
 
-
 //#define COMPILE_ALL
 //#define COMPILE_2015
 //#define COMPILE_2016
@@ -25,7 +24,7 @@ int main()
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2023, 10>();
+  RunDay<2023, 11>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
