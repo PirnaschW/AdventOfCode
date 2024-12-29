@@ -82,7 +82,7 @@ template<> Number AoC<2023, 7, A>(std::istream& input)
   for (const auto& line : v)
   {
     Hand h{};
-    int z = sscanf_s(line.c_str(), "%5c %lld", reinterpret_cast<char*>(h.c.data()), sizeof(h.c), &h.b);
+    int z = sscanf_s(line.c_str(), "%5c %lld", reinterpret_cast<char*>(h.c.data()), static_cast<unsigned int>(sizeof(h.c)), &h.b);
     assert(z == 2);
     h.SetType();
     hand.push_back(h);
@@ -213,7 +213,7 @@ template<> Number AoC<2023, 7, B>(std::istream& input)
   for (const auto& line : v)
   {
     Hand h{};
-    int z = sscanf_s(line.c_str(), "%5c %lld", reinterpret_cast<char*>(h.c.data()), sizeof(h.c), &h.b);
+    int z = sscanf_s(line.c_str(), "%5c %lld", reinterpret_cast<char*>(h.c.data()), static_cast<unsigned int>(sizeof(h.c)), &h.b);
     assert(z == 2);
     h.SetType();
     hand.push_back(h);

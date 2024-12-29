@@ -28,7 +28,7 @@ template<> Number AoC<2023, 8, A>(std::istream& input)
       }
       else
       {
-        int next = name.size();
+        int next = static_cast<int>(std::ssize(name));
         name.insert({ n, next });
         return next;
       }
@@ -44,7 +44,7 @@ template<> Number AoC<2023, 8, A>(std::istream& input)
   std::vector<Node> node(v.size()-2);
   for (size_t i = 2; i < v.size(); ++i)
   {
-    constexpr size_t NameLen{ 4 };
+    constexpr unsigned int NameLen{ 4 };
     char n[NameLen]{};
     char l[NameLen]{};
     char r[NameLen]{};
@@ -98,7 +98,7 @@ template<> Number AoC<2023, 8, B>(std::istream& input)
       }
       else
       {
-        int next = name.size();
+        int next = static_cast<int>(std::ssize(name));
         name.insert({ n, next });
         return next;
       }
@@ -114,7 +114,7 @@ template<> Number AoC<2023, 8, B>(std::istream& input)
   std::vector<Node> node(v.size() - 2);
   for (size_t i = 2; i < v.size(); ++i)
   {
-    constexpr size_t NameLen{ 4 };
+    constexpr unsigned int NameLen{ 4 };
     char n[NameLen]{};
     char l[NameLen]{};
     char r[NameLen]{};

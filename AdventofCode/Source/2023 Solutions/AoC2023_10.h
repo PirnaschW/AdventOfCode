@@ -30,8 +30,8 @@ template<> Number AoC<2023, 10, A>(std::istream& input)
 
   auto FindStart = [&v]()->Point
     {
-      for (int y = 0; y < v.size(); ++y)
-        for (int x = 0; x < v[0].size(); ++x)
+      for (int y = 0; y < std::ssize(v); ++y)
+        for (int x = 0; x < std::ssize(v[0]); ++x)
           if (v[y][x] == 'S') return Point(x, y);
       assert(false);
       return Point(0, 0);
@@ -93,10 +93,10 @@ template<> Number AoC<2023, 10, A>(std::istream& input)
   Point s{ FindStart() };
   Point current{s};
   Direction currdir{None};
-  if (s.x > 0             && GetDirections(s + GoLeft ) & Right) { currdir = Left ; }
-  if (s.y > 0             && GetDirections(s + GoRight) & Left ) { currdir = Right; }
-  if (s.x < v[0].size()-1 && GetDirections(s + GoUp   ) & Down ) { currdir = Up   ; }
-  if (s.y < v.size()-1    && GetDirections(s + GoDown ) & Up   ) { currdir = Down ; }
+  if (s.x > 0                  && GetDirections(s + GoLeft ) & Right) { currdir = Left ; }
+  if (s.y > 0                  && GetDirections(s + GoRight) & Left ) { currdir = Right; }
+  if (s.x < std::ssize(v[0])-1 && GetDirections(s + GoUp   ) & Down ) { currdir = Up   ; }
+  if (s.y < std::ssize(v)-1    && GetDirections(s + GoDown ) & Up   ) { currdir = Down ; }
   assert(currdir != None);
 
   Number steps{ 0 };
@@ -174,8 +174,8 @@ template<> Number AoC<2023, 10, B>(std::istream& input)
 
   auto FindStart = [&v]()->Point
     {
-      for (int y = 0; y < v.size(); ++y)
-        for (int x = 0; x < v[0].size(); ++x)
+      for (int y = 0; y < std::ssize(v); ++y)
+        for (int x = 0; x < std::ssize(v[0]); ++x)
           if (v[y][x] == 'S') return Point(x, y);
       assert(false);
       return Point(0, 0);
@@ -237,10 +237,10 @@ template<> Number AoC<2023, 10, B>(std::istream& input)
   Point s{ FindStart() };
   Point current{s};
   Direction currdir{None};
-  if (s.x > 0             && GetDirections(s + GoLeft ) & Right) { currdir = Left ; }
-  if (s.y > 0             && GetDirections(s + GoRight) & Left ) { currdir = Right; }
-  if (s.x < v[0].size()-1 && GetDirections(s + GoUp   ) & Down ) { currdir = Up   ; }
-  if (s.y < v.size()-1    && GetDirections(s + GoDown ) & Up   ) { currdir = Down ; }
+  if (s.x > 0                  && GetDirections(s + GoLeft ) & Right) { currdir = Left ; }
+  if (s.y > 0                  && GetDirections(s + GoRight) & Left ) { currdir = Right; }
+  if (s.x < std::ssize(v[0])-1 && GetDirections(s + GoUp   ) & Down ) { currdir = Up;    }
+  if (s.y < std::ssize(v)-1    && GetDirections(s + GoDown ) & Up   ) { currdir = Down ; }
   assert(currdir != None);
 
   std::vector<Point> polygon{};

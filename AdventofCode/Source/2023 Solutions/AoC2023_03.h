@@ -39,9 +39,9 @@ template<> Number AoC<2023, 3, A>(std::istream& input)
   Number total{0};  // accumulated total
   Number z{0};  // number found
   int d{0};  // digit count
-  for (size_t y = 0; y < v.size(); y++)
+  for (int y = 0; y < std::ssize(v); y++)
   {
-    for (size_t x = 0; x < v[y].size(); x++)
+    for (int x = 0; x < std::ssize(v[y]); x++)
     {
       switch (v[y][x])
       {
@@ -76,7 +76,7 @@ template<> Number AoC<2023, 3, A>(std::istream& input)
     // reached end of line, reset
     if (d > 0)
     {
-      if (HasSymbol(v[y].size(), y, d))
+      if (HasSymbol(static_cast<int>(std::ssize(v[y])), y, d))
       {
         total += z;
       }
@@ -166,9 +166,9 @@ template<> Number AoC<2023, 3, B>(std::istream& input)
 
   Number z{0};  // number found
   int d{0};  // digit count
-  for (size_t y = 0; y < v.size(); y++)
+  for (int y = 0; y < std::ssize(v); y++)
   {
-    for (size_t x = 0; x < v[y].size(); x++)
+    for (int x = 0; x < std::ssize(v[y]); x++)
     {
       switch (v[y][x])
       {
@@ -194,11 +194,11 @@ template<> Number AoC<2023, 3, B>(std::istream& input)
     }
 
     // reached end of line, reset
-    LogGear(d, z, v[y].size(), y);
+    LogGear(d, z, static_cast<int>(std::ssize(v[y])), y);
   }
 
   Number result{0};
-  for (size_t i = 0; i < g.size(); ++i)
+  for (int i = 0; i < std::ssize(g); ++i)
   {
     if (g[i].count == 2)
     {
