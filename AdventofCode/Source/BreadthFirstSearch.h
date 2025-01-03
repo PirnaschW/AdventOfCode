@@ -36,10 +36,11 @@ namespace BFS
         }
       }
 
-      // now insert all the new ones
-      for (auto const& s : newstates)
+      // now insert / replace all the new ones
+      for (const auto& s : newstates)
       {
-        if (!states_.contains(s)) states_.insert(s);
+        auto [it, inserted] = states_.insert(s);
+        if (!inserted) it->ReplaceWith(s);
       }
       return newstates.size();
     }
