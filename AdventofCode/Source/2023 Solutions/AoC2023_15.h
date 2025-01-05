@@ -110,7 +110,7 @@ template<> Number AoC<2023, 15, B>(std::istream& input)
       case '-':
         {
           assert(z == 2);
-          int e = std::erase_if(facility[box].lens, [&label](const auto& l) { return l.label == label; });
+          size_t e = std::erase_if(facility[box].lens, [&label](const auto& l) { return l.label == label; });
         }
         break;
       default:

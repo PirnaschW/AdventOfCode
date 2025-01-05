@@ -282,12 +282,12 @@ template<> Number AoC<2023, 16, B>(std::istream& input)
   for (int y = 0; y < std::ssize(e0); ++y)
   {
     TryOne(Point(0, y), GoRight);
-    TryOne(Point(std::ssize(e0[0]) - 1, y), GoLeft);
+    TryOne(Point(static_cast<int>(std::ssize(e0[0]) - 1), y), GoLeft);
   }
   for (int x = 0; x < std::ssize(e0[0]); ++x)
   {
     TryOne(Point(x, 0), GoDown);
-    TryOne(Point(x, std::ssize(e0) - 1), GoUp);
+    TryOne(Point(x, static_cast<int>(std::ssize(e0) - 1)), GoUp);
   }
 
   return max;

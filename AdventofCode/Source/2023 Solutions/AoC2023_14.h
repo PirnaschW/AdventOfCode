@@ -94,7 +94,7 @@ template<> Number AoC<2023, 14, B>(std::istream& input)
     {
       for (int x = 0; x < std::ssize(v[0]); ++x)
       {
-        for (int y = std::ssize(v) - 1, rollto = y; y >= 0; --y)
+        for (int y = static_cast<int>(std::ssize(v) - 1), rollto = y; y >= 0; --y)
         {
           switch (v[y][x])
           {
@@ -144,7 +144,7 @@ template<> Number AoC<2023, 14, B>(std::istream& input)
     {
       for (int y = 0; y < std::ssize(v); ++y)
       {
-        for (int x = std::ssize(v[0]) - 1, rollto = x; x >= 0; --x)
+        for (int x = static_cast<int>(std::ssize(v[0]) - 1), rollto = x; x >= 0; --x)
         {
           switch (v[y][x])
           {

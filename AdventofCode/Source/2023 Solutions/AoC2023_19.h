@@ -46,7 +46,7 @@ template<> Number AoC<2023, 19, A>(std::istream& input)
   NameMap vName{};
   auto GetNameIndex = [](NameMap& map, const std::string& s) -> int
     {
-      auto [it, found] = map.insert({ s, std::ssize(map) + 1 });
+      auto [it, found] = map.insert({ s, static_cast<int>(std::ssize(map)) + 1 });
       return it->second;
     };
 
@@ -184,12 +184,12 @@ template<> Number AoC<2023, 19, B>(std::istream& input)
   NameMap vName{};
   auto GetNameIndex = [](NameMap& map, const std::string& s) -> int
     {
-      auto [it, found] = map.insert({ s, std::ssize(map)});
+      auto [it, found] = map.insert({ s, static_cast<int>(std::ssize(map))});
       return it->second;
     };
 
   int line{ -1 };
-  int nextDecisionNumber{ std::ssize(v) * 2 };
+  int nextDecisionNumber{ 2 * static_cast<int>(std::ssize(v)) };
   while (++line < std::ssize(v))
   {
     if (v[line] == "") break;
