@@ -148,7 +148,7 @@ template<> Number AoC<2023, 21, A>(std::istream& input)
 //".##.#.####.\n"
 //".##..##.##.\n"
 //"...........\n"
-//"10\n50\n100\n500\n1000\n5000\n"; }; // Result: 10 -> 50, 50 -> 1594, 100 -> 6536, 500 -> 167004, 1000 -> 668697, 5000 -> 16733044
+//"6\n10\n50\n100\n500\n1000\n5000\n"; }; // Result: 6 -> 16, 10 -> 50, 50 -> 1594, 100 -> 6536, 500 -> 167004, 1000 -> 668697, 5000 -> 16733044
 template<> Number AoC<2023, 21, B>(std::istream& input)
 {
   using Input = std::vector<std::string>;
@@ -220,6 +220,13 @@ template<> Number AoC<2023, 21, B>(std::istream& input)
       if (p.y >= std::ssize(v_)) return false;
       return true;
     }
+    bool wrapAround{ false };
+    Point WrapAround(const Point p) const noexcept
+    {
+      static Coord width = static_cast<Coord>(std::size(v_));
+      auto Wrap = [](Coord width, Coord z) -> Coord { if (z < 0) z += width * (-z / width + 1); return z % width; };
+      return Point(Wrap(width, p.x), Wrap(width, p.y));
+    }
   };
 
   enum Parity
@@ -246,8 +253,9 @@ template<> Number AoC<2023, 21, B>(std::istream& input)
 
       auto InsertIfPossible = [&g, &v](const Point& p, int steps) -> void
         {
-          if (!g.IsValid(p)) return;
-          if (g.v_[p.y][p.x] != '.') return;
+          const Point& p0 = g.wrapAround ? g.WrapAround(p) : p;
+          if (!g.IsValid(p0)) return;
+          if (g.v_[p0.y][p0.x] != '.') return;
           v.emplace_back(p,steps+1);
         };
 
@@ -258,8 +266,10 @@ template<> Number AoC<2023, 21, B>(std::istream& input)
       InsertIfPossible(p_ + g.GoUp,    steps_);
       return v;
     }
-    Parity GetStepsParity() const noexcept { return (steps_ % 2) ? Even : Odd; }
+    Parity GetLocationParity() const noexcept { return ((p_.x + p_.y) % 2) ? Odd: Even; }
+    int GetSteps() const noexcept { return steps_; }
   private:
+  public:
     const Point p_{ 0, 0 };
     const int steps_{ 0 };
     mutable size_t hash_{ 0 };
@@ -283,7 +293,7 @@ template<> Number AoC<2023, 21, B>(std::istream& input)
   Point start = GetStart();
 
 
-  auto GetCount = [&g](const Point& s, Number steps, Parity parity) -> Number
+  auto GetBFS = [&g](const Point& s, Number steps) -> BFS::BreadthFirstSearch<myState, myGlobalInfo>
     {
       myState s0(s, 0);
       BFS::BreadthFirstSearch<myState, myGlobalInfo> bfs(s0, g);
@@ -293,93 +303,153 @@ template<> Number AoC<2023, 21, B>(std::istream& input)
         if (n == 0)
           break;
       }
-      const auto& states = bfs.GetSet();
+      return bfs;
+    };
+
+  auto CountByParity = [](BFS::BreadthFirstSearch<myState, myGlobalInfo> bfs, Parity parity, int minSteps = -1) -> Number
+    {
       Number count{ 0 };
-      for (const auto& s : states)
+      for (const auto& s : bfs.GetSet())
       {
-        if (s.GetStepsParity() == parity) ++count;
+//        std::cout << s.p_.x << "," << s.p_.y << "; steps = " << s.steps_ << ", parity = " << s.GetLocationParity() << std::endl;
+        if (s.GetSteps() > minSteps && s.GetLocationParity() == parity)
+        {
+          ++count;
+        }
       }
       return count;
     };
 
-
-
   assert(std::size(v[0]) == std::size(v));
   assert(start.x == start.y);
   Coord width = static_cast<Coord>(std::size(v));
-  //totalSteps = width * 5 / 2;  // for testing
 
-  auto Calculate = [&GetCount,width,start](Number totalSteps) -> Number
+  auto Calculate1 = [&CountByParity,&GetBFS,&g,width,start](Number totalSteps) -> Number
     {
-
-      Number completePoints{ 0 };
-      if (totalSteps < width / 2)
+      g.wrapAround = false;
+      if (totalSteps < width)
       {
-        completePoints = GetCount(start, width, Odd);
+        auto bfs = GetBFS(start, totalSteps);
+        Number completePoints = CountByParity(bfs,Even);
+        return completePoints;
       }
       else
       {
+        auto bfs = GetBFS(start, width);
         Number nComplete = totalSteps / width - 1;
         Parity parity  = nComplete % 2 ? Odd : Even;
         Parity reverse = nComplete % 2 ? Even : Odd;
-        if (nComplete < 0)
-        {
-          nComplete = 0;
-          completePoints = 0;
-        }
-        else
-        {
-          Number completeOdd = parity == Odd ? nComplete * nComplete : (nComplete + 1) * (nComplete + 1);
-          Number completeEven = parity == Odd ? (nComplete + 1) * (nComplete + 1) : nComplete * nComplete;
-          Number oddPoints = GetCount(start, width, parity);
-          Number evenPoints = GetCount(start, width, reverse);
-          completePoints = completeOdd * oddPoints + completeEven + evenPoints;
-        }
+
+        // o and e refer to the graphic!
+        Number oPoints = CountByParity(bfs,Even); // 65+65  is even
+        Number ePoints = CountByParity(bfs,Odd); // 65+65 +131 is odd
+
+        Number completeO = parity == Odd ?  nComplete      *  nComplete      : (nComplete + 1) * (nComplete + 1);
+        Number completeE = parity == Odd ? (nComplete + 1) * (nComplete + 1) :  nComplete      *  nComplete;
+        Number completePoints = completeO * oPoints + completeE * ePoints;
 
         Number remainingSteps;
+        Parity p;
 
-        remainingSteps = totalSteps - nComplete * width - start.x;
-        Number pointsLeft = GetCount(Point(width - 1, start.y), remainingSteps, parity);   // left
-        Number pointsRight = GetCount(Point(0, start.y), remainingSteps, parity);   // right
-        Number pointsTop = GetCount(Point(start.x, width - 1), remainingSteps, parity);   // top
-        Number pointsBottom = GetCount(Point(start.x, 0), remainingSteps, parity);   // bottom
+        remainingSteps = totalSteps - nComplete * width - start.x - 1;
+        p = (remainingSteps-1) % 2 == totalSteps % 2 ? Even : Odd;
+        Number pointsLeft   = CountByParity(GetBFS(Point(width - 1,   start.y), remainingSteps), p);   // left
+        Number pointsRight  = CountByParity(GetBFS(Point(        0,   start.y), remainingSteps), p);   // right
+        Number pointsTop    = CountByParity(GetBFS(Point(  start.x, width - 1), remainingSteps), p);   // top
+        Number pointsBottom = CountByParity(GetBFS(Point(  start.x,         0), remainingSteps), p);   // bottom
         completePoints += pointsLeft;
         completePoints += pointsRight;
         completePoints += pointsTop;
         completePoints += pointsBottom;
 
-        remainingSteps = totalSteps - nComplete * width;
-        Number points1TopLeft = GetCount(Point(width - 1, width - 1), remainingSteps, parity);   // left
-        Number points1TopRight = GetCount(Point(0, width - 1), remainingSteps, parity);   // right
-        Number points1BottomLeft = GetCount(Point(width - 1, 0), remainingSteps, parity);   // top
-        Number points1BottomRight = GetCount(Point(0, 0), remainingSteps, parity);   // bottom
+        remainingSteps = totalSteps - nComplete * width - 1;
+        p = remainingSteps % 2 == totalSteps % 2 ? Even : Odd;
+        Number points1TopLeft     = CountByParity(GetBFS(Point(width - 1, width - 1), remainingSteps), p);   // left
+        Number points1TopRight    = CountByParity(GetBFS(Point(        0, width - 1), remainingSteps), p);   // right
+        Number points1BottomLeft  = CountByParity(GetBFS(Point(width - 1,         0), remainingSteps), p);   // top
+        Number points1BottomRight = CountByParity(GetBFS(Point(        0,         0), remainingSteps), p);   // bottom
         completePoints += nComplete * points1TopLeft;
         completePoints += nComplete * points1TopRight;
         completePoints += nComplete * points1BottomLeft;
         completePoints += nComplete * points1BottomRight;
 
-        remainingSteps = totalSteps - (nComplete + 1) * width;
-        Number points2TopLeft = GetCount(Point(width - 1, width - 1), remainingSteps, reverse);   // left
-        Number points2TopRight = GetCount(Point(0, width - 1), remainingSteps, reverse);   // right
-        Number points2BottomLeft = GetCount(Point(width - 1, 0), remainingSteps, reverse);   // top
-        Number points2BottomRight = GetCount(Point(0, 0), remainingSteps, reverse);   // bottom
+        remainingSteps = totalSteps - (nComplete + 1) * width - 1;
+        p = remainingSteps % 2 == totalSteps % 2 ? Even : Odd;
+        Number points2TopLeft     = CountByParity(GetBFS(Point(width - 1, width - 1), remainingSteps), p);   // left
+        Number points2TopRight    = CountByParity(GetBFS(Point(        0, width - 1), remainingSteps), p);   // right
+        Number points2BottomLeft  = CountByParity(GetBFS(Point(width - 1,         0), remainingSteps), p);   // top
+        Number points2BottomRight = CountByParity(GetBFS(Point(        0,         0), remainingSteps), p);   // bottom
         completePoints += (nComplete + 1) * points2TopLeft;
         completePoints += (nComplete + 1) * points2TopRight;
         completePoints += (nComplete + 1) * points2BottomLeft;
         completePoints += (nComplete + 1) * points2BottomRight;
+        return completePoints;
       }
-      return completePoints;
     };
 
-  Number res{ 0 };
+  auto Calculate2 = [&CountByParity,&GetBFS,&g,width,start](Number totalSteps) -> Number
+    {
+      g.wrapAround = false;
+      Number n = (totalSteps - width / 2) / width; // 202300
+      // o and e refer to the graphic!
+      auto states = GetBFS(start, width);
+      Number ePoints = CountByParity(states, Even); // 65+65  is even
+      Number oPoints = CountByParity(states, Odd); // 65+65 +131 is odd
+      Number eCorners = CountByParity(states, Even, 65);  // count if further than 65 steps
+      Number oCorners = CountByParity(states, Odd, 65);
+
+      // n=0: 1 E -  4/4 EC  + 0 O + 0/4 OC 
+      // n=1: 1 E +  4/4 EC  + 4 O - 8/4 OC
+      // n=2: 9 E - 12/4 EC  + 4 O + 8/4 OC
+      if (n % 2 == 0) // for even n
+      {
+        Number completePoints = (n + 1) * (n + 1) * ePoints - (n + 1) * eCorners  + n * n * oPoints + n * oCorners;
+        return completePoints;
+      }
+      else // for odd n
+      {
+        Number completePoints = n * n * ePoints + n * eCorners  + (n + 1) * (n + 1) * oPoints - (n + 1) * oCorners;
+        return completePoints;
+      }
+    };
+
+  auto Calculate3 = [&CountByParity,&GetBFS,&g,width,start](Number totalSteps) -> Number
+    {
+      g.wrapAround = true;
+      auto states = GetBFS(start, totalSteps);
+      return CountByParity(states, Even); // 65+65  is even
+    };
+
+  Number res1{ 0 };
+  Number res2{ 0 };
+  Number res3{ 0 };
+  totalSteps.clear();
+  Number remainder = targetSteps % 131;
+  for (int i = 0; i < 12; ++i)
+    totalSteps.push_back(remainder + 131 * i);
+  totalSteps.push_back(targetSteps);
+
   for (int i = 0; i < std::ssize(totalSteps); ++i)
   {
-    res = Calculate(totalSteps[i]);
-    std::cout << totalSteps[i] << " " << res << std::endl;
+    res1 = Calculate1(totalSteps[i]);
+    res2 = Calculate2(totalSteps[i]);
+    if (totalSteps[i] < 5000)
+      res3 = Calculate3(totalSteps[i]);
+    std::cout << totalSteps[i] << " res1 = " << res1 << " res2 = " << res2 << " res3 = " << res3 << std::endl;
   }
-  return res;
-  // FL: 316560330685443 is too low
-  // FL: 316560299935843 is too low
-  // FL: 316560257858007 is probably too low too
-  // FL: 315946384577007 is probably too low too
+  return res1;
+  // FL: 632421612690320 is not the right answer
+  // FL: 632421658005632 is not the right answer
+  // FL: 632421658207932 is not the right answer
+  // FL: 632379148908931 ?
+  // FL: 632421612690484 is not the right answer
+  // FL: 632421612690320 ? probably too low
+
+  // WP: 609585186166077 is not the right answer
+  // WP: 609585185963777 is not the right answer
+  // WP: 609585267693179 is not the right answer
+  // WP: 609585214488015 is not the right answer
+  // WP: 609585267895479 is too high
+  // WP: 609585185963801 is too low
+  // WP: 609542797438078 is probably too low too
 }

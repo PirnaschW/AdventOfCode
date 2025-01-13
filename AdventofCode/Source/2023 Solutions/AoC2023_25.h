@@ -200,8 +200,8 @@ template<> Number AoC<2023, 25, A>(std::istream& input)
     BFS::BreadthFirstSearch<myState, myGlobalInfo> bfs(s0, g);
     while (bfs.NextLevel() > 0);
   
-    res1 = bfs.GetSet().size();
-    res2 = nMap.size() - res1;
+    res1 = static_cast<int>(std::ssize(bfs.GetSet()));
+    res2 = static_cast<int>(std::ssize(nMap)) - res1;
   }
 
   return res1 * res2;

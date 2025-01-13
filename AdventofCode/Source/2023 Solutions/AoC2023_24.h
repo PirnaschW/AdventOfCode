@@ -244,7 +244,7 @@ template<> Number AoC<2023, 24, B>(std::istream& input)
       return r;
     };
   
-  int s = std::ssize(hail);
+  int s = static_cast<int>(std::ssize(hail));
   Vector3D<Real> rock{};
   for (int i = 0; i < s; i++)
   {
