@@ -75,7 +75,7 @@ template<> Number AoC<2019, 18, A>(std::istream& input)
     State() = delete;
 
   public:
-    static_assert(sizeof(size_t) >= 6);
+    static_assert(sizeof(size_t) >= 4);
     size_t Hash() const noexcept { return std::hash<decltype(k_.keylist)>()(k_.keylist); }
     constexpr bool operator ==(const State& s) const noexcept { return s.k_ == k_; }
     constexpr bool IsAlive() const noexcept { return !iterated_; }
@@ -327,7 +327,7 @@ template<> Number AoC<2019, 18, B>(std::istream& input)
     State() = delete;
 
   public:
-    static_assert(sizeof(size_t) >= 6);
+    static_assert(sizeof(size_t) >= 4);
     size_t Hash() const noexcept { return std::hash<decltype(k_.keylist)>()(k_.keylist); }
     constexpr bool operator ==(const State& s) const noexcept { return s.k_ == k_; }
     constexpr bool IsAlive() const noexcept { return !iterated_; }

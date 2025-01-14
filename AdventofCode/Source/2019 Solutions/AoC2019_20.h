@@ -189,6 +189,7 @@ template<> Number AoC<2019, 20, A>(std::istream& input)
     size_t Hash() const noexcept { return p_.first << 8 | p_.second; }
     constexpr bool operator ==(const State& s) const noexcept { return s.p_ == p_; }
     constexpr bool IsAlive() const noexcept { return !iterated_; }
+    constexpr void ReplaceWith(const State& s) const noexcept {};
     constexpr Number GetSteps() const noexcept { return steps_; }
     constexpr void TryPoint(const GlobalInfo& g, const Point& p0, Coord dx, Coord dy, StateVec& n) const noexcept
     {
@@ -459,6 +460,7 @@ template<> Number AoC<2019, 20, B>(std::istream& input)
     size_t Hash() const noexcept { return p_.Hash(); }
     constexpr bool operator ==(const State& s) const noexcept { return s.p_ == p_; }
     constexpr bool IsAlive() const noexcept { return !iterated_; }
+    constexpr void ReplaceWith(const State& s) const noexcept {};
     constexpr Number GetSteps() const noexcept { return steps_; }
     constexpr void TryPoint(const GlobalInfo& g, Coord dx, Coord dy, StateVec& n) const noexcept
     {

@@ -33,6 +33,7 @@ template<> Number AoC<2016, 13, A>(std::istream& input)
     size_t Hash() const noexcept { return (x_ << 8) + y_; }
     bool operator ==(const myState& s) const noexcept { return x_ == s.x_ && y_ == s.y_; }
     bool IsAlive() const noexcept { return alive_; }
+    constexpr void ReplaceWith(const myState& s) const noexcept {};
     std::vector<myState> Iterate([[maybe_unused]] const myGlobalInfo& g) const
     {
       if (x_ == g.x && y_ == g.y)
@@ -102,6 +103,7 @@ template<> Number AoC<2016, 13, B>(std::istream& input)
     size_t Hash() const noexcept { return (x_ << 8) + y_; }
     bool operator ==(const myState& s) const noexcept { return x_ == s.x_ && y_ == s.y_; }
     bool IsAlive() const noexcept { return alive_; }
+    constexpr void ReplaceWith(const myState& s) const noexcept {};
     std::vector<myState> Iterate([[maybe_unused]] const myGlobalInfo& g) const
     {
       if (steps_ == g.n - 1)

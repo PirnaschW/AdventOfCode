@@ -22,6 +22,7 @@ template<> Number AoC<2016, 17, A>(std::istream& input)
     size_t Hash() const noexcept { return std::hash<std::string>()(s_); }
     bool operator ==(const State& s) const noexcept { return s_ == s.s_; }
     bool IsAlive() const noexcept { return alive_; }
+    constexpr void ReplaceWith(const State& s) const noexcept {};
     std::vector<State> Iterate(const GlobalInfo& g) const
     {
       std::vector<State> v;
@@ -86,6 +87,7 @@ template<> Number AoC<2016, 17, B>(std::istream& input)
     size_t Hash() const noexcept { return std::hash<std::string>()(s_); }
     bool operator ==(const State& s) const noexcept { return s_ == s.s_; }
     bool IsAlive() const noexcept { return alive_; }
+    constexpr void ReplaceWith(const State& s) const noexcept {};
     std::vector<State> Iterate(const GlobalInfo& g) const
     {
       alive_ = false;

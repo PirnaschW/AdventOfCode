@@ -15,6 +15,7 @@ template<> Number AoC<2019, 15, A>(std::istream& input)
     Space(Coord x, Coord y, Coord fx, Coord fy) : x_(x), y_(y), fromx_(fx), fromy_(fy) {}
 //    Space() = delete;
     bool IsAlive() const noexcept { return !visited_; }
+    constexpr void ReplaceWith(const Space& s) const noexcept {};
 
     bool IsHome() const noexcept { return x_ == 0 && y_ == 0; }
     void SetVisited() const noexcept { visited_ = true; }
@@ -139,6 +140,7 @@ template<> Number AoC<2019, 15, B>(std::istream& input)
     Space(Coord x, Coord y, Coord fx, Coord fy) : x_(x), y_(y), fromx_(fx), fromy_(fy) {}
     //    Space() = delete;
     bool IsAlive() const noexcept { return !visited_; }
+    constexpr void ReplaceWith(const Space& s) const noexcept {};
     static void Cleanup([[maybe_unused]] StateSet<Space>& deadstates, [[maybe_unused]] StateSet<Space>& livestates) {} // allow optional removal of inferior States
 
     bool IsHome() const noexcept { return x_ == fromx_ && y_ == fromy_; }
