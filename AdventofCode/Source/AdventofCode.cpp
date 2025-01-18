@@ -15,16 +15,11 @@
 //#define COMPILE_2021
 //#define COMPILE_2022
 //#define COMPILE_2023
-#define COMPILE_2024
+//#define COMPILE_2024
 
 int main()
 {
   using namespace AdventOfCode;
-
-  //Run<2018, 10, B>(User::FL);
-  //Run<2018, 10, B>(User::FL);
-
-  RunDay<2024, 01>();
 
   //RunEvent<2015>(User::FL);
   //RunEvent<2016>(User::FL);
@@ -47,10 +42,40 @@ int main()
   //RunEvent<2022>(User::PW);
   //RunEvent<2023>(User::PW);
   //RunEvent<2024>(User::PW);
+
+  //Run<2018, 10, B>(User::FL);
+  //Run<2018, 10, B>(User::FL);
+
+  RunDay<2024, 02>();
+
 }
 
 namespace AdventOfCode
 {
+#include "2024 Solutions\AoC2024_02.h"
+#include "2024 Solutions\AoC2024_03.h"
+#include "2024 Solutions\AoC2024_04.h"
+#include "2024 Solutions\AoC2024_05.h"
+#include "2024 Solutions\AoC2024_06.h"
+#include "2024 Solutions\AoC2024_07.h"
+#include "2024 Solutions\AoC2024_08.h"
+#include "2024 Solutions\AoC2024_09.h"
+#include "2024 Solutions\AoC2024_10.h"
+#include "2024 Solutions\AoC2024_11.h"
+#include "2024 Solutions\AoC2024_12.h"
+#include "2024 Solutions\AoC2024_13.h"
+#include "2024 Solutions\AoC2024_14.h"
+#include "2024 Solutions\AoC2024_15.h"
+#include "2024 Solutions\AoC2024_16.h"
+#include "2024 Solutions\AoC2024_17.h"
+#include "2024 Solutions\AoC2024_18.h"
+#include "2024 Solutions\AoC2024_19.h"
+#include "2024 Solutions\AoC2024_20.h"
+#include "2024 Solutions\AoC2024_21.h"
+#include "2024 Solutions\AoC2024_22.h"
+#include "2024 Solutions\AoC2024_23.h"
+#include "2024 Solutions\AoC2024_24.h"
+#include "2024 Solutions\AoC2024_25.h"
 
 #if defined COMPILE_ALL || defined COMPILE_2015
 #include "2015 Solutions\AoC2015_01.h"
