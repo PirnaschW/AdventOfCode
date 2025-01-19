@@ -46,13 +46,12 @@ int main()
   //Run<2018, 10, B>(User::FL);
   //Run<2018, 10, B>(User::FL);
 
-  RunDay<2024, 02>();
+  RunDay<2024, 03>();
 
 }
 
 namespace AdventOfCode
 {
-#include "2024 Solutions\AoC2024_02.h"
 #include "2024 Solutions\AoC2024_03.h"
 #include "2024 Solutions\AoC2024_04.h"
 #include "2024 Solutions\AoC2024_05.h"
