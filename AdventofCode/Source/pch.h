@@ -22,10 +22,13 @@
 #include "URL.h"
 
 using Number = long long int;
+using Input = std::vector<std::string>;
+
 #include <__msvc_int128.hpp>  // for extra long arithmetic...
 
 #include "FrameWork.h"
 #include "BreadthFirstSearch.h"
+#include "Coord.h"
 #include "IntCodeComputer2019.h"
 
 using namespace AdventOfCode;

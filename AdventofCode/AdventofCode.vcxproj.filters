@@ -76,7 +76,6 @@
     <Filter Include="Input Files %28FL%29\2024 Input Files">
       <UniqueIdentifier>{5d29c300-eefd-405e-993f-e25101e51738}</UniqueIdentifier>
     </Filter>
-
     <Filter Include="Input Files %28PW%29">
       <UniqueIdentifier>{41ea0cf5-7f27-4ef6-adf7-b05ceac20d6e}</UniqueIdentifier>
     </Filter>
@@ -885,6 +884,9 @@
     </ClInclude>
     <ClInclude Include="Source\2024 Solutions\AoC2024_25.h">
       <Filter>Header Files\2024 Solutions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Coord.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

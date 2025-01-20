@@ -344,6 +344,7 @@
     <ClInclude Include="Source\2024 Solutions\AoC2024_25.h" />
     <ClInclude Include="Source\AoCTemplate.h" />
     <ClInclude Include="Source\AoCUtil.h" />
+    <ClInclude Include="Source\Coord.h" />
     <ClInclude Include="Source\FrameWork.h" />
     <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\IntCodeComputer2019.h" />
