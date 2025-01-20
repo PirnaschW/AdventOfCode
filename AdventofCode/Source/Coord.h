@@ -26,6 +26,12 @@ namespace Coord2D
     Coord x;
     Coord y;
   };
+  using PointSet = std::unordered_set < Point,
+    decltype([](const Point& p) -> size_t { return std::hash<size_t>()((p.x << 16) | p.y); }),
+    decltype([](const Point& p1, const Point& p2) -> bool { return p1.x == p2.x && p1.y == p2.y; }) > ;
+  using PointDirectionSet = std::unordered_set < std::pair<Point,Direction>,
+    decltype([](const std::pair<Point,Direction>& z) -> size_t { return std::hash<size_t>()((z.second.dx << 30) | (z.second.dy << 14) | (z.first.x << 16) | z.first.y); }),
+    decltype([](const std::pair<Point,Direction>& z1, const std::pair<Point,Direction>& z2) -> bool { return z1.first.x == z2.first.x && z1.first.y == z2.first.y && z1.second.dx == z2.second.dx && z1.second.dy == z2.second.dy; }) > ;
 
   const Direction GoNull{ 0,  0 };
   const Direction GoLeft{ -1,  0 };
@@ -51,6 +57,17 @@ namespace Coord2D
     }
     Coord SizeX() const noexcept { return sizeX_; }
     Coord SizeY() const noexcept { return sizeY_; }
+    Point Find(const char c) const noexcept
+    {
+      for (Coord y=0; y<sizeY_; ++y)
+        for (Coord x = 0; x < sizeX_; ++x)
+        {
+          const Point p{ x,y };
+          if (GetChar(p) == c) return p;
+        }
+      assert(false);
+      return Point{ -1,-1 };
+    }
 
     const Input& v_;
     const Coord sizeX_;
